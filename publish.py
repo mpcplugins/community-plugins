@@ -1,4 +1,4 @@
-"""Publishes approved uploads from thediskking.com/plugins/upload as GitHub releases of this repo.
+"""Publishes approved uploads from thediskking.com/plugins/share as GitHub releases of this repo.
 Copyright (c) 2026 The Disk King. All rights reserved.
 
 Runs in GitHub Actions (see .github/workflows/publish.yml). Needs:
@@ -83,7 +83,7 @@ def main():
             open(spath, "wb").write(api("upload-file", {"id": u["id"], "file": "shot"}, raw=True))
             changed = True
         notes = ("**%s %s** by **%s**\n\n%s\n\n%s"
-                 "Uploaded by its maker at thediskking.com/plugins/upload and approved by The Disk King.\n\n"
+                 "Uploaded by its maker at thediskking.com/plugins/share and approved by The Disk King.\n\n"
                  "**Install:** unzip it and copy the folder `%s` into `VST2 Plugins` on your MPC (MPC OS 3.10.1 with "
                  "External Plugin Support on), then restart. Or install it with MPC Plugins Manager.\n\n"
                  "Provided as is by its maker. The Disk King is not responsible in any way for any damage or loss. Back up first."

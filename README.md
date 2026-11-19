@@ -3,7 +3,7 @@
 **Hosted by The Disk King** · [thediskking.com/plugins](https://thediskking.com/plugins/)
 
 Plugins for the Akai MPC and Force made by people who don't use GitHub. Makers upload them at
-**[thediskking.com/plugins/upload](https://thediskking.com/plugins/upload/)**; each one is checked (checksum, MPC
+**[thediskking.com/plugins/share](https://thediskking.com/plugins/share/)**; each one is checked (checksum, MPC
 processor, risky functions) and approved by hand before it is published here as a release, with its maker's name.
 
 Every release here is listed automatically on [thediskking.com/plugins](https://thediskking.com/plugins/),
