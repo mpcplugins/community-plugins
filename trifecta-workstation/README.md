@@ -30,13 +30,27 @@ touch-screen display, a big VALUE dial, program and combination banks, an arpegg
 | ![ARP](screens/03-arp.png) | ![FX](screens/04-fx.png) |
 | ![KEYS](screens/05-keys.png) | |
 
+## Sounds: bring your own
+
+**The original Korg Triton sounds (its built-in PCM ROM and Korg's sample libraries) cannot be included** with this
+plugin: they belong to Korg. Trifecta comes with The Disk King's own PRELOAD program set and a built-in synth voice;
+for the real sampled sounds you load **your own** sound files.
+
+- **In 0.1:** every program and combi plays the built-in **Trifecta Voice** (an analog-style synth made in code).
+- **Next version (0.2): load your own sounds.** Put your own samples in a folder named `Trifecta Sounds` on any MPC
+  drive: Korg sample files you made or own (`.KSC` / `.KMP` / `.KSF`, as saved from a Triton) or plain `.WAV` files,
+  and Trifecta will play them in its programs.
+
+Trifecta Workstation is an independent plugin by The Disk King. It is not made by, endorsed by or affiliated with Korg.
+Korg and Triton are trademarks of their owner.
+
 ## What is in 0.1
 
 - **Sound set included:** The Disk King's own PRELOAD set: 4 program banks (A-D, 512 programs) and 4 combination banks
   (512 combis), shown by name. Tap a name in the list, turn the **VALUE dial**, use **PREV / NEXT**, the **A-D bank keys**
   and **PROG / COMBI**.
 - **Trifecta Voice:** a built-in analog-style synth (2 detuned oscillators + sub + noise, 24 dB low-pass filter with its own
-  envelope, amp envelope, LFO). In 0.1 every program and combi plays this voice; the programs' own sounds come later.
+  envelope, amp envelope, LFO). In 0.1 every program and combi plays this voice.
 - **Realtime controls:** Cutoff, Resonance, EG Int, Release. **SW1** = mono, **SW2** = portamento.
 - **Arpeggiator:** Up, Down, Alt 1, Alt 2, Random; 1/8 to 1/32; gate, octaves 1-4, swing, latch. Follows the MPC tempo.
 - **Effects:** stereo chorus, tempo delay, reverb.
@@ -45,7 +59,8 @@ touch-screen display, a big VALUE dial, program and combination banks, an arpegg
 
 ## Not yet
 
-- The programs' own oscillator, filter and envelope settings, and loading user sample sets.
+- Loading your own sounds (`Trifecta Sounds` folder: KSC / KMP / KSF or WAV) - planned for 0.2.
+- The programs' own oscillator, filter and envelope settings.
 
 ## Disclaimer
 
