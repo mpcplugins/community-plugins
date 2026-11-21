@@ -1,0 +1,17 @@
+{
+  "name": "MPC Plugin Scanner",
+  "manufacturer": "The Disk King",
+  "version": "1.0.0",
+  "format": "vst2",
+  "kind": "instrument",
+  "uid": "TDKS",
+  "numInputs": 0,
+  "numOutputs": 2,
+  "category": "Synth",
+  "file32": "VST/mpc-plugin-scanner-arm32.so",
+  "file64": "VST/mpc-plugin-scanner-arm64.so",
+  "description": "MPC Plugin Scanner: checks every plugin on your MPC for things a music plugin should not contain (running programs, system changes, internet use, hidden scripts) and shows green, yellow or red with the reasons. Changes nothing, sends nothing.",
+  "author": "The Disk King",
+  "url": "https://thediskking.com",
+  "license": "Copyright The Disk King"
+}
