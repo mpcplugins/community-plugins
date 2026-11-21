@@ -26,6 +26,9 @@ P_LIGHT1 = P_INFO1 + ROWS
 P_DTITLE = P_LIGHT1 + ROWS
 P_DVERDICT, P_DLIGHT, P_DWHERE = P_DTITLE + 1, P_DTITLE + 2, P_DTITLE + 3
 P_DLINE1 = P_DTITLE + 4
+P_BADGE1 = P_DLINE1 + LINES          # added in 1.1
+P_DBADGE = P_BADGE1 + ROWS
+BLUE = (29, 155, 240)                 # verified creator
 
 ORANGE = (234, 134, 26)
 BG1, BG2 = (24, 24, 28), (14, 14, 17)
@@ -65,16 +68,16 @@ def background():
     for r in range(ROWS):
         y = 100 + r * 76
         d.rounded_rectangle((20, y, 800, y + 70), radius=10, fill=PANEL, outline=EDGE)
-        d.ellipse((34, y + 16, 72, y + 54), fill=(10, 10, 12), outline=(70, 70, 80), width=2)
+        d.ellipse((34, y + 16, 72, y + 54), fill=(10, 10, 12), outline=(30, 30, 36), width=2)
     # details panel
     d.rounded_rectangle((816, 100, 1260, 556), radius=12, fill=PANEL, outline=EDGE)
     d.text((834, 110), "DETAILS", font=font(16, "Bold Condensed"), fill=(150, 148, 160))
-    d.ellipse((832, 134, 876, 178), fill=(10, 10, 12), outline=(70, 70, 80), width=2)
+    d.ellipse((832, 134, 876, 178), fill=(10, 10, 12), outline=(30, 30, 36), width=2)
     d.line((832, 248, 1244, 248), fill=EDGE, width=1)
     # legend + footer
     fy = 576
-    for i, (col, word) in enumerate((((60, 200, 90), "CLEAN"), ((240, 190, 40), "CHECK"), ((235, 60, 50), "RISKY"))):
-        x = 540 + i * 92
+    for i, (col, word) in enumerate((((60, 200, 90), "CLEAN"), ((240, 190, 40), "CHECK"), ((235, 60, 50), "RISKY"), (BLUE, "VERIFIED"))):
+        x = 470 + i * 86
         d.ellipse((x, fy + 4, x + 16, fy + 20), fill=col)
         d.text((x + 22, fy + 2), word, font=font(17, "Bold Condensed"), fill=(200, 198, 206))
     d.text((834, 566), "A warning-sign scan, not a guarantee.", font=font(16, "SemiCondensed"), fill=(150, 148, 160))
@@ -82,21 +85,150 @@ def background():
     return im
 
 
+def pad_ring(size):
+    """Verified light, styled like a lit MPC pad but round: a dark pad inside a glowing blue ring made of
+    8 segments with small gaps, a soft halo around it and a bright core in each segment."""
+    S = 4
+    K = size * S
+    c = K / 2
+    r_out, r_in = K * 0.44, K * 0.31
+    ring = Image.new("L", (K, K), 0)
+    rd = ImageDraw.Draw(ring)
+    rd.ellipse((c - r_out, c - r_out, c + r_out, c + r_out), fill=255)
+    rd.ellipse((c - r_in, c - r_in, c + r_in, c + r_in), fill=0)
+    gap = K * 0.035
+    for k in range(8):                                   # cut the ring into 8 segments
+        a = np.pi / 8 + k * np.pi / 4
+        dx, dy = np.cos(a), np.sin(a)
+        px, py = -dy * gap, dx * gap
+        rd.polygon([(c + px, c + py), (c - px, c - py), (c - px + dx * K, c - py + dy * K), (c + px + dx * K, c + py + dy * K)], fill=0)
+    core = ring.filter(ImageFilter.MinFilter(5))         # thinner bright line inside each segment
+    im = Image.new("RGBA", (K, K), (0, 0, 0, 0))
+    halo = Image.new("RGBA", (K, K), BLUE + (0,))
+    halo.putalpha(ring.filter(ImageFilter.GaussianBlur(K * 0.06)).point(lambda v: int(v * 0.85)))
+    im.alpha_composite(halo)
+    d = ImageDraw.Draw(im)
+    d.ellipse((c - r_in + 2, c - r_in + 2, c + r_in - 2, c + r_in - 2), fill=(8, 10, 14, 255))          # the dark pad
+    d.ellipse((c - r_in * 0.92, c - r_in * 0.92, c + r_in * 0.92, c + r_in * 0.92), outline=(22, 26, 34, 255), width=S)
+    seg = Image.new("RGBA", (K, K), (36, 150, 255, 255))
+    seg.putalpha(ring)
+    im.alpha_composite(seg)
+    hot = Image.new("RGBA", (K, K), (170, 222, 255, 255))
+    hot.putalpha(core.filter(ImageFilter.GaussianBlur(S * 0.6)))
+    im.alpha_composite(hot)
+    return im.resize((size, size), Image.LANCZOS)
+
+
 def light_strip(size, fname):
-    """4 frames: none, green, yellow, red."""
-    cols = [None, (60, 200, 90), (240, 190, 40), (235, 60, 50)]
-    strip = Image.new("RGBA", (size, size * 4), (0, 0, 0, 0))
+    """5 frames: none, green, yellow, red, blue (verified creator)."""
+    cols = [None, (60, 200, 90), (240, 190, 40), (235, 60, 50), BLUE]
+    strip = Image.new("RGBA", (size, size * 5), (0, 0, 0, 0))
     for i, col in enumerate(cols):
         im = Image.new("RGBA", (size, size), (0, 0, 0, 0))
         if col:
             g = Image.new("RGBA", (size, size), (0, 0, 0, 0))
             ImageDraw.Draw(g).ellipse((2, 2, size - 3, size - 3), fill=col + (170,))
             im.alpha_composite(g.filter(ImageFilter.GaussianBlur(3)))
-            d = ImageDraw.Draw(im)
-            d.ellipse((6, 6, size - 7, size - 7), fill=col)
-            d.ellipse((size * 0.28, size * 0.22, size * 0.5, size * 0.42), fill=(255, 255, 255, 120))
+            # a lit lamp: brighter in the middle, even edge, no shine spot (so it reads as a light, not a knob)
+            yy, xx = np.mgrid[0:size, 0:size]
+            rr = np.hypot(xx - (size - 1) / 2, yy - (size - 1) / 2) / ((size - 12) / 2)
+            hot = np.array([min(255, c + 90) for c in col], np.float32)
+            lamp = hot[None, None] + (np.array(col, np.float32) - hot)[None, None] * np.clip(rr, 0, 1)[..., None] ** 1.5
+            a = (np.clip((1.0 - rr) * (size / 2 - 6), 0, 1) * 255).astype(np.uint8)
+            im.alpha_composite(Image.fromarray(np.dstack([lamp.clip(0, 255).astype(np.uint8), a]), "RGBA"))
         strip.paste(im, (0, i * size))
     strip.save(os.path.join(OUT, fname))
+
+
+BW, BH = 206, 44
+
+
+def badge_strip(fname):
+    """2 frames: nothing / VERIFIED CREATOR styled like a lit MPC pad, but rounded: a dark button with a glowing
+    blue edge made of segments with small gaps, a soft halo, and glowing blue text with a check seal."""
+    S = 4
+    w, h = BW * S, BH * S
+    im = Image.new("RGBA", (w, h), (0, 0, 0, 0))
+    edge = Image.new("L", (w, h), 0)
+    ed = ImageDraw.Draw(edge)
+    pad = 5 * S
+    rad = 3 * S                                                   # a box with softly rounded corners, like a pad
+    ed.rounded_rectangle((pad, pad, w - pad - 1, h - pad - 1), radius=rad, fill=255)
+    t = int(2.6 * S)
+    ed.rounded_rectangle((pad + t, pad + t, w - pad - 1 - t, h - pad - 1 - t), radius=rad - t, fill=0)
+    g = int(1.6 * S)
+    ed.rectangle((w / 2 - g, 0, w / 2 + g, h), fill=0)            # each side split in the middle, like the MPC pad light
+    ed.rectangle((0, h / 2 - g, w, h / 2 + g), fill=0)
+    halo = Image.new("RGBA", (w, h), BLUE + (0,))
+    halo.putalpha(edge.filter(ImageFilter.GaussianBlur(3 * S)).point(lambda v: int(v * 0.9)))
+    body = Image.new("L", (w, h), 0)
+    ImageDraw.Draw(body).rounded_rectangle((pad + t, pad + t, w - pad - 1 - t, h - pad - 1 - t), radius=rad - t, fill=255)
+    dark = Image.new("RGBA", (w, h), (10, 12, 18, 255)); dark.putalpha(body)
+    im.alpha_composite(dark)
+    im.alpha_composite(halo)
+    seg = Image.new("RGBA", (w, h), (40, 156, 255, 255)); seg.putalpha(edge)
+    im.alpha_composite(seg)
+    hot = Image.new("RGBA", (w, h), (175, 225, 255, 255)); hot.putalpha(edge.filter(ImageFilter.MinFilter(3)).filter(ImageFilter.GaussianBlur(S * 0.5)))
+    im.alpha_composite(hot)
+    d = ImageDraw.Draw(im)
+    fnt = font(17 * S, "Bold Condensed")
+    tw = ImageDraw.Draw(Image.new("RGBA", (1, 1))).textbbox((0, 0), "VERIFIED CREATOR", font=fnt)[2]
+    r = h * 0.17
+    gapx = 7 * S
+    x0 = (w - (2 * r + gapx + tw)) / 2                         # seal + text centred in the box
+    cx, cy = x0 + r, h / 2
+    # a plain lit check mark in the same pad blue (no social-media seal)
+    tick = Image.new("RGBA", (w, h), (0, 0, 0, 0))
+    ImageDraw.Draw(tick).line((cx - r * 0.85, cy + r * 0.05, cx - r * 0.2, cy + r * 0.7, cx + r * 0.95, cy - r * 0.75),
+                              fill=(120, 200, 255), width=int(S * 3.2), joint="curve")
+    im.alpha_composite(tick.filter(ImageFilter.GaussianBlur(2 * S))); im.alpha_composite(tick)
+    txt = Image.new("RGBA", (w, h), (0, 0, 0, 0))
+    ImageDraw.Draw(txt).text((x0 + 2 * r + gapx, h / 2), "VERIFIED CREATOR", font=fnt, fill=(120, 200, 255), anchor="lm")
+    glow = txt.filter(ImageFilter.GaussianBlur(2 * S))
+    im.alpha_composite(glow); im.alpha_composite(txt)
+    strip = Image.new("RGBA", (BW, BH * 2), (0, 0, 0, 0))
+    strip.paste(im.resize((BW, BH), Image.LANCZOS), (0, BH))
+    strip.save(os.path.join(OUT, fname))
+
+
+def pad_check_strip(size, fname):
+    """2 frames: nothing / a square MPC drum pad lit blue (edge split in the middle of each side) with a lit check."""
+    S = 4
+    K = size * S
+    im = Image.new("RGBA", (K, K), (0, 0, 0, 0))
+    pad, t, g = 5 * S, int(3 * S), int(1.8 * S)
+    edge = Image.new("L", (K, K), 0)
+    ed = ImageDraw.Draw(edge)
+    ed.rounded_rectangle((pad, pad, K - pad - 1, K - pad - 1), radius=3 * S, fill=255)
+    ed.rounded_rectangle((pad + t, pad + t, K - pad - 1 - t, K - pad - 1 - t), radius=2 * S, fill=0)
+    ed.rectangle((K / 2 - g, 0, K / 2 + g, K), fill=0)
+    ed.rectangle((0, K / 2 - g, K, K / 2 + g), fill=0)
+    body = Image.new("L", (K, K), 0)
+    ImageDraw.Draw(body).rounded_rectangle((pad + t, pad + t, K - pad - 1 - t, K - pad - 1 - t), radius=2 * S, fill=255)
+    dark = Image.new("RGBA", (K, K), (10, 12, 18, 255)); dark.putalpha(body)
+    halo = Image.new("RGBA", (K, K), BLUE + (0,)); halo.putalpha(edge.filter(ImageFilter.GaussianBlur(3 * S)).point(lambda v: int(v * 0.9)))
+    seg = Image.new("RGBA", (K, K), (40, 156, 255, 255)); seg.putalpha(edge)
+    hot = Image.new("RGBA", (K, K), (175, 225, 255, 255)); hot.putalpha(edge.filter(ImageFilter.MinFilter(3)).filter(ImageFilter.GaussianBlur(S * 0.5)))
+    for layer in (dark, halo, seg, hot):
+        im.alpha_composite(layer)
+    c, r = K / 2, K * 0.2
+    tick = Image.new("RGBA", (K, K), (0, 0, 0, 0))
+    ImageDraw.Draw(tick).line((c - r * 0.95, c + r * 0.05, c - r * 0.25, c + r * 0.75, c + r * 1.0, c - r * 0.7),
+                              fill=(140, 210, 255), width=int(S * 3.4), joint="curve")
+    im.alpha_composite(tick.filter(ImageFilter.GaussianBlur(2 * S))); im.alpha_composite(tick)
+    strip = Image.new("RGBA", (size, size * 2), (0, 0, 0, 0))
+    strip.paste(im.resize((size, size), Image.LANCZOS), (0, size))
+    strip.save(os.path.join(OUT, fname))
+
+
+def pad_check(param, x, y, size, img):
+    return entry("padcheck %d" % param, "Image", {"version": 2, "imageType": "FilmStrip", "colour": "0", "image": img,
+                                                  "numFrames": 2, "handleName": "Parameter %d" % param}, bounds(x, y, size, size))
+
+
+def badge(param, x, y, img):
+    return entry("badge %d" % param, "Image", {"version": 2, "imageType": "FilmStrip", "colour": "0", "image": img,
+                                               "numFrames": 2, "handleName": "Parameter %d" % param}, bounds(x, y, BW, BH))
 
 
 def button(w, h, text, on, fname, accent=False):
@@ -149,7 +281,7 @@ def btn(name, param, x, y, w, h, on_img, off_img, momentary=True):
 
 def light(param, x, y, size, img):
     return entry("light %d" % param, "Image", {"version": 2, "imageType": "FilmStrip", "colour": "0", "image": img,
-                                                "numFrames": 4, "handleName": "Parameter %d" % param}, bounds(x, y, size, size))
+                                                "numFrames": 5, "handleName": "Parameter %d" % param}, bounds(x, y, size, size))
 
 
 def main():
@@ -164,6 +296,8 @@ def main():
     for n in ("PREV", "NEXT"):
         button(150, 44, n, False, n.lower() + "_off.png")
         button(150, 44, n, True, n.lower() + "_on.png")
+    badge_strip("badge.png")
+    pad_check_strip(52, "padcheck.png")
     row_button(False, "row_off.png")
     row_button(True, "row_on.png")
 
@@ -174,13 +308,15 @@ def main():
     for r in range(ROWS):
         y = 100 + r * 76
         items.append(light(P_LIGHT1 + r, 34, y + 16, 38, "light38.png"))
-        items.append(label(P_NAME1 + r, 90, y + 6, 690, 32, 24, TXT, style="SemiBold"))
+        items.append(label(P_NAME1 + r, 90, y + 6, 470, 32, 24, TXT, style="SemiBold"))
+        items.append(badge(P_BADGE1 + r, 566, y + 13, "badge.png"))
         items.append(label(P_INFO1 + r, 90, y + 38, 690, 26, 18, DIM, style="Regular"))
         items.append(btn("row %d" % (r + 1), P_ROW1 + r, 20, y, 780, 70, "row_on.png", "row_off.png"))
     items.append(btn("prev", P_PREV, 20, 568, 150, 44, "prev_on.png", "prev_off.png"))
     items.append(btn("next", P_NEXT, 180, 568, 150, 44, "next_on.png", "next_off.png"))
     items.append(label(P_PAGE, 344, 568, 180, 44, 18, DIM, style="Regular"))
     items.append(light(P_DLIGHT, 832, 134, 44, "light44.png"))
+    items.append(pad_check(P_DBADGE, 1196, 106, 52, "padcheck.png"))   # verified: a lit drum pad with a check
     items.append(label(P_DTITLE, 886, 128, 364, 34, 26, TXT, style="Bold"))
     items.append(label(P_DWHERE, 886, 160, 364, 24, 16, DIM, style="Regular"))
     items.append(label(P_DVERDICT, 834, 196, 416, 44, 20, "ffea861a", style="SemiBold"))

@@ -22,6 +22,7 @@
 #include <set>
 #include <string>
 #include <vector>
+#include "sha256.h"
 
 #if !defined(_WIN32)
 #include <sys/stat.h>
@@ -47,6 +48,8 @@ struct Report
     std::string path;
     int level = kClean;
     int codeFiles = 0, files = 0;
+    bool verified = false;               // every code file is an official build by The Disk King (see scanAll)
+    std::vector<std::string> codeHashes; // SHA-256 of each code file
     std::vector<Finding> findings;
     void add(int lv, const std::string& t, const std::string& d)
     {
@@ -323,6 +326,7 @@ inline Report scanPlugin(const fs::path& folder, const std::string& driveLabel)
         ++r.codeFiles;
         std::vector<uint8_t> d;
         if (!readAll(p, d)) { r.add(kCheck, "Code file unreadable", rel); continue; }
+        { tdk::Sha256 h; h.update(d.data(), d.size()); r.codeHashes.push_back(h.hex()); }
         Elf e = readElf(d);
         if (!e.ok) { r.add(kCheck, "Code file unreadable", rel); continue; }
         if (e.hasInterp || e.type == 2) { r.add(kRisky, "Contains a program", rel); }
@@ -377,8 +381,25 @@ inline std::vector<Drive> drives()
     return out;
 }
 
-// selfFolder: this scanner's own folder. It is left out: its code holds the very list of warning words it looks
-// for ("rm -rf", "wget", ...), so it would always flag itself.
+// ------------------------------------------------------------------ verified creator
+// Official builds of The Disk King's own utility tools, by the SHA-256 of each code file. A plugin is shown as
+// VERIFIED only when every one of its code files matches this list exactly (a copied name or folder is not enough)
+// and nothing risky was found in its folder. Add the hashes of every new MPC Plugins Manager release here.
+inline const std::set<std::string>& officialHashes()
+{
+    static const std::set<std::string> h = {
+        // MPC Plugins Manager 1.0.0
+        "00d400b018cba556ef3e82fccd371969ae4a8a491416f9e0375ed86325d0e397",
+        "bc1b183c498889684c140a50ced9929b225d608ff283f912f7e70dbdd878e550",
+        // MPC Plugins Manager 1.1.0
+        "cd9496485017728966fa8922d3c767c61f406166f6ac3e4c333f443db6d0e9df",
+        "67b722a0ab9574004f179d308badd963e69f779c3c939a96f93cf2c6d6711325",
+    };
+    return h;
+}
+
+// selfFolder: this scanner's own folder. Its code holds the very list of warning words it looks for ("rm -rf",
+// "wget", ...); a verified copy of the scanner is shown with that explained instead of as warnings.
 inline std::vector<Report> scanAll(const std::string& selfFolder = "")
 {
     std::vector<Report> all;
@@ -393,11 +414,39 @@ inline std::vector<Report> scanAll(const std::string& selfFolder = "")
         std::sort(folders.begin(), folders.end());
         for (const fs::path& f : folders)
         {
-            if (!self.empty() && fs::weakly_canonical(f, ec).string() == self) continue;
             all.push_back(scanPlugin(f, d.label));
         }
     }
-    std::stable_sort(all.begin(), all.end(), [](const Report& a, const Report& b) { return a.level > b.level; });
+    // Trusted: the official list, plus this scanner's own code (any copy of the same scanner is ours too).
+    std::set<std::string> trusted = officialHashes(), scannerCode;
+    if (!self.empty()) { Report me = scanPlugin(fs::path(self), ""); scannerCode.insert(me.codeHashes.begin(), me.codeHashes.end()); }
+    trusted.insert(scannerCode.begin(), scannerCode.end());
+    // risky things in the FOLDER (not in the matching code) always cancel "verified"
+    static const std::set<std::string> folderRisky = {"Link leads outside folder", "Files with special rights",
+        "Contains a system driver", "Contains a script", "Contains a program"};
+    std::set<std::string> wordTexts;
+    for (const Rule& ru : stringRules()) wordTexts.insert(ru.text);
+    for (Report& r : all)
+    {
+        bool ok = r.codeFiles > 0 && (int)r.codeHashes.size() == r.codeFiles;
+        bool isScanner = ok;
+        for (const std::string& h : r.codeHashes) { if (!trusted.count(h)) ok = false; if (!scannerCode.count(h)) isScanner = false; }
+        for (const Finding& fd : r.findings) if (fd.level >= kRisky && folderRisky.count(fd.text)) ok = false;
+        r.verified = ok;
+        if (ok && isScanner)
+        {
+            // the scanner's warning words are its search list, not something it does
+            std::vector<Finding> keep;
+            for (const Finding& fd : r.findings) if (!wordTexts.count(fd.text)) keep.push_back(fd);
+            keep.insert(keep.begin(), Finding{kNote, "Holds the scan word list", ""});
+            r.findings = keep;
+            r.level = kClean;
+            for (const Finding& fd : r.findings) r.level = std::max(r.level, fd.level);
+        }
+    }
+    std::stable_sort(all.begin(), all.end(), [](const Report& a, const Report& b) {
+        if (a.verified != b.verified) return a.verified;          // verified tools at the top, then RISKY, CHECK, CLEAN
+        return a.level > b.level; });
     return all;
 }
 

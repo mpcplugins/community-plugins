@@ -6,7 +6,7 @@ Plugins for the MPC are free and come from many different makers. A plugin runs 
 MPC Plugin Scanner looks inside every plugin you have installed and tells you, in plain words, if anything in it does
 something a music plugin should never need to do.
 
-**Version 1.0.0. Tested on an Akai MPC Live III (MPC OS 3.10.1).**
+**Version 1.1.0. Tested on an Akai MPC Live III (MPC OS 3.10.1).**
 
 ![MPC Plugin Scanner on an MPC Live III](mpc-plugin-scanner.png)
 
@@ -14,13 +14,19 @@ something a music plugin should never need to do.
 
 | | |
 |---|---|
-| ![A plugin that needs a check](screens/01-check.png) | ![A clean plugin](screens/02-clean.png) |
+| ![RISKY: a plugin with every warning sign](screens/01-risky.png) | ![VERIFIED CREATOR: MPC Plugins Manager](screens/02-verified-creator.png) |
+| ![VERIFIED CREATOR: the scanner itself](screens/03-verified-scanner.png) | ![CHECK: uses the internet](screens/04-check.png) |
+| ![CLEAN: no warning signs](screens/05-clean.png) | |
+
+*"Waveforms" and "Open Sauced" in these pictures are harmless demo plugins made only for these screenshots: they
+contain the warning signs but never use them. They are not real products and are not available anywhere.*
 
 ## How to use it
 
 1. Install it like any plugin (or with MPC Plugins Manager).
 2. Add a **Plugin track** and pick **MPC Plugin Scanner**. It scans straight away.
-3. Every plugin gets a light: 🟢 **CLEAN**, 🟡 **CHECK** or 🔴 **RISKY**, with its main reason. The worst are listed first.
+3. Every plugin gets a light: 🔵 **VERIFIED**, 🟢 **CLEAN**, 🟡 **CHECK** or 🔴 **RISKY**, with its main reason.
+   Verified tools are listed first, then the most serious.
 4. Tap a plugin to see **all** its reasons on the right. **SCAN AGAIN** re-checks; **PREV / NEXT** page through long lists.
 
 It checks every `VST2 Plugins` folder on every drive: internal, SSD and USB. It makes no sound.
@@ -43,10 +49,18 @@ It reads each plugin's code and files **without running them**:
 
 **🟢 CLEAN** — no warning signs. Normal file use (saving presets, deleting or renaming its own files) is only shown as a note.
 
+## Verified creator
+
+Tools made by The Disk King, the scanner's own maker (**MPC Plugins Manager** and **MPC Plugin Scanner**), get a
+🔵 **blue light**, a lit **VERIFIED CREATOR** pad and a check pad in the details. This is only given when **every code
+file matches an official release exactly** (by its SHA-256 fingerprint) and nothing risky was added to its folder.
+Copying the name, the folder or the maker is not enough: any changed byte and it is scanned like any other plugin.
+The details still list honestly what the tool can do (for example, the Manager uses the internet to install plugins).
+
 ## What it never does
 
 - It **changes nothing**, **runs nothing** and **sends nothing** anywhere. No internet, no data collection.
-- It does not list itself (its own code contains the list of warning words it looks for).
+- It lists itself as verified; its own code holds the list of warning words it searches for, and it says so.
 
 **Please note:** this is a warning-sign scan, not a guarantee. Cleverly written code can hide what it does. A red light
 means "remove it unless you really trust the maker"; a green light means no warning signs were found.

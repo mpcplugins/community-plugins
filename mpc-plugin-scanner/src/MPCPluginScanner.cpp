@@ -33,7 +33,9 @@ enum P
     kLight1 = kInfo1 + kRows,            // kRows lights: 0 none, 1 green, 2 yellow, 3 red
     kDTitle = kLight1 + kRows, kDVerdict, kDLight, kDWhere,
     kDLine1,                             // kLines reason lines
-    kNumParams = kDLine1 + kLines
+    kBadge1 = kDLine1 + kLines,          // added in 1.1: kRows "verified creator" badges (0 none, 1 shown)
+    kDBadge = kBadge1 + kRows,           // added in 1.1: badge on the details side
+    kNumParams
 };
 std::string fit(std::string s) { if (s.size() > kMax) { s.resize(kMax - 1); s += "."; } return s; }
 std::string pluginName(const std::string& folder)
@@ -55,11 +57,13 @@ public:
         for (int r = 1; r <= kRows; ++r) { std::string id = "row" + std::to_string(r), n = "Row " + std::to_string(r); addParam(mpc::boolParam(id.c_str(), n.c_str(), false)); }
         addText("Summary"); addText("Status"); addText("Page");
         for (const char* base : {"Name ", "Info "}) for (int r = 1; r <= kRows; ++r) addText((std::string(base) + std::to_string(r)).c_str());
-        for (int r = 1; r <= kRows; ++r) { std::string id = "light" + std::to_string(r), n = "Light " + std::to_string(r); auto p = mpc::intParam(id.c_str(), n.c_str(), 0, 3, 0); p.automatable = false; addParam(p); }
+        for (int r = 1; r <= kRows; ++r) { std::string id = "light" + std::to_string(r), n = "Light " + std::to_string(r); auto p = mpc::intParam(id.c_str(), n.c_str(), 0, 4, 0); p.automatable = false; addParam(p); }
         addText("D Title"); addText("D Verdict");
-        { auto p = mpc::intParam("dlight", "D Light", 0, 3, 0); p.automatable = false; addParam(p); }
+        { auto p = mpc::intParam("dlight", "D Light", 0, 4, 0); p.automatable = false; addParam(p); }
         addText("D Where");
         for (int k = 1; k <= kLines; ++k) addText(("D Line " + std::to_string(k)).c_str());
+        for (int r = 1; r <= kRows; ++r) { std::string id = "badge" + std::to_string(r), n = "Badge " + std::to_string(r); auto p = mpc::intParam(id.c_str(), n.c_str(), 0, 1, 0); p.automatable = false; addParam(p); }
+        { auto p = mpc::intParam("dbadge", "D Badge", 0, 1, 0); p.automatable = false; addParam(p); }
         text_.assign(kNumParams, std::string());
         text_[kSummary] = "MPC PLUGIN SCANNER";
         text_[kStatus] = "Starting...";
@@ -93,7 +97,7 @@ public:
 
     bool formatValue(int index, float, std::string& out) override
     {
-        if (index < kSummary || (index >= kLight1 && index < kLight1 + kRows) || index == kDLight) return false;
+        if (index < kSummary || (index >= kLight1 && index < kLight1 + kRows) || index == kDLight || index >= kBadge1) return false;
         std::lock_guard<std::mutex> g(mu_);
         out = text_[(size_t)index];
         return true;
@@ -106,7 +110,7 @@ private:
         i.name = "MPC Plugin Scanner";
         i.vendor = "The Disk King";
         i.uniqueId = MPC_FOURCC('T', 'D', 'K', 'S');   // must match plugin.json "uid"
-        i.version = 1000;
+        i.version = 1100;
         i.isInstrument = true;
         i.numInputs = 0;
         i.numOutputs = 2;
@@ -147,6 +151,9 @@ private:
         }
     }
 
+    // 1 green, 2 yellow, 3 red, 4 blue (verified creator: our own official tools)
+    static int lightOf(const scan::Report& rp) { return rp.verified ? 4 : rp.level >= scan::kRisky ? 3 : rp.level == scan::kCheck ? 2 : 1; }
+
     void release(int i) { setNormalised(i, 0.0f); notifyHostParameterChanged(i); }
     void releaseButtons() { release(kPrev); release(kNext); for (int r = 0; r < kRows; ++r) release(kRow1 + r); }
 
@@ -154,12 +161,12 @@ private:
     {
         publish({{kStatus, "Scanning your plugins..."}}, {});
         auto t0 = std::chrono::steady_clock::now();
-        std::vector<scan::Report> rep = scan::scanAll(mpc::pluginFolder());   // never lists itself
+        std::vector<scan::Report> rep = scan::scanAll(mpc::pluginFolder());   // never lists itself; marks our own tools verified
         const double secs = std::chrono::duration<double>(std::chrono::steady_clock::now() - t0).count();
         reports_ = std::move(rep);
         page_ = 0; selected_ = reports_.empty() ? -1 : 0;
         int n[4] = {0, 0, 0, 0};
-        for (auto& r : reports_) n[std::min(3, std::max(0, r.level))]++;
+        for (auto& r : reports_) n[r.verified ? 0 : std::min(3, std::max(0, r.level))]++;
         char sum[64], st[64];
         std::snprintf(sum, sizeof sum, "OK %d  |  CHECK %d  |  RISKY %d", n[0] + n[1], n[2], n[3]);
         std::time_t now = std::time(nullptr);
@@ -185,16 +192,18 @@ private:
             {
                 const scan::Report& rp = reports_[(size_t)i];
                 std::string info = std::string(scan::levelName(rp.level));
-                if (rp.level >= scan::kCheck && !rp.findings.empty()) info += ": " + rp.findings[0].text;
+                if (rp.verified) info = "VERIFIED: The Disk King tool";
+                else if (rp.level >= scan::kCheck && !rp.findings.empty()) info += ": " + rp.findings[0].text;
                 else if (rp.level == scan::kClean) info += ": nothing found";
                 else info += ": only normal file use";
                 t.push_back({kName1 + r, fit((i == selected_ ? "> " : "") + pluginName(rp.folder))});
                 t.push_back({kInfo1 + r, fit(info)});
-                f.push_back({kLight1 + r, (float)(rp.level >= scan::kRisky ? 3 : rp.level == scan::kCheck ? 2 : 1)});
+                f.push_back({kLight1 + r, (float)lightOf(rp)});
+                f.push_back({kBadge1 + r, rp.verified ? 1.0f : 0.0f});
             }
             else
             {
-                t.push_back({kName1 + r, ""}); t.push_back({kInfo1 + r, ""}); f.push_back({kLight1 + r, 0.0f});
+                t.push_back({kName1 + r, ""}); t.push_back({kInfo1 + r, ""}); f.push_back({kLight1 + r, 0.0f}); f.push_back({kBadge1 + r, 0.0f});
             }
         }
         // details of the selected plugin
@@ -206,18 +215,21 @@ private:
             const scan::Report& rp = reports_[(size_t)selected_];
             title = pluginName(rp.folder);
             where = "by " + rp.folder.substr(0, rp.folder.find(" - VST - ")) + " | " + rp.drive;
-            light = rp.level >= scan::kRisky ? 3 : rp.level == scan::kCheck ? 2 : 1;
-            verdict = rp.level >= scan::kRisky ? "RISKY: remove unless trusted" : rp.level == scan::kCheck ? "CHECK: OK if you trust maker" : "CLEAN: no warning signs";
+            light = lightOf(rp);
+            verdict = rp.verified ? "Verified creator: The Disk King"
+                    : rp.level >= scan::kRisky ? "RISKY: remove unless trusted" : rp.level == scan::kCheck ? "CHECK: OK if you trust maker" : "CLEAN: no warning signs";
+            if (rp.verified) lines.push_back("Official build, files match");
             for (const auto& fd : rp.findings)
             {
                 if (lines.size() >= kLines) break;
-                lines.push_back(std::string(fd.level >= scan::kRisky ? "! " : fd.level == scan::kCheck ? "? " : "- ") + fd.text);
+                lines.push_back(std::string(rp.verified ? "- " : fd.level >= scan::kRisky ? "! " : fd.level == scan::kCheck ? "? " : "- ") + fd.text);
             }
             if (rp.findings.empty()) lines.push_back("No risky parts found.");
             if (lines.size() < kLines) lines.push_back(std::to_string(rp.files) + " files, " + std::to_string(rp.codeFiles) + " code checked");
         }
         t.push_back({kDTitle, fit(title)}); t.push_back({kDVerdict, fit(verdict)}); t.push_back({kDWhere, fit(where)});
         f.push_back({kDLight, (float)light});
+        f.push_back({kDBadge, (selected_ >= 0 && selected_ < (int)reports_.size() && reports_[(size_t)selected_].verified) ? 1.0f : 0.0f});
         for (int k = 0; k < kLines; ++k) t.push_back({kDLine1 + k, k < (int)lines.size() ? fit(lines[(size_t)k]) : ""});
         publish(t, f);
     }
