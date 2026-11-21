@@ -1,0 +1,29 @@
+# Publishes The Disk King's own plugins kept in this repo when a tag "<slug>-v<version>" is pushed
+# (for example hybrid-phatt-v0.1.0). The zip and NOTES.md are committed under release/<slug>/<version>/.
+# Uses only GitHub's built-in per-run pass (GITHUB_TOKEN) and the gh tool GitHub's runners already have.
+name: Release own plugin
+on:
+  push:
+    tags: ['*-v*']
+permissions:
+  contents: write
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Publish the release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -e
+          TAG="$GITHUB_REF_NAME"
+          SLUG="${TAG%-v*}"
+          VER="${TAG##*-v}"
+          DIR="release/$SLUG/$VER"
+          test -f "$DIR/NOTES.md" || { echo "missing $DIR/NOTES.md"; exit 1; }
+          ls "$DIR"/*.zip > /dev/null || { echo "missing zip in $DIR"; exit 1; }
+          ( cd "$DIR" && sha256sum *.zip > SHA256SUMS.txt && cat SHA256SUMS.txt )
+          TITLE="$(head -n 1 "$DIR/NOTES.md")"
+          tail -n +3 "$DIR/NOTES.md" > /tmp/notes.md
+          gh release create "$TAG" "$DIR"/*.zip "$DIR/SHA256SUMS.txt" --title "$TITLE" --notes-file /tmp/notes.md
