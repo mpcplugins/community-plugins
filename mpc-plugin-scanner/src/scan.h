@@ -394,6 +394,9 @@ inline const std::set<std::string>& officialHashes()
         // MPC Plugins Manager 1.1.0
         "cd9496485017728966fa8922d3c767c61f406166f6ac3e4c333f443db6d0e9df",
         "67b722a0ab9574004f179d308badd963e69f779c3c939a96f93cf2c6d6711325",
+        // MPC Plugins Manager 1.2.0
+        "a3049a1acf73e15ea3dc26d9126ece12dc2ffc986ba3a01d2a1de2a7e9b57e63",
+        "25c230a627fa2b3163bb3e93897c2220026bb2e44a54db493417da0068835d17",
     };
     return h;
 }

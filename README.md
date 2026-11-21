@@ -13,9 +13,9 @@ Every release here is listed automatically on [thediskking.com/plugins](https://
 
 | Plugin | | Download |
 |---|---|---|
-| **[MPC Plugin Scanner](mpc-plugin-scanner/)** | Safety check for every plugin on your MPC | [![Download](assets/download-button.png)](https://github.com/mpcplugins/community-plugins/releases/download/mpc-plugin-scanner-v1.1.0/MPC-Plugin-Scanner-1.1.0-mpc-sdk.zip) |
+| **[MPC Plugin Scanner](mpc-plugin-scanner/)** | Safety check for every plugin on your MPC | [![Download](assets/download-button.png)](https://github.com/mpcplugins/community-plugins/releases/download/mpc-plugin-scanner-v1.2.0/MPC-Plugin-Scanner-1.2.0-mpc-sdk.zip) |
 | **[Hybrid Phatt](hybrid-phatt/)** | 90s-style ROM sound module | [![Download](assets/download-button.png)](https://github.com/mpcplugins/community-plugins/releases/download/hybrid-phatt-v0.2.0/Hybrid-Phatt-0.2.0-mpc-sdk.zip) |
-| **[MPC Plugins Manager](https://github.com/mpcplugins/mpc-plugins-manager)** | Install, update and remove plugins on the MPC | [![Download](assets/download-button.png)](https://github.com/mpcplugins/mpc-plugins-manager/releases/download/v1.1.0/MPC-Plugins-Manager-1.1.0-mpc-sdk.zip) |
+| **[MPC Plugins Manager](https://github.com/mpcplugins/mpc-plugins-manager)** | Install, update and remove plugins on the MPC | [![Download](assets/download-button.png)](https://github.com/mpcplugins/mpc-plugins-manager/releases/download/v1.2.0/MPC-Plugins-Manager-1.2.0-mpc-sdk.zip) |
 
 Each plugin's page has step-by-step install instructions.
 

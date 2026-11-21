@@ -6,16 +6,16 @@ Plugins for the MPC are free and come from many different makers. A plugin runs 
 MPC Plugin Scanner looks inside every plugin you have installed and tells you, in plain words, if anything in it does
 something a music plugin should never need to do.
 
-**Version 1.1.0. Tested on an Akai MPC Live III (MPC OS 3.10.1).**
+**Version 1.2.0. Tested on an Akai MPC Live III (MPC OS 3.10.1).**
 
 ## Download
 
-[![Download MPC Plugin Scanner 1.1.0](../assets/download-button.png)](https://github.com/mpcplugins/community-plugins/releases/download/mpc-plugin-scanner-v1.1.0/MPC-Plugin-Scanner-1.1.0-mpc-sdk.zip)
+[![Download MPC Plugin Scanner 1.2.0](../assets/download-button.png)](https://github.com/mpcplugins/community-plugins/releases/download/mpc-plugin-scanner-v1.2.0/MPC-Plugin-Scanner-1.2.0-mpc-sdk.zip)
 
 **Easiest:** on your MPC, open **MPC Plugins Manager**, find **MPC Plugin Scanner** and tap **Install**.
 
 **By hand, step by step:**
-1. Click the **DOWNLOAD** button above. A file called `MPC-Plugin-Scanner-1.1.0-mpc-sdk.zip` lands in your **Downloads** folder.
+1. Click the **DOWNLOAD** button above. A file called `MPC-Plugin-Scanner-1.2.0-mpc-sdk.zip` lands in your **Downloads** folder.
 2. Unzip it. On Windows: right-click the file, then **Extract All**. On a Mac: double-click it.
 3. Connect your MPC to the computer with its USB cable and switch it to **Computer Mode**, so its **internal drive** shows up on the computer.
 4. On the MPC's internal drive, open the folder **VST2 Plugins** (make it if it is not there).

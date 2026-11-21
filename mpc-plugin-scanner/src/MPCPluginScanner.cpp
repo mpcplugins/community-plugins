@@ -110,7 +110,7 @@ private:
         i.name = "MPC Plugin Scanner";
         i.vendor = "The Disk King";
         i.uniqueId = MPC_FOURCC('T', 'D', 'K', 'S');   // must match plugin.json "uid"
-        i.version = 1100;
+        i.version = 1200;
         i.isInstrument = true;
         i.numInputs = 0;
         i.numOutputs = 2;
