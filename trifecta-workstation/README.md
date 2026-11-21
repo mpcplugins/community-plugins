@@ -3,16 +3,16 @@
 A 2000s-style music workstation for Akai MPC standalone hardware: a silver panel with realtime knobs, a blue
 touch-screen display, a big VALUE dial, program and combination banks, an arpeggiator and effects.
 
-**Version 0.1.0 — early beta. Tested on an Akai MPC Live III (MPC OS 3.10.1). Use at your own risk.**
+**Version 0.1.1 — early beta. Tested on an Akai MPC Live III (MPC OS 3.10.1). Use at your own risk.**
 
 ## Download
 
-[![Download Trifecta Workstation 0.1.0](../assets/download-button.png)](https://github.com/mpcplugins/community-plugins/releases/download/trifecta-workstation-v0.1.0/Trifecta-Workstation-0.1.0-mpc-sdk.zip)
+[![Download Trifecta Workstation 0.1.1](../assets/download-button.png)](https://github.com/mpcplugins/community-plugins/releases/download/trifecta-workstation-v0.1.1/Trifecta-Workstation-0.1.1-mpc-sdk.zip)
 
 **Easiest:** on your MPC, open **MPC Plugins Manager**, find **Trifecta Workstation** and tap **Install**.
 
 **By hand, step by step:**
-1. Click the **DOWNLOAD** button above. A file called `Trifecta-Workstation-0.1.0-mpc-sdk.zip` lands in your **Downloads** folder.
+1. Click the **DOWNLOAD** button above. A file called `Trifecta-Workstation-0.1.1-mpc-sdk.zip` lands in your **Downloads** folder.
 2. Unzip it. On Windows: right-click the file, then **Extract All**. On a Mac: double-click it.
 3. Connect your MPC to the computer with its USB cable and switch it to **Computer Mode**, so its **internal drive** shows up on the computer.
 4. On the MPC's internal drive, open the folder **VST2 Plugins** (make it if it is not there).
@@ -54,7 +54,8 @@ Korg and Triton are trademarks of their owner.
 - **Realtime controls:** Cutoff, Resonance, EG Int, Release. **SW1** = mono, **SW2** = portamento.
 - **Arpeggiator:** Up, Down, Alt 1, Alt 2, Random; 1/8 to 1/32; gate, octaves 1-4, swing, latch. Follows the MPC tempo.
 - **Effects:** stereo chorus, tempo delay, reverb.
-- **KEYS page:** 61 keys light up from the pads; tap a key to play it (handy on an MPC without keys).
+- **KEYS page:** a realistic 61-key keyboard that lights up from the pads; tap a key to play it (handy on an MPC
+  without keys). The big dial is the master volume there.
 - Q-Links mapped on every page.
 
 ## Not yet
