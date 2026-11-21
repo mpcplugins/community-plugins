@@ -4,6 +4,16 @@ A 90s-style ROM sound module for Akai MPC standalone hardware, in the spirit of 
 
 **Version 0.1.0 — early beta. Tested on an Akai MPC Live III (MPC OS 3.10.1). Use at your own risk.**
 
+![Hybrid Phatt on an MPC Live III](hybrid-phatt.png)
+
+## All screens
+
+| | |
+|---|---|
+| ![MAIN](screens/01-main.png) | ![LAYERS](screens/02-layers.png) |
+| ![FILTER](screens/03-filter.png) | ![MOD](screens/04-mod.png) |
+| ![GROOVE](screens/05-groove.png) | ![FX](screens/06-fx.png) |
+
 ## What is in 0.1
 
 - Six touch-screen pages: **MAIN, LAYERS, FILTER, MOD, GROOVE, FX**, with LED-ring knobs, vertical chrome faders, lit keys and a backlit LCD. Q-Links mapped in groups of four on every page.
