@@ -1,7 +1,7 @@
 {
   "name": "Hybrid Phatt",
   "manufacturer": "The Disk King",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "format": "vst2",
   "kind": "instrument",
   "uid": "THyP",
@@ -10,7 +10,7 @@
   "category": "Synth",
   "file32": "VST/hybrid-phatt-arm32.so",
   "file64": "VST/hybrid-phatt-arm64.so",
-  "description": "Hybrid Phatt: a 90s-style ROM sound module for the MPC. 4 banks of 128 presets, layered multi-sample voices, MPC 60-style screen. 0.1 beta: no sound bank included yet.",
+  "description": "Hybrid Phatt: a 90s-style ROM sound module for the MPC. Layered multi-sample presets, MPC 60-style screen, KEYS page that lights up as you play. Load your own E-mu .exb set (no sound bank included).",
   "author": "The Disk King",
   "url": "https://thediskking.com",
   "license": "MIT"

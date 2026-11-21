@@ -67,6 +67,10 @@ public:
         kStep0,                          // 64 step switches: 4 lanes x 16 steps
         kInfo = kStep0 + 64,             // display only: category and voice count of the current preset
         kAct1, kAct2, kAct3, kAct4,      // display only: layer lights (0 unused, 1 used by the preset, 2 playing)
+        kBankState,                      // display only: 0 bank ready, 1 loading, 2 no bank found (shows the instructions)
+        kLastNote,                       // display only: last note played (KEYS tab)
+        kKey0,                           // 61 keys C1..C6 (MIDI 36..96): lit while held; tapping one plays it
+        kKeyLast = kKey0 + 60,
         kNumParams
     };
 
@@ -180,6 +184,15 @@ public:
             p.automatable = false;
             addParam(p);
             for (int l = 1; l <= 4; ++l) { Param a = intParam(id("act", l), name("Layer ", l, " Light"), 0, 2, 0); a.automatable = false; addParam(a); }
+            Param bs = intParam("bankstate", "Bank State", 0, 2, 1); bs.automatable = false; addParam(bs);
+            Param ln = intParam("lastnote", "Last Note", 0, 127, 0); ln.automatable = false; addParam(ln);
+            static const char* nn[12] = {"C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"};
+            for (int k = 0; k <= 60; ++k)
+            {
+                const int note = kFirstKey + k;
+                Param kp = boolParam(id("key", k), keep(std::string("Key ") + nn[note % 12] + std::to_string(note / 12 - 2)), false);
+                kp.automatable = false; addParam(kp);
+            }
         }
         if (numParams() != kNumParams) mpc::log("HybridPhatt: parameter count mismatch (%d vs %d)", numParams(), (int)kNumParams);
 
@@ -210,6 +223,11 @@ public:
     {
         // The MPC owns the button (lit while touched, dark when released). Step once on the press only,
         // and tell the screen about the new preset from process(), not from inside the host's own call.
+        if (index >= kKey0 && index <= kKeyLast)
+        {
+            if (!selfSet_) (plain >= 0.5f ? tapPress_ : tapRelease_)[index - kKey0].fetch_add(1);   // counted: a quick tap is never lost
+            return;
+        }
         if (index == kPrev || index == kNext)
         {
             const bool down = plain >= 0.5f;
@@ -253,19 +271,65 @@ public:
             out = b;
             return true;
         }
+        if (index == kLastNote)
+        {
+            static const char* nn[12] = {"C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"};
+            const int n = lastNote_.load(), v = lastVel_.load();
+            if (n < 0) { out = "HIT A PAD OR TAP A KEY"; return true; }
+            char b[48]; std::snprintf(b, sizeof b, "%s%d   NOTE %d   VEL %d", nn[n % 12], n / 12 - 2, n, v); out = b; return true;
+        }
+        if (index == kBank)
+        {
+            char b[96];
+            const int st = state_.load(std::memory_order_acquire);
+            std::snprintf(b, sizeof b, "%s%sBANK %d", st == 1 ? bankName_.c_str() : "", st == 1 ? "  -  " : "", (int)std::lround(plain));
+            out = b;
+            return true;
+        }
         if (index >= kPan1 && index <= kPan4)
         {
             const int v = (int)std::lround(plain);
             out = v == 0 ? "C" : (v < 0 ? "L" + std::to_string(-v) : "R" + std::to_string(v));
             return true;
         }
-        return false;
+        // units on every readout (the MPC shows only the value text)
+        const mpc::Param& pr = param(index);
+        if (pr.kind == mpc::Param::Kind::Choice || pr.kind == mpc::Param::Kind::Bool || pr.unit.empty()) return false;
+        char b[32];
+        const std::string& u = pr.unit;
+        if (u == "Hz") { if (plain >= 1000.0f) std::snprintf(b, sizeof b, "%.1f kHz", plain / 1000.0f); else if (plain < 10.0f) std::snprintf(b, sizeof b, "%.2f Hz", plain); else std::snprintf(b, sizeof b, "%d Hz", (int)std::lround(plain)); }
+        else if (u == "ms") { if (plain >= 1000.0f) std::snprintf(b, sizeof b, "%.2f s", plain / 1000.0f); else std::snprintf(b, sizeof b, "%d ms", (int)std::lround(plain)); }
+        else if (u == "%") std::snprintf(b, sizeof b, "%s%d%%", (pr.min < 0.0f && plain > 0.5f) ? "+" : "", (int)std::lround(plain));
+        else if (u == "dB") std::snprintf(b, sizeof b, "%s%.1f dB", plain > 0.05f ? "+" : "", std::fabs(plain) < 0.05f ? 0.0f : plain);
+        else if (u == "st" || u == "ct") std::snprintf(b, sizeof b, "%s%d %s", plain > 0.5f ? "+" : "", (int)std::lround(plain), u.c_str());
+        else return false;
+        out = b;
+        return true;
     }
 
     // ----- audio ------------------------------------------------------------
     void process(mpc::ProcessContext& ctx) override
     {
         readBlockSettings();
+        // screen keys: every press plays; a release ends the note, but never sooner than 0.25 s (quick taps still sound)
+        for (int k = 0; k <= 60; ++k)
+        {
+            const int pr = tapPress_[k].load(), rl = tapRelease_[k].load();
+            if (pr != pressSeen_[k])
+            {
+                pressSeen_[k] = pr;
+                if (tapHeld_[k]) noteOff(kFirstKey + k);
+                tapHeld_[k] = true; tapLeft_[k] = (int)(0.25f * sr_); releaseWait_[k] = false;
+                lastNote_.store(kFirstKey + k); lastVel_.store(100); noteDirty_ = true;
+                noteOn(kFirstKey + k, 100);
+            }
+            if (rl != releaseSeen_[k]) { releaseSeen_[k] = rl; if (tapHeld_[k]) releaseWait_[k] = true; }
+            if (tapHeld_[k])
+            {
+                tapLeft_[k] -= ctx.numFrames;
+                if (releaseWait_[k] && tapLeft_[k] <= 0) { tapHeld_[k] = false; releaseWait_[k] = false; noteOff(kFirstKey + k); }
+            }
+        }
         int pos = 0;
         for (int e = 0; e < ctx.numMidiEvents; ++e)
         {
@@ -285,9 +349,23 @@ private:
         lightCount_ += frames;
         if (lightCount_ < (int)(sr_ / 30.0f)) return;
         lightCount_ = 0;
+        {
+            const int st = state_.load(std::memory_order_acquire), shown = st == 1 ? 0 : (st == 0 ? 1 : 2);
+            if (shown != shownState_) { shownState_ = shown; set(kBankState, (float)shown); notifyHostParameterChanged(kBankState);
+                                        notifyPending_.store(true); }
+        }
         if (notifyPending_.exchange(false))
         {
             notifyHostParameterChanged(kBank); notifyHostParameterChanged(kPreset); notifyHostParameterChanged(kInfo);
+        }
+        if (noteDirty_) { noteDirty_ = false; set(kLastNote, (float)lastNote_.load()); notifyHostParameterChanged(kLastNote); }
+        for (int k = 0; k <= 60; ++k)
+        {
+            const bool lit = held_[kFirstKey + k] > 0 || tapHeld_[k];
+            if (lit != getBool(kKey0 + k))
+            {
+                keyLit_[k] = lit; selfSet_ = true; set(kKey0 + k, lit ? 1.0f : 0.0f); selfSet_ = false; notifyHostParameterChanged(kKey0 + k);
+            }
         }
         const Preset* pr = currentPreset(b_.bank, b_.preset);
         for (int l = 0; l < 4; ++l)
@@ -426,12 +504,50 @@ private:
         return false;
     }
 
+    // A bank is a folder holding one .exb file and its sounds (.ebl files, normally in a SamplePool folder).
+    // Looked for, in order: the plugin's own Content/ folder, then "Hybrid Phatt Sets" at the top of every drive.
+    static std::string findExb(const std::string& dir)
+    {
+        namespace fs = std::filesystem;
+        try { for (const auto& f : fs::directory_iterator(dir)) { std::string n = f.path().filename().string(), l = n;
+            for (auto& c : l) c = (char)std::tolower((unsigned char)c);
+            if (l.size() > 4 && l.substr(l.size() - 4) == ".exb" && f.is_regular_file()) return f.path().string(); } }
+        catch (...) {}
+        return "";
+    }
+    static void banksIn(const std::string& dir, std::vector<std::pair<std::string, std::string>>& out)   // (folder, exb)
+    {
+        namespace fs = std::filesystem;
+        const std::string here = findExb(dir);
+        if (!here.empty()) { out.push_back({dir, here}); return; }
+        try { for (const auto& f : fs::directory_iterator(dir)) if (f.is_directory()) {
+            const std::string e = findExb(f.path().string());
+            if (!e.empty()) out.push_back({f.path().string(), e}); } }
+        catch (...) {}
+    }
+    std::vector<std::pair<std::string, std::string>> findBanks()
+    {
+        namespace fs = std::filesystem;
+        std::vector<std::pair<std::string, std::string>> out;
+        banksIn(mpc::contentFolder(), out);
+        std::vector<std::string> roots = {"/nvme"};
+        try { for (const auto& f : fs::directory_iterator("/media")) if (f.is_directory()) roots.push_back(f.path().string()); } catch (...) {}
+        // the drive that holds "VST2 Plugins" (works on any system)
+        std::string up = mpc::pluginFolder();
+        for (int i = 0; i < 4 && !up.empty(); ++i) { const size_t s = up.find_last_of('/'); if (s == std::string::npos) break; up = up.substr(0, s); roots.push_back(up); }
+        for (const auto& r : roots) banksIn(r + "/Hybrid Phatt Sets", out);
+        return out;
+    }
+
     void loadBank()
     {
         namespace fs = std::filesystem;
-        const std::string root = mpc::contentPath("Mo'Phatt");
+        const auto banks = findBanks();
+        if (banks.empty()) { mpc::log("HybridPhatt: no sound bank found"); state_.store(2); return; }
+        const std::string root = banks[0].first;
+        bankName_ = fs::path(banks[0].second).stem().string();
         std::vector<uint8_t> exb;
-        if (!mpc::readFile(root + "/Mo'Phatt.exb", exb)) { mpc::log("HybridPhatt: bank not found in %s", root.c_str()); state_.store(2); return; }
+        if (!mpc::readFile(banks[0].second, exb)) { state_.store(2); return; }
         std::vector<TocEntry> toc;
         if (!readToc(exb, toc)) { state_.store(2); return; }
 
@@ -440,15 +556,19 @@ private:
         for (const auto& e : toc) if (!std::strcmp(e.tag, "E5SL")) bankNames[e.idx] = e.name;
         try
         {
-            for (const auto& f : fs::directory_iterator(root + "/SamplePool"))
+            for (const auto& f : fs::recursive_directory_iterator(root))
             {
-                const std::string fn = f.path().filename().string();
-                const size_t p = fn.rfind("SL");
-                if (p == std::string::npos || fn.size() < 4 || fn.substr(fn.size() - 4) != ".ebl") continue;
+                if (!f.is_regular_file()) continue;
+                std::string fn = f.path().filename().string(), low = fn;
+                for (auto& c : low) c = (char)std::tolower((unsigned char)c);
+                if (low.size() < 5 || low.substr(low.size() - 4) != ".ebl") continue;
+                const size_t p = low.rfind("sl");
+                if (p == std::string::npos) continue;
                 files[std::atoi(fn.c_str() + p + 2)] = f.path().string();
             }
         }
         catch (...) { state_.store(2); return; }
+        if (files.empty()) { state_.store(2); return; }
 
         // load every sound; files numbered outside the bank's list are matched by their sound name
         std::map<std::string, int> needByName;
@@ -624,9 +744,9 @@ private:
 
     void handleMidi(const mpc::MidiEvent& ev)
     {
-        if (ev.isNoteOn()) noteOn(ev.note(), ev.velocity());
-        else if (ev.isNoteOff()) noteOff(ev.note());
-        else if (ev.isAllNotesOff()) { for (auto& p : voices_) if (p.active) release(p); }
+        if (ev.isNoteOn()) { held_[ev.note() & 127]++; lastNote_.store(ev.note()); lastVel_.store(ev.velocity()); noteDirty_ = true; noteOn(ev.note(), ev.velocity()); }
+        else if (ev.isNoteOff()) { if (held_[ev.note() & 127] > 0) held_[ev.note() & 127]--; noteOff(ev.note()); }
+        else if (ev.isAllNotesOff()) { for (auto& p : voices_) if (p.active) release(p); for (auto& h : held_) h = 0; }
         else if (ev.isPitchBend()) bend_ = ev.pitchBend() * 2.0f;
     }
 
@@ -757,10 +877,19 @@ private:
     std::vector<Sample> samples_;
     std::vector<Preset> presets_;
     std::atomic<int> state_{0};      // 0 loading, 1 ready, 2 bank missing
+    std::string bankName_;           // written by the loader before state_ becomes 1
+    int shownState_ = -1;
     std::atomic<bool> quit_{false};
     std::thread loader_;
     float sr_ = 44100.0f, volSmooth_ = 1.0f, bend_ = 0.0f;
     bool stepping_ = false, prevDown_ = false, nextDown_ = false;
+    static constexpr int kFirstKey = 36;     // C1
+    std::atomic<int> tapPress_[61] = {}, tapRelease_[61] = {};   // counts of screen presses / releases
+    int pressSeen_[61] = {}, releaseSeen_[61] = {}, tapLeft_[61] = {};
+    bool releaseWait_[61] = {};
+    bool tapHeld_[61] = {}, keyLit_[61] = {}, noteDirty_ = false, selfSet_ = false;
+    int held_[128] = {};
+    std::atomic<int> lastNote_{-1}, lastVel_{0};
     std::atomic<bool> notifyPending_{false};
 };
 

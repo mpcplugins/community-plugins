@@ -311,6 +311,107 @@ def layer_light_strip(param, n):
     strip.save(os.path.join(OUT, "light%d.png" % n))
 
 
+HELP_TITLE = "HYBRID PHATT  -  SOUND BANK"
+HELP_BODY = [
+    ("p", "Hybrid Phatt was created with the Mo'Phatt sound bank (Mo'Phatt.exb and its SamplePool), "
+          "but those sounds cannot be released with the plugin because of copyright."),
+    ("p", "Contact the creator at thediskking.com if more information is needed."),
+    ("h", "LOAD YOUR OWN BANK  (E-mu Emulator X / Proteus X  .exb)"),
+    ("n", "1.  Connect your MPC to a computer in Computer Mode, or put the bank on a USB stick."),
+    ("n", "2.  At the top of any MPC drive (internal, SSD or USB) make a folder named:  Hybrid Phatt Sets"),
+    ("n", "3.  Copy your bank folder into it: the .exb file together with its SamplePool folder."),
+    ("c", "Hybrid Phatt Sets / My Bank / My Bank.exb"),
+    ("c", "Hybrid Phatt Sets / My Bank / SamplePool / (the .ebl sound files)"),
+    ("n", "4.  Remove Hybrid Phatt from the track and add it again. The bank name and presets show on the LCD."),
+]
+
+
+def wrap(d, text, f, width):
+    words, lines, cur = text.split(), [], ""
+    for w in words:
+        t = (cur + " " + w).strip()
+        if d.textbbox((0, 0), t, font=f)[2] > width and cur:
+            lines.append(cur)
+            cur = w
+        else:
+            cur = t
+    if cur:
+        lines.append(cur)
+    return lines
+
+
+def help_panel(fname):
+    """Full-tab instructions card: dimmed page behind, metal card with purple title bar."""
+    im = Image.new("RGBA", (W, H), (10, 8, 14, 200))
+    cx, cy, cw, ch = 150, 26, 980, 520
+    card = metal_plate(cw, ch, seed=99)
+    m = Image.new("L", (cw, ch), 0)
+    ImageDraw.Draw(m).rounded_rectangle((0, 0, cw - 1, ch - 1), radius=12, fill=255)
+    sh = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    ImageDraw.Draw(sh).rounded_rectangle((cx + 6, cy + 10, cx + cw + 6, cy + ch + 10), radius=12, fill=(0, 0, 0, 160))
+    im.alpha_composite(sh.filter(ImageFilter.GaussianBlur(8)))
+    im.paste(card, (cx, cy), m)
+    d = ImageDraw.Draw(im)
+    d.rounded_rectangle((cx, cy, cx + cw - 1, cy + ch - 1), radius=12, outline=INK_SOFT, width=2)
+    bar = Image.new("RGBA", (cw, 54))
+    bd = ImageDraw.Draw(bar)
+    for i in range(54):
+        c = tuple(int(PURPLE_TOP[k] + (PURPLE_BOT[k] - PURPLE_TOP[k]) * i / 53) for k in range(3))
+        bd.line((0, i, cw, i), fill=c + (255,))
+    bm = Image.new("L", (cw, 54), 0)
+    ImageDraw.Draw(bm).rounded_rectangle((0, 0, cw - 1, 70), radius=12, fill=255)
+    im.paste(bar, (cx, cy), bm)
+    text_center(d, cx + cw / 2, cy + 27, HELP_TITLE, font(30, "Bold Condensed"), (239, 232, 247))
+    y = cy + 76
+    fp, fh, fc = font(22, "SemiCondensed"), font(22, "Bold Condensed"), font(20, "SemiBold Condensed")
+    for kind, text in HELP_BODY:
+        if kind == "h":
+            y += 8
+            d.text((cx + 40, y), text, font=fh, fill=(69, 48, 95))
+            y += 34
+            continue
+        if kind == "c":
+            d.rounded_rectangle((cx + 80, y - 2, cx + cw - 80, y + 28), radius=4, fill=LCD_BG, outline=LCD_FG)
+            d.text((cx + 94, y + 1), text, font=fc, fill=LCD_FG)
+            y += 36
+            continue
+        f = fp
+        indent = 40 if kind == "p" else 56
+        for ln in wrap(d, text, f, cw - indent - 40):
+            d.text((cx + indent, y), ln, font=f, fill=INK)
+            y += 29
+        y += 6
+    for sx, sy in ((cx + 14, cy + ch - 14), (cx + cw - 15, cy + ch - 14)):
+        screw(d, sx, sy, 6)
+    im.save(os.path.join(OUT, fname))
+    return cx, cy, cw, ch
+
+
+NOTE_NAMES = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"]
+
+
+def piano_key(black, w, h, on, label, fname):
+    im = Image.new("RGBA", (w, h), (0, 0, 0, 0))
+    d = ImageDraw.Draw(im)
+    if black:
+        top, bot = ((255, 120, 90), (200, 40, 20)) if on else ((70, 70, 76), (12, 12, 14))
+        for y in range(h - 6):
+            t = y / max(1, h - 7)
+            d.line((1, y, w - 2, y), fill=tuple(int(a + (b - a) * t) for a, b in zip(top, bot)) + (255,))
+        d.rounded_rectangle((0, 0, w - 1, h - 1), radius=3, outline=(0, 0, 0))
+        d.rectangle((3, h - 14, w - 4, h - 4), fill=(255, 170, 140) if on else (40, 40, 44))
+    else:
+        top, bot = ((255, 214, 190), (255, 96, 60)) if on else ((250, 248, 242), (214, 208, 194))
+        for y in range(h):
+            t = y / max(1, h - 1)
+            d.line((0, y, w - 1, y), fill=tuple(int(a + (b - a) * t) for a, b in zip(top, bot)) + (255,))
+        d.rectangle((0, 0, w - 1, h - 1), outline=(60, 56, 50))
+        d.rectangle((1, h - 8, w - 2, h - 2), fill=(196, 188, 172) if not on else (230, 70, 40))
+        if label:
+            text_center(d, w / 2, h - 26, label, font(15, "SemiBold Condensed"), (90, 84, 96) if not on else (60, 10, 0))
+    im.save(os.path.join(OUT, fname))
+
+
 def lcd_item(w, h, text, on, fname):
     im = Image.new("RGBA", (w, h), (0, 0, 0, 0))
     d = ImageDraw.Draw(im)
@@ -398,6 +499,7 @@ class Page:
         self.name, self.key, self.direction = name, key, direction
         self.img = metal_plate(W, H, seed=key + 3)
         self.items = []
+        self.overlays = []
         self.groups = []           # 4 lists of 4 param ids (Q-Link banks), None = unassigned
         self.qrects = []
 
@@ -462,7 +564,7 @@ class Page:
         root = {"version": 2, "actions": [],
                 "backgroundData": {"version": 1, "focussed": {"version": 1, "colour": "ffbdb7aa", "image": fn},
                                    "unfocussed": {"version": 1, "colour": "ffbdb7aa", "image": fn}},
-                "ignoreMousePresses": False, "disableCoarseDataWheel": False, "componentsData": self.items}
+                "ignoreMousePresses": False, "disableCoarseDataWheel": False, "componentsData": self.items + self.overlays}
         return {"version": 1, "tabName": self.name, "fnKeyIndex": index, "fnKeySubIndex": 0,
                 "componentDefinition": root, "qlinkBoundsData": ["%d %d %d %d" % r for r in self.qrects]}
 
@@ -530,7 +632,7 @@ def main():
     ids += ["blvl%d" % k for k in range(1, 5)] + ["bswing", "bhum"]
     ids += ["rvon", "rvtype", "rvsize", "rvdamp", "rvpre", "rvmix", "chon", "chtype", "chrate", "chdepth", "chfb", "chmix"]
     ids += ["dlon", "dltime", "dlfb", "dltone", "dlwidth", "dlmix", "lofi"] + ["step%d" % k for k in range(64)]
-    ids += ["info", "act1", "act2", "act3", "act4"]
+    ids += ["info", "act1", "act2", "act3", "act4", "bankstate", "lastnote"] + ["key%d" % k for k in range(61)]
     if len(ids) != len(plist):
         sys.exit("parameter list mismatch: %d ids vs %d params" % (len(ids), len(plist)))
     for i, (pi, p) in enumerate(zip(ids, plist)):
@@ -592,6 +694,29 @@ def main():
     for i in range(4):
         pg.control("f120", "lvl%d" % (i + 1), 452 + 804 * (i + 0.5) / 4, 450, None)
         silk(pg.img, 452 + 804 * (i + 0.5) / 4 - 62, 510, "L%d" % (i + 1), 22)
+    keycap(96, 34, "HELP", True, "btn_help_on.png", size=16)
+    keycap(96, 34, "HELP", False, "btn_help_off.png", size=16)
+    pg.items.append(entry("help", "Button", {"version": 2, "onImage": "btn_help_on.png", "offImage": "btn_help_off.png", "buttonId": 1,
+                                              "numButtonsInGroup": 1, "handleName": "Local/2/help", "gestureBehaviour": "Instant"},
+                          bounds(326, 380, 96, 34, "Yes", "Show")))
+    cx, cy, cw, ch = help_panel("help_panel.png")
+    keycap(200, 50, "CLOSE", False, "btn_close_off.png", size=20, led=False)
+    keycap(200, 50, "CLOSE", True, "btn_close_on.png", size=20, led=False)
+    DEFS["helpPanel"] = {
+        "version": 4, "actions": [], "backgroundData": bg_none(), "ignoreMousePresses": False, "disableCoarseDataWheel": False,
+        "repeats": 1, "hideQLinkBounds": True,
+        "componentsData": [
+            entry("card", "Image", {"version": 2, "imageType": "Regular", "colour": "0", "image": "help_panel.png"}, bounds(0, 0, W, H, "No", "Show")),
+            entry("close", "Button", {"version": 2, "onImage": "btn_close_on.png", "offImage": "btn_close_off.png", "buttonId": 1,
+                                      "numButtonsInGroup": 1, "handleName": "Data", "gestureBehaviour": "Instant"},
+                  bounds(cx + cw - 230, cy + ch - 70, 200, 50, "Yes", "Show")),
+        ]}
+    st = "Parameter %d" % pid("bankstate")
+    auto = entry("instructions", "helpPanel", {"version": 1, "handleName": "Data"}, bounds(0, 0, W, H, "Children", "Show"), "Local/2/dismiss")
+    auto["bounds"] = {**auto["bounds"], "version": 2, "additionalInvalidatingHandles": ["IndexedEnabling/2/3/" + st, "IndexedEnabling/0/2/Local/2/dismiss"]}
+    manual = entry("help panel", "helpPanel", {"version": 1, "handleName": "Data"}, bounds(0, 0, W, H, "Children", "Show"), "Local/2/help")
+    manual["bounds"] = {**manual["bounds"], "version": 2, "additionalInvalidatingHandles": ["IndexedEnabling/1/2/Local/2/help"]}
+    pg.overlays = [auto, manual]
     pg.groups = [["cutoff", "reso", "morph", "drive"], ["attack", "decay", "release", "volume"],
                  ["lvl1", "lvl2", "lvl3", "lvl4"], ["glide", "tune", "rvmix", "chmix"]]
     pg.qrects = [(462, 46, 784, 176), (462, 222, 784, 176), (462, 436, 784, 172), (32, 416, 394, 192)]
@@ -668,7 +793,7 @@ def main():
     panel_box(pg.img, 470, 22, 786, 592, "BEATS")
     pg.toggle("beatplay", 490, 44, 150, 46, "PLAY")
     lcd(pg.img, 658, 48, 300, 38)
-    pg.fixed_text("PATTERN 01  BOOM BAP", 668, 48, 284, 38, 20, LCD_TXT, style="Regular")
+    ImageDraw.Draw(pg.img).text((672, 55), "PATTERN 01   BOOM BAP   92 BPM", font=font(20, "SemiBold Condensed"), fill=LCD_FG)
     pg.radio("beatvar", 990, 44, 78, 46, 3, gap=6, size=16)
     lanes = ["KICK", "SNARE", "HAT", "PERC"]
     for r in range(4):
@@ -706,6 +831,51 @@ def main():
     pg.groups = [["rvsize", "rvdamp", "rvpre", "rvmix"], ["chrate", "chdepth", "chfb", "chmix"],
                  ["dlfb", "dltone", "dlwidth", "dlmix"], ["drive", "lofi", "volume", None]]
     pg.qrects = [(30 + i * 316, 210, 288, 398) for i in range(3)] + [(978, 46, 272, 562)]
+    pages.append(pg)
+
+    # ---------------- KEYS
+    pg = Page("KEYS", 6, "RowTopDown")
+    panel_box(pg.img, 24, 22, 1232, 592, "KEYS")
+    lcd(pg.img, 44, 50, 560, 64)
+    pg.label("lastnote", 58, 50, 540, 64, 30, LCD_TXT, style="SemiBold")
+    d = ImageDraw.Draw(pg.img)
+    tip = font(19, "SemiCondensed")
+    d.text((630, 54), "Hit a drum pad and its key lights up.", font=tip, fill=INK)
+    d.text((630, 82), "Tap a key to play it. C3 = note 60. MPC pads start at C#1 (37).", font=tip, fill=INK)
+    x0, y0, ww, wh, bw, bh = 46, 236, 33, 340, 21, 210
+    first = 36
+    whites = [n for n in range(first, first + 61) if NOTE_NAMES[n % 12].find("#") < 0]
+    wx = {n: x0 + i * ww for i, n in enumerate(whites)}
+
+    def note_x(n):
+        if n in wx:
+            return wx[n]
+        return wx[n - 1] + ww - bw // 2
+
+    # range bars: MPC Key 61 (C1-C6) and MPC Key 37 (C2-C5)
+    for (lo, hi, label, yy) in ((36, 96, "MPC KEY 61   C1 - C6", 150), (48, 84, "MPC KEY 37   C2 - C5", 186)):
+        xa, xb = note_x(lo), note_x(hi) + ww
+        d.rounded_rectangle((xa, yy, xb, yy + 26), radius=4, fill=(PURPLE_BOT if lo == 36 else PURPLE_TOP) + (255,))
+        text_center(d, (xa + xb) / 2, yy + 13, label, font(17, "Bold Condensed"), (239, 232, 247))
+    d.rounded_rectangle((x0 - 6, y0 - 8, x0 + len(whites) * ww + 6, y0 + wh + 8), radius=6, fill=(20, 18, 22))
+    for black in (False, True):
+        for k in range(61):
+            n = first + k
+            is_black = "#" in NOTE_NAMES[n % 12]
+            if is_black != black:
+                continue
+            label = ("C%d" % (n // 12 - 2)) if NOTE_NAMES[n % 12] == "C" else ""
+            w, h = (bw, bh) if black else (ww, wh)
+            base = "key_%d" % k
+            piano_key(black, w, h, True, label, base + "_on.png")
+            piano_key(black, w, h, False, label, base + "_off.png")
+            pg.items.append(entry("key%d" % k, "Button", {"version": 2, "onImage": base + "_on.png", "offImage": base + "_off.png",
+                                                           "buttonId": 1, "numButtonsInGroup": 1,
+                                                           "handleName": "ResetOnGestureEnd/Parameter %d" % pid("key%d" % k),
+                                                           "gestureBehaviour": "Instant"},
+                                  bounds(note_x(n), y0, w, h, "No", "Show")))
+    pg.groups = [["volume", "cutoff", "reso", "tune"], [None, None, None, None], [None, None, None, None], [None, None, None, None]]
+    pg.qrects = []
     pages.append(pg)
 
     # ---------------- write TUI.json + Q-Links.json
