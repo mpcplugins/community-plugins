@@ -14,9 +14,11 @@ something a music plugin should never need to do.
 
 | | |
 |---|---|
-| ![RISKY: a plugin with every warning sign](screens/01-risky.png) | ![VERIFIED CREATOR: MPC Plugins Manager](screens/02-verified-creator.png) |
-| ![VERIFIED CREATOR: the scanner itself](screens/03-verified-scanner.png) | ![CHECK: uses the internet](screens/04-check.png) |
-| ![CLEAN: no warning signs](screens/05-clean.png) | |
+| ![RISKY: a plugin with every warning sign](screens/01-risky.png) | ![CLEAN: JV-880, a plugin by another maker (sd88me)](screens/02-third-party-clean.png) |
+| ![VERIFIED CREATOR: MPC Plugins Manager](screens/03-verified-creator.png) | ![VERIFIED CREATOR: the scanner itself](screens/04-verified-scanner.png) |
+| ![CHECK: uses the internet](screens/05-check.png) | ![CLEAN: no warning signs](screens/06-clean.png) |
+
+It checks **every** plugin on the MPC, from any maker: above, JV-880 by sd88me comes up clean.
 
 *"Waveforms" and "Open Sauced" in these pictures are harmless demo plugins made only for these screenshots: they
 contain the warning signs but never use them. They are not real products and are not available anywhere.*
