@@ -1,0 +1,55 @@
+# Trifecta Workstation (The Disk King)
+
+A 2000s-style music workstation for Akai MPC standalone hardware: a silver panel with realtime knobs, a blue
+touch-screen display, a big VALUE dial, program and combination banks, an arpeggiator and effects.
+
+**Version 0.1.0 — early beta. Tested on an Akai MPC Live III (MPC OS 3.10.1). Use at your own risk.**
+
+## Download
+
+[![Download Trifecta Workstation 0.1.0](../assets/download-button.png)](https://github.com/mpcplugins/community-plugins/releases/download/trifecta-workstation-v0.1.0/Trifecta-Workstation-0.1.0-mpc-sdk.zip)
+
+**Easiest:** on your MPC, open **MPC Plugins Manager**, find **Trifecta Workstation** and tap **Install**.
+
+**By hand, step by step:**
+1. Click the **DOWNLOAD** button above. A file called `Trifecta-Workstation-0.1.0-mpc-sdk.zip` lands in your **Downloads** folder.
+2. Unzip it. On Windows: right-click the file, then **Extract All**. On a Mac: double-click it.
+3. Connect your MPC to the computer with its USB cable and switch it to **Computer Mode**, so its **internal drive** shows up on the computer.
+4. On the MPC's internal drive, open the folder **VST2 Plugins** (make it if it is not there).
+5. Copy the folder **The Disk King - VST - Trifecta Workstation** from the unzipped files into **VST2 Plugins**.
+6. On the MPC: **Preferences → Enhancements (Beta)** → turn on **Enable Enhancements** and **External Plugin Support** (needs MPC OS 3.10.1 or later). Restart the MPC.
+7. Add a **Plugin track** and pick **Trifecta Workstation**.
+
+![Trifecta Workstation on an MPC Live III](trifecta-workstation.png)
+
+## All screens
+
+| | |
+|---|---|
+| ![PLAY](screens/01-play.png) | ![EDIT](screens/02-edit.png) |
+| ![ARP](screens/03-arp.png) | ![FX](screens/04-fx.png) |
+| ![KEYS](screens/05-keys.png) | |
+
+## What is in 0.1
+
+- **Sound set included:** The Disk King's own PRELOAD set: 4 program banks (A-D, 512 programs) and 4 combination banks
+  (512 combis), shown by name. Tap a name in the list, turn the **VALUE dial**, use **PREV / NEXT**, the **A-D bank keys**
+  and **PROG / COMBI**.
+- **Trifecta Voice:** a built-in analog-style synth (2 detuned oscillators + sub + noise, 24 dB low-pass filter with its own
+  envelope, amp envelope, LFO). In 0.1 every program and combi plays this voice; the programs' own sounds come later.
+- **Realtime controls:** Cutoff, Resonance, EG Int, Release. **SW1** = mono, **SW2** = portamento.
+- **Arpeggiator:** Up, Down, Alt 1, Alt 2, Random; 1/8 to 1/32; gate, octaves 1-4, swing, latch. Follows the MPC tempo.
+- **Effects:** stereo chorus, tempo delay, reverb.
+- **KEYS page:** 61 keys light up from the pads; tap a key to play it (handy on an MPC without keys).
+- Q-Links mapped on every page.
+
+## Not yet
+
+- The programs' own oscillator, filter and envelope settings, and loading user sample sets.
+
+## Disclaimer
+
+Provided as is, with no warranty of any kind. Use entirely at your own risk; The Disk King is not responsible in any way
+for any loss, damage or problem from using it.
+
+More MPC sounds: https://thediskking.com

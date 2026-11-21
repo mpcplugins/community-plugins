@@ -1,0 +1,17 @@
+{
+  "name": "Trifecta Workstation",
+  "manufacturer": "The Disk King",
+  "version": "0.1.0",
+  "format": "vst2",
+  "kind": "instrument",
+  "uid": "TRFW",
+  "numInputs": 0,
+  "numOutputs": 2,
+  "category": "Synth",
+  "file32": "VST/trifecta-workstation-arm32.so",
+  "file64": "VST/trifecta-workstation-arm64.so",
+  "description": "Trifecta Workstation: a 2000s workstation-style instrument with a TouchView-style screen, program and combi banks, built-in Trifecta Voice synth, arpeggiator, chorus, delay and reverb.",
+  "author": "The Disk King",
+  "url": "https://thediskking.com",
+  "license": "Copyright The Disk King"
+}
