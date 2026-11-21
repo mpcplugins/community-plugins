@@ -4,6 +4,21 @@ A 90s-style ROM sound module for Akai MPC standalone hardware, in the spirit of 
 
 **Version 0.2.0 — beta. Tested on an Akai MPC Live III (MPC OS 3.10.1). Use at your own risk.**
 
+## Download
+
+[![Download Hybrid Phatt 0.2.0](../assets/download-button.png)](https://github.com/mpcplugins/community-plugins/releases/download/hybrid-phatt-v0.2.0/Hybrid-Phatt-0.2.0-mpc-sdk.zip)
+
+**Easiest:** on your MPC, open **MPC Plugins Manager**, find **Hybrid Phatt** and tap **Install**.
+
+**By hand, step by step:**
+1. Click the **DOWNLOAD** button above. A file called `Hybrid-Phatt-0.2.0-mpc-sdk.zip` lands in your **Downloads** folder.
+2. Unzip it. On Windows: right-click the file, then **Extract All**. On a Mac: double-click it.
+3. Connect your MPC to the computer with its USB cable and switch it to **Computer Mode**, so its **internal drive** shows up on the computer.
+4. On the MPC's internal drive, open the folder **VST2 Plugins** (make it if it is not there).
+5. Copy the folder **The Disk King - VST - Hybrid Phatt** from the unzipped files into **VST2 Plugins**.
+6. On the MPC: **Preferences → Enhancements (Beta)** → turn on **Enable Enhancements** and **External Plugin Support** (needs MPC OS 3.10.1 or later). Restart the MPC.
+7. Add a **Plugin track** and pick **Hybrid Phatt**.
+
 ![Hybrid Phatt on an MPC Live III](hybrid-phatt.png)
 
 ## All screens
@@ -33,24 +48,6 @@ A 90s-style ROM sound module for Akai MPC standalone hardware, in the spirit of 
 
 - **No sound bank is included** (copyright). Without one the plugin plays a simple test saw and the LCD says "SOUND BANK NOT FOUND". Load your own .exb as above.
 - The MOD, GROOVE and FX pages are on screen but do not change the sound yet.
-
-## Install
-
-Needs MPC OS 3.10.1 or later, with **Preferences → Enhancements (Beta) → Enable Enhancements** and **External Plugin Support** turned on.
-
-1. Download `Hybrid-Phatt-0.2.0-mpc-sdk.zip` from the Releases page.
-2. Copy the folder `The Disk King - VST - Hybrid Phatt` into a folder named `VST2 Plugins` on your MPC's internal drive.
-3. Restart the MPC and load **Hybrid Phatt** on a plugin track.
-
-## Build from source
-
-Built with Akai's MPC Plugin SDK. Put this folder in the SDK's `plugins/` folder as `Hybrid Phatt`, then:
-
-```
-python tools/build.py "plugins/Hybrid Phatt"
-python "plugins/Hybrid Phatt/make_skin.py"
-python tools/build.py "plugins/Hybrid Phatt"
-```
 
 ## Disclaimer
 

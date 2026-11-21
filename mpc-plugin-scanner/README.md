@@ -8,6 +8,21 @@ something a music plugin should never need to do.
 
 **Version 1.1.0. Tested on an Akai MPC Live III (MPC OS 3.10.1).**
 
+## Download
+
+[![Download MPC Plugin Scanner 1.1.0](../assets/download-button.png)](https://github.com/mpcplugins/community-plugins/releases/download/mpc-plugin-scanner-v1.1.0/MPC-Plugin-Scanner-1.1.0-mpc-sdk.zip)
+
+**Easiest:** on your MPC, open **MPC Plugins Manager**, find **MPC Plugin Scanner** and tap **Install**.
+
+**By hand, step by step:**
+1. Click the **DOWNLOAD** button above. A file called `MPC-Plugin-Scanner-1.1.0-mpc-sdk.zip` lands in your **Downloads** folder.
+2. Unzip it. On Windows: right-click the file, then **Extract All**. On a Mac: double-click it.
+3. Connect your MPC to the computer with its USB cable and switch it to **Computer Mode**, so its **internal drive** shows up on the computer.
+4. On the MPC's internal drive, open the folder **VST2 Plugins** (make it if it is not there).
+5. Copy the folder **The Disk King - VST - MPC Plugin Scanner** from the unzipped files into **VST2 Plugins**.
+6. On the MPC: **Preferences → Enhancements (Beta)** → turn on **Enable Enhancements** and **External Plugin Support** (needs MPC OS 3.10.1 or later). Restart the MPC.
+7. Add a **Plugin track** and pick **MPC Plugin Scanner**.
+
 ![MPC Plugin Scanner on an MPC Live III](mpc-plugin-scanner.png)
 
 ## All screens
@@ -66,16 +81,6 @@ The details still list honestly what the tool can do (for example, the Manager u
 
 **Please note:** this is a warning-sign scan, not a guarantee. Cleverly written code can hide what it does. A red light
 means "remove it unless you really trust the maker"; a green light means no warning signs were found.
-
-## Install
-
-Needs MPC OS 3.10.1 or later, with **Preferences → Enhancements (Beta) → Enable Enhancements** and **External Plugin Support** on.
-
-1. Download `MPC-Plugin-Scanner-1.0.0-mpc-sdk.zip` from the Releases page.
-2. Copy the folder `The Disk King - VST - MPC Plugin Scanner` into `VST2 Plugins` on your MPC's internal drive.
-3. Restart the MPC and load **MPC Plugin Scanner** on a plugin track.
-
-Or install it in one tap with [MPC Plugins Manager](https://github.com/mpcplugins/mpc-plugins-manager).
 
 ## Build from source
 
