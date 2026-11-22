@@ -1,0 +1,17 @@
+{
+  "name": "Ashy to Classy",
+  "manufacturer": "The Disk King",
+  "version": "1.0.0",
+  "format": "vst2",
+  "kind": "effect",
+  "uid": "TDAC",
+  "numInputs": 2,
+  "numOutputs": 2,
+  "category": "Effect",
+  "file32": "VST/ashy-to-classy-arm32.so",
+  "file64": "VST/ashy-to-classy-arm64.so",
+  "description": "Ashy to Classy: a vintage console that cleans records (hiss, crackle, pops, hum) or ages them (vinyl noise, crackle, scratches, buzz, lo-fi, tape, wow and flutter).",
+  "author": "The Disk King",
+  "url": "https://thediskking.com",
+  "license": "Copyright The Disk King"
+}

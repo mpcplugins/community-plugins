@@ -16,6 +16,7 @@ Every release here is listed automatically on [thediskking.com/plugins](https://
 | **[MPC Plugin Scanner](mpc-plugin-scanner/)** | Safety check for every plugin on your MPC | [![Download](assets/download-button.png)](https://github.com/mpcplugins/community-plugins/releases/download/mpc-plugin-scanner-v1.2.0/MPC-Plugin-Scanner-1.2.0-mpc-sdk.zip) |
 | **[Hybrid Phatt](hybrid-phatt/)** | 90s-style ROM sound module | [![Download](assets/download-button.png)](https://github.com/mpcplugins/community-plugins/releases/download/hybrid-phatt-v0.2.0/Hybrid-Phatt-0.2.0-mpc-sdk.zip) |
 | **[Trifecta Workstation](trifecta-workstation/)** | 2000s-style workstation: blue screen, programs, combis, arpeggiator | [![Download](assets/download-button.png)](https://github.com/mpcplugins/community-plugins/releases/download/trifecta-workstation-v0.1.1/Trifecta-Workstation-0.1.1-mpc-sdk.zip) |
+| **[Ashy to Classy](ashy-to-classy/)** | Vintage console effect: clean up old records or make sounds dusty (Insert Effects) | [![Download](assets/download-button.png)](https://github.com/mpcplugins/community-plugins/releases/download/ashy-to-classy-v1.0.0/Ashy-to-Classy-1.0.0-mpc-sdk.zip) |
 | **[MPC Plugins Manager](https://github.com/mpcplugins/mpc-plugins-manager)** | Install, update and remove plugins on the MPC | [![Download](assets/download-button.png)](https://github.com/mpcplugins/mpc-plugins-manager/releases/download/v1.2.0/MPC-Plugins-Manager-1.2.0-mpc-sdk.zip) |
 
 Each plugin's page has step-by-step install instructions.
