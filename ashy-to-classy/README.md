@@ -4,7 +4,7 @@ A vintage console for Akai MPC standalone hardware. The left side **cleans up ol
 60 Hz hum). The right side **makes clean sounds dusty** (vinyl noise, surface crackle, deep scratches, loop buzz).
 It also has Lo-Fi, Tape and RPM switches, four IN / OUT level meters and an amber 16 x 2 LCD.
 
-**Version 1.2.0. Tested on an Akai MPC Live III (MPC OS 3.10.1). Use at your own risk.**
+**Version 1.2.1. Tested on an Akai MPC Live III (MPC OS 3.10.1). Use at your own risk.**
 
 ![Ashy to Classy on an MPC Live III](ashy-to-classy.png)
 
@@ -24,12 +24,12 @@ Master = the whole beat.
 
 ## Download
 
-[![Download Ashy to Classy 1.2.0](../assets/download-button.png)](https://github.com/mpcplugins/community-plugins/releases/download/ashy-to-classy-v1.2.0/Ashy-to-Classy-1.2.0-mpc-sdk.zip)
+[![Download Ashy to Classy 1.2.1](../assets/download-button.png)](https://github.com/mpcplugins/community-plugins/releases/download/ashy-to-classy-v1.2.1/Ashy-to-Classy-1.2.1-mpc-sdk.zip)
 
 **Easiest:** on your MPC, open **MPC Plugins Manager**, find **Ashy to Classy** and tap **Install**.
 
 **By hand, step by step:**
-1. Click the **DOWNLOAD** button above. A file called `Ashy-to-Classy-1.2.0-mpc-sdk.zip` lands in your **Downloads** folder.
+1. Click the **DOWNLOAD** button above. A file called `Ashy-to-Classy-1.2.1-mpc-sdk.zip` lands in your **Downloads** folder.
 2. Unzip it. On Windows: right-click the file, then **Extract All**. On a Mac: double-click it.
 3. Connect your MPC to the computer with its USB cable and switch it to **Computer Mode**, so its **internal drive** shows up on the computer.
 4. On the MPC's internal drive, open the folder **VST2 Plugins** (make it if it is not there).
@@ -43,7 +43,7 @@ Master = the whole beat.
 |---|---|
 | ![MAIN](screens/01-main.png) | ![HELP](screens/02-help.png) |
 
-## What is in 1.2.0
+## What is in 1.2.1
 
 - **Restoration faders (0-10):** HISS (spectral noise reduction), CRACKLE (de-crackle), POP (de-click), HUM (60 Hz notch and
   its harmonics).
@@ -53,10 +53,11 @@ Master = the whole beat.
   effects), the **OUT** pair shows it going out (after). IN / OUT lights, plus a clip light.
 - **16 x 2 amber LCD:** status, what is on, and the value of any fader you move.
 - **Record and export:** tap PLAY, hit the pad, then STOP / EXPORT. A WAV is saved to `Ashy to Classy Saves` on the drive.
-- **HELP** pop-up, Q-Links mapped to all eight faders, 7 presets.
+- **HELP** pop-up, Q-Links mapped to all eight faders (no outline drawn over the panels), 7 presets.
 
 ## Older versions
 
+- [1.2.0](https://github.com/mpcplugins/community-plugins/releases/tag/ashy-to-classy-v1.2.0): new console art, IN / OUT meters, 16 x 2 LCD.
 - [1.0.0](https://github.com/mpcplugins/community-plugins/releases/tag/ashy-to-classy-v1.0.0): first release (two meters, 20 x 2 LCD).
 
 ## Known limits

@@ -61,5 +61,12 @@
   "device": "Akai MPC Live III",
   "firmware": "MPC OS 3.10.1",
   "date": "2026-11-22"
+ },
+ {
+  "id": "ashy-to-classy",
+  "version": "1.2.1",
+  "device": "Akai MPC Live III",
+  "firmware": "MPC OS 3.10.1",
+  "date": "2026-11-22"
  }
 ]
