@@ -5,7 +5,7 @@ tape: saturation, warmth, wow and flutter, tape speed from 3.75 to 30 inches per
 curves, hiss, tape stop, and recording to a WAV. While the sound plays, the reels really turn (the full reel slowly,
 the empty one fast), the tape moves from one reel to the other, the VU needles move and the red counter runs.
 
-**Version 1.0.0. Tested on an Akai MPC Live III (MPC OS 3.10.1). Use at your own risk.**
+**Version 1.1.0. Tested on an Akai MPC Live III (MPC OS 3.10.1). Use at your own risk.**
 
 ![Reel-to-Real on an MPC](reel-to-real.png)
 
@@ -26,12 +26,12 @@ coast to a stop.
 
 ## Download
 
-[![Download Reel-to-Real 1.0.0](../assets/download-button.png)](https://github.com/mpcplugins/community-plugins/releases/download/reel-to-real-v1.0.0/Reel-to-Real-1.0.0-mpc-sdk.zip)
+[![Download Reel-to-Real 1.1.0](../assets/download-button.png)](https://github.com/mpcplugins/community-plugins/releases/download/reel-to-real-v1.1.0/Reel-to-Real-1.1.0-mpc-sdk.zip)
 
 **Easiest:** on your MPC, open **MPC Plugins Manager**, find **Reel-to-Real** and tap **Install**.
 
 **By hand, step by step:**
-1. Click the **DOWNLOAD** button above. A file called `Reel-to-Real-1.0.0-mpc-sdk.zip` lands in your **Downloads** folder.
+1. Click the **DOWNLOAD** button above. A file called `Reel-to-Real-1.1.0-mpc-sdk.zip` lands in your **Downloads** folder.
 2. Unzip it. On Windows: right-click the file, then **Extract All**. On a Mac: double-click it.
 3. Connect your MPC to the computer with its USB cable and switch it to **Computer Mode**, so its **internal drive** shows up on the computer.
 4. On the MPC's internal drive, open the folder **VST2 Plugins** (make it if it is not there).
@@ -60,7 +60,7 @@ coast to a stop.
 | POWER | OFF = a tape stop (the tape slows to a halt). ON = back. |
 | REC / PLAY | REC records what you hear to a WAV in **Reel-to-Real Saves** on the drive. The counter shows -rEC-, then SAVEd. |
 | REWIND | Spins the reels back to 00:00.0. |
-| VU meters, counter | The VU needles show the output level in real dB. The counter shows tape time. |
+| VU meters, counter | The VU needles show the output level in real dB. While your sequence plays, the counter counts your loop and goes back to 00:00.0 each time it starts over; with only pads, it shows tape time. |
 
 ## Presets
 
@@ -83,6 +83,16 @@ SATURATION 5 is calibrated tape; WOW & FLUTTER 1 is a good deck. OUTPUT 0 dB and
 The settings follow published specs of classic 1/4-inch decks and tape (calibration level, head bump, tape EQ
 time constants, wow and flutter, hiss) and how engineers describe the speeds: 30 ips tight and clean for mix bus
 and mastering, 15 ips rounder with more low end for rock mixes and drums, 7.5 and below warm and fat.
+
+## What is new in 1.1.0
+
+- **The counter follows your loop:** while the MPC sequence plays, it shows the time from the start of the loop and resets to 00:00.0 every pass (a 4-bar loop at 90 BPM counts to 00:10.6, then starts over).
+- **Fills the whole MPC screen** (the deck is stretched evenly, so nothing is cut off and no dark bars).
+- **New HELP card in the deck's own look:** wood frame, brushed panel, the panel's lettering and corner screws.
+
+## Older versions
+
+- [1.0.0](https://github.com/mpcplugins/community-plugins/releases/tag/reel-to-real-v1.0.0): first release.
 
 ## Known limits
 
