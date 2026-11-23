@@ -1,0 +1,17 @@
+{
+  "name": "Warm Front Compressor",
+  "manufacturer": "The Disk King",
+  "version": "1.0.0",
+  "format": "vst2",
+  "kind": "effect",
+  "uid": "Tv8n",
+  "numInputs": 2,
+  "numOutputs": 2,
+  "category": "Effect",
+  "file32": "VST/warm-front-compressor-arm32.so",
+  "file64": "VST/warm-front-compressor-arm64.so",
+  "description": "Warm Front Compressor: a stereo compressor with Classic (1980s console bus mix glue), Vintage (opto-style warmth) and Modern (clean look-ahead) styles, sidechain filter, real dB VU meters and a gain-reduction LED strip.",
+  "author": "The Disk King",
+  "url": "https://thediskking.com",
+  "license": "Copyright The Disk King"
+}
