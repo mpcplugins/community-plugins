@@ -89,5 +89,12 @@
   "device": "Akai MPC Live III",
   "firmware": "MPC OS 3.10.1",
   "date": "2026-11-23"
+ },
+ {
+  "id": "diskking-670-compressor",
+  "version": "1.0.0",
+  "device": "Akai MPC Live III",
+  "firmware": "MPC OS 3.10.1",
+  "date": "2026-11-23"
  }
 ]
