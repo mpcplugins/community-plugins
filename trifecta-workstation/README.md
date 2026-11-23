@@ -7,7 +7,9 @@ touch-screen display, a big VALUE dial, program and combination banks, an arpegg
 
 ## Download
 
-[![Download Trifecta Workstation 0.1.1](../assets/download-button.png)](https://github.com/mpcplugins/community-plugins/releases/download/trifecta-workstation-v0.1.1/Trifecta-Workstation-0.1.1-mpc-sdk.zip)
+[![Download Trifecta Workstation 0.1.1](../assets/download-button.png)](https://github.com/mpcplugins/community-plugins/releases/download/trifecta-workstation-v0.1.1/Trifecta-Workstation-0.1.1-mpc-sdk.zip) [![Get updates with MPC Plugins Manager](../assets/updates-button.png)](https://mpcplugins.github.io/p/mpc-plugins-manager/)
+
+**Get updates automatically:** a zip you download by hand never updates itself. Install **[MPC Plugins Manager](https://mpcplugins.github.io/p/mpc-plugins-manager/)** once on your MPC: it shows when a new version of Trifecta Workstation is out and installs it in one tap.
 
 **Easiest:** on your MPC, open **MPC Plugins Manager**, find **Trifecta Workstation** and tap **Install**.
 

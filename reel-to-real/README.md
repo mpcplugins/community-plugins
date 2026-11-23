@@ -26,7 +26,9 @@ coast to a stop.
 
 ## Download
 
-[![Download Reel-to-Real 1.1.0](../assets/download-button.png)](https://github.com/mpcplugins/community-plugins/releases/download/reel-to-real-v1.1.0/Reel-to-Real-1.1.0-mpc-sdk.zip)
+[![Download Reel-to-Real 1.1.0](../assets/download-button.png)](https://github.com/mpcplugins/community-plugins/releases/download/reel-to-real-v1.1.0/Reel-to-Real-1.1.0-mpc-sdk.zip) [![Get updates with MPC Plugins Manager](../assets/updates-button.png)](https://mpcplugins.github.io/p/mpc-plugins-manager/)
+
+**Get updates automatically:** a zip you download by hand never updates itself. Install **[MPC Plugins Manager](https://mpcplugins.github.io/p/mpc-plugins-manager/)** once on your MPC: it shows when a new version of Reel-to-Real is out and installs it in one tap.
 
 **Easiest:** on your MPC, open **MPC Plugins Manager**, find **Reel-to-Real** and tap **Install**.
 

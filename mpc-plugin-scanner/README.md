@@ -10,7 +10,9 @@ something a music plugin should never need to do.
 
 ## Download
 
-[![Download MPC Plugin Scanner 1.2.0](../assets/download-button.png)](https://github.com/mpcplugins/community-plugins/releases/download/mpc-plugin-scanner-v1.2.0/MPC-Plugin-Scanner-1.2.0-mpc-sdk.zip)
+[![Download MPC Plugin Scanner 1.2.0](../assets/download-button.png)](https://github.com/mpcplugins/community-plugins/releases/download/mpc-plugin-scanner-v1.2.0/MPC-Plugin-Scanner-1.2.0-mpc-sdk.zip) [![Get updates with MPC Plugins Manager](../assets/updates-button.png)](https://mpcplugins.github.io/p/mpc-plugins-manager/)
+
+**Get updates automatically:** a zip you download by hand never updates itself. Install **[MPC Plugins Manager](https://mpcplugins.github.io/p/mpc-plugins-manager/)** once on your MPC: it shows when a new version of MPC Plugin Scanner is out and installs it in one tap.
 
 **Easiest:** on your MPC, open **MPC Plugins Manager**, find **MPC Plugin Scanner** and tap **Install**.
 

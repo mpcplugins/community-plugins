@@ -24,7 +24,9 @@ Master = the whole beat.
 
 ## Download
 
-[![Download Ashy to Classy 1.2.1](../assets/download-button.png)](https://github.com/mpcplugins/community-plugins/releases/download/ashy-to-classy-v1.2.1/Ashy-to-Classy-1.2.1-mpc-sdk.zip)
+[![Download Ashy to Classy 1.2.1](../assets/download-button.png)](https://github.com/mpcplugins/community-plugins/releases/download/ashy-to-classy-v1.2.1/Ashy-to-Classy-1.2.1-mpc-sdk.zip) [![Get updates with MPC Plugins Manager](../assets/updates-button.png)](https://mpcplugins.github.io/p/mpc-plugins-manager/)
+
+**Get updates automatically:** a zip you download by hand never updates itself. Install **[MPC Plugins Manager](https://mpcplugins.github.io/p/mpc-plugins-manager/)** once on your MPC: it shows when a new version of Ashy to Classy is out and installs it in one tap.
 
 **Easiest:** on your MPC, open **MPC Plugins Manager**, find **Ashy to Classy** and tap **Install**.
 

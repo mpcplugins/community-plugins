@@ -1,4 +1,4 @@
-# DISKKING 670 Compressor (The Disk King)
+# Diskking 670 Compressor (The Disk King)
 
 **The Disk King's variation on the Fairchild 670**, the classic 1959 two-channel variable-mu tube limiter,
 for Akai MPC standalone hardware. Put it on your Master for glue, on drums to squash them, or on a vocal to level it.
@@ -9,16 +9,16 @@ It does what the real unit is known for:
 - the famous "thump" when the tubes are out of balance;
 - gain-reduction meters.
 
-**Version 1.0.0. Tested on an Akai MPC Live III (MPC OS 3.10.1). Use at your own risk.**
+**Version 1.0.1. Tested on an Akai MPC Live III (MPC OS 3.10.1). Use at your own risk.**
 
-![DISKKING 670 Compressor on an MPC](diskking-670-compressor.png)
+![Diskking 670 Compressor on an MPC](diskking-670-compressor.png)
 
 ## This is an EFFECT: find it in Insert Effects
 
-DISKKING 670 is an **insert effect**, not an instrument. To use it:
+Diskking 670 Compressor is an **insert effect**, not an instrument. To use it:
 
 1. Open the **Mixer** (or a track's / pad's **Insert Effects**) and tap an empty **Insert** slot.
-2. Choose **External Plugins → The Disk King → DISKKING 670 Compressor**. Tap the slot's edit (pencil) icon to see the panel.
+2. Choose **External Plugins → The Disk King → Diskking 670 Compressor**. Tap the slot's edit (pencil) icon to see the panel.
 3. Pick a preset from the **preset name at the top of the plugin window** (it starts on **Mix Bus Glue TC2**), then play.
 4. Tap **HELP** on the panel any time.
 
@@ -27,17 +27,19 @@ DISKKING 670 is an **insert effect**, not an instrument. To use it:
 
 ## Download
 
-[![Download DISKKING 670 Compressor 1.0.0](../assets/download-button.png)](https://github.com/mpcplugins/community-plugins/releases/download/diskking-670-compressor-v1.0.0/DISKKING-670-Compressor-1.0.0-mpc-sdk.zip)
+[![Download Diskking 670 Compressor 1.0.1](../assets/download-button.png)](https://github.com/mpcplugins/community-plugins/releases/download/diskking-670-compressor-v1.0.1/Diskking-670-Compressor-1.0.1-mpc-sdk.zip) [![Get updates with MPC Plugins Manager](../assets/updates-button.png)](https://mpcplugins.github.io/p/mpc-plugins-manager/)
 
-**Easiest:** on your MPC, open **MPC Plugins Manager**, find **DISKKING 670 Compressor** and tap **Install**.
+**Get updates automatically:** a zip you download by hand never updates itself. Install **[MPC Plugins Manager](https://mpcplugins.github.io/p/mpc-plugins-manager/)** once on your MPC: it shows when a new version of Diskking 670 Compressor is out and installs it in one tap.
+
+**Easiest:** on your MPC, open **MPC Plugins Manager**, find **Diskking 670 Compressor** and tap **Install**.
 New versions are listed at **[mpcplugins.github.io](https://mpcplugins.github.io/)** and in MPC Plugins Manager.
 
 **By hand, step by step:**
-1. Click the **DOWNLOAD** button above. A file called `DISKKING-670-Compressor-1.0.0-mpc-sdk.zip` lands in your **Downloads** folder.
+1. Click the **DOWNLOAD** button above. A file called `Diskking-670-Compressor-1.0.1-mpc-sdk.zip` lands in your **Downloads** folder.
 2. Unzip it. On Windows: right-click the file, then **Extract All**. On a Mac: double-click it.
 3. Connect your MPC to the computer with its USB cable and switch it to **Computer Mode**, so its **internal drive** shows up on the computer.
 4. On the MPC's internal drive, open the folder **VST2 Plugins** (make it if it is not there).
-5. Copy the folder **The Disk King - VST - DISKKING 670 Compressor** from the unzipped files into **VST2 Plugins**.
+5. Copy the folder **The Disk King - VST - Diskking 670 Compressor** from the unzipped files into **VST2 Plugins**.
 6. On the MPC: **Preferences → Enhancements (Beta)** → turn on **Enable Enhancements** and **External Plugin Support** (needs MPC OS 3.10.1 or later). Restart the MPC.
 7. Put it in an **Insert Effects** slot (see above) and play.
 
@@ -96,12 +98,20 @@ The THRESHOLD numbers are where to start: turn it up or down until the needle sw
 
 The Fairchild 670 was designed by Rein Narma and built from 1959. It is a stereo version of the mono 660, with about
 20 tubes per unit. Mastering and recording engineers used it for decades (Abbey Road used Fairchild limiters on Beatles records),
-and today it is one of the most sought-after (and most expensive) pieces of studio gear. DISKKING 670 follows the
+and today it is one of the most sought-after (and most expensive) pieces of studio gear. Diskking 670 follows the
 original instruction manual for the time constants, the 1 dB input steps, unity at 10, LAT-VERT and the BAL / ZERO
 adjustments, and adds the soft, growing variable-mu curve and the tube and transformer colour.
 
 *Fairchild is a trademark of its owner. The Disk King is not affiliated with or endorsed by them; the name is used
-only to say which classic unit DISKKING 670 is modelled on.*
+only to say which classic unit Diskking 670 is modelled on.*
+
+## What is new in 1.0.1
+
+- New name on the MPC: **Diskking 670 Compressor** (was all capitals). If you have 1.0.0, delete the old folder **The Disk King - VST - DISKKING 670 Compressor** from **VST2 Plugins** (or remove it in MPC Plugins Manager).
+
+## Older versions
+
+- [1.0.0](https://github.com/mpcplugins/community-plugins/releases/tag/diskking-670-compressor-v1.0.0): first release (as DISKKING 670 Compressor).
 
 ## Known limits
 
