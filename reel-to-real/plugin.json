@@ -1,0 +1,17 @@
+{
+  "name": "Reel-to-Real",
+  "manufacturer": "The Disk King",
+  "version": "1.0.0",
+  "format": "vst2",
+  "kind": "effect",
+  "uid": "Td9x",
+  "numInputs": 2,
+  "numOutputs": 2,
+  "category": "Effect",
+  "file32": "VST/reel-to-real-arm32.so",
+  "file64": "VST/reel-to-real-arm64.so",
+  "description": "Reel-to-Real: a reel-to-reel tape machine for the MPC. Tape saturation, warmth, NAB / IEC EQ, wow & flutter, tape speed 3.75-30 ips (head bump, top-end loss, hiss), tape stop, WAV recording, spinning reels, VU meters and an LED tape counter.",
+  "author": "The Disk King",
+  "url": "https://thediskking.com",
+  "license": "Copyright The Disk King"
+}
