@@ -2,9 +2,11 @@
 
 A vintage console for Akai MPC standalone hardware. The left side **cleans up old records** (hiss, crackle, pops,
 60 Hz hum). The right side **makes clean sounds dusty** (vinyl noise, surface crackle, deep scratches, loop buzz).
-It also has Lo-Fi, Tape and RPM switches, four IN / OUT level meters and an amber 16 x 2 LCD.
+In the middle are **ten keys**: eight filters (LO-FI, WATER, DYNAMIC, TINNY, RADIO, HOLLOW, SWEEP, MUFFLED), a real
+analog **TAPE**, and HELP. Every key opens its own little mixer with four faders, and you can stack as many as you like.
+Four INPUT / OUTPUT meters and an amber 16 x 2 LCD show what is going on.
 
-**Version 1.2.1. Tested on an Akai MPC Live III (MPC OS 3.10.1). Use at your own risk.**
+**Version 2.0.0. Tested on an Akai MPC Live III (MPC OS 3.10.1). Use at your own risk.**
 
 ![Ashy to Classy on an MPC Live III](ashy-to-classy.png)
 
@@ -24,14 +26,14 @@ Master = the whole beat.
 
 ## Download
 
-[![Download Ashy to Classy 1.2.1](../assets/download-button.png)](https://github.com/mpcplugins/community-plugins/releases/download/ashy-to-classy-v1.2.1/Ashy-to-Classy-1.2.1-mpc-sdk.zip) [![Get updates with MPC Plugins Manager](../assets/updates-button.png)](https://mpcplugins.github.io/p/mpc-plugins-manager/)
+[![Download Ashy to Classy 2.0.0](../assets/download-button.png)](https://github.com/mpcplugins/community-plugins/releases/download/ashy-to-classy-v2.0.0/Ashy-to-Classy-2.0.0-mpc-sdk.zip) [![Get updates with MPC Plugins Manager](../assets/updates-button.png)](https://mpcplugins.github.io/p/mpc-plugins-manager/)
 
 **Get updates automatically:** a zip you download by hand never updates itself. Install **[MPC Plugins Manager](https://mpcplugins.github.io/p/mpc-plugins-manager/)** once on your MPC: it shows when a new version of Ashy to Classy is out and installs it in one tap.
 
 **Easiest:** on your MPC, open **MPC Plugins Manager**, find **Ashy to Classy** and tap **Install**.
 
 **By hand, step by step:**
-1. Click the **DOWNLOAD** button above. A file called `Ashy-to-Classy-1.2.1-mpc-sdk.zip` lands in your **Downloads** folder.
+1. Click the **DOWNLOAD** button above. A file called `Ashy-to-Classy-2.0.0-mpc-sdk.zip` lands in your **Downloads** folder.
 2. Unzip it. On Windows: right-click the file, then **Extract All**. On a Mac: double-click it.
 3. Connect your MPC to the computer with its USB cable and switch it to **Computer Mode**, so its **internal drive** shows up on the computer.
 4. On the MPC's internal drive, open the folder **VST2 Plugins** (make it if it is not there).
@@ -43,22 +45,43 @@ Master = the whole beat.
 
 | | |
 |---|---|
-| ![MAIN](screens/01-main.png) | ![HELP](screens/02-help.png) |
+| ![MAIN](screens/01-main.png) | ![WATER and TAPE mixers open](screens/02-mixers.png) |
+| ![HELP](screens/03-help.png) | |
 
-## What is in 1.2.1
+## What is in 2.0.0
 
 - **Restoration faders (0-10):** HISS (spectral noise reduction), CRACKLE (de-crackle), POP (de-click), HUM (60 Hz notch and
   its harmonics).
 - **Degradation faders (0-10):** vinyl noise, surface crackle, deep scratches (one per turn at 33 1/3 rpm), loop buzz.
-- **Lo-Fi** (12 kHz / 12-bit crunch), **Tape** (warm saturation), **RPM** (wow and flutter), **Bypass**.
-- **Four level meters in real dB** (0 = full scale, red = over): the **IN** pair shows the sound coming in (before the
-  effects), the **OUT** pair shows it going out (after). IN / OUT lights, plus a clip light.
-- **16 x 2 amber LCD:** status, what is on, and the value of any fader you move.
-- **Record and export:** tap PLAY, hit the pad, then STOP / EXPORT. A WAV is saved to `Ashy to Classy Saves` on the drive.
-- **HELP** pop-up, Q-Links mapped to all eight faders (no outline drawn over the panels), 7 presets.
+  The added noise only plays **while your music plays**: no sound in, no noise out.
+- **Ten keys in the middle.** Tap a key and its **mixer** opens over that side of the console (left keys on the left,
+  right keys on the right): four faders, **ON / OFF** and **CLOSE**. A **green light** beside a key = that sound is on.
+  Turn on as many as you like: they run one after another.
+  - **LO-FI**: telephone sound (the 300 Hz to 3.4 kHz phone band).
+  - **WATER**: underwater, muffled and grainy.
+  - **DYNAMIC**: a filter that opens and closes with your playing (SENS, RANGE, SPEED, PEAK).
+  - **TINNY**: a cheap little speaker, no bass.
+  - **RADIO**: an old AM radio.
+  - **HOLLOW**: the middle scooped out, ghostly and phasey.
+  - **SWEEP**: a filter that sways by itself, smooth or in steps (RATE, DEPTH, CENTER, SHAPE).
+  - **MUFFLED**: music through the wall, only the low end.
+  - The six still filters share the same four faders: **LOW CUT**, **HIGH CUT**, **MIDS** (down = hollow, up = boxy) and
+    **GRIT** (overdrive and digital crunch). Each key keeps its own settings and starts on a sound that already works.
+  - **TAPE**: real analog tape: **DRIVE** (saturation that hits the highs first, like tape), **BUMP** (the low-end head
+    bump), **TONE** (top roll-off) and **WOW** (wow and flutter).
+- **Four level meters in real dB** (0 = full scale, red = over): the **INPUT** pair shows the sound coming in (before the
+  effects), the **OUTPUT** pair shows it going out (after).
+- **16 x 2 amber LCD:** status, everything that is on, and the value of any fader you move.
+- **Presets move the faders and keys** on the panel. 16 presets: Default (everything off), Clean / Lo-Fi, Restore Only,
+  Dusty 45, Worn Record, SP Crunch, Tape Warmth, Hot Tape, Old Radio, Long Distance, Water, Dynamic, Tinny, Hollow,
+  Sweep, Muffled. Every sound a preset makes, you can make yourself with the faders and keys.
+- **HELP** pop-up, Q-Links mapped to all eight console faders.
+- **Gone in 2.0.0:** BYPASS (use the MPC's own **ON** key in the plugin header), PLAY / STOP-EXPORT (resample on the
+  MPC instead) and RPM (its wobble is now TAPE's **WOW** fader). Your old projects still open.
 
 ## Older versions
 
+- [1.2.1](https://github.com/mpcplugins/community-plugins/releases/tag/ashy-to-classy-v1.2.1): cleaner panels, a small look update to 1.2.
 - [1.2.0](https://github.com/mpcplugins/community-plugins/releases/tag/ashy-to-classy-v1.2.0): new console art, IN / OUT meters, 16 x 2 LCD.
 - [1.0.0](https://github.com/mpcplugins/community-plugins/releases/tag/ashy-to-classy-v1.0.0): first release (two meters, 20 x 2 LCD).
 

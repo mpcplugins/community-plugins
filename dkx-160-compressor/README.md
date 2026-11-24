@@ -7,7 +7,7 @@ standalone hardware. It is the punchy one: put it on kick, snare, bass or the dr
 - the amber BELOW / red ABOVE threshold lights;
 - a lamp-lit meter that lights up when you press POWER.
 
-**Version 1.0.0. Tested on an Akai MPC Live III (MPC OS 3.10.1). Use at your own risk.**
+**Version 1.0.1. Tested on an Akai MPC Live III (MPC OS 3.10.1). Use at your own risk.**
 
 ![dkx 160 Compressor on an MPC](dkx-160-compressor.png)
 
@@ -25,14 +25,14 @@ dkx 160 Compressor is an **insert effect**, not an instrument. To use it:
 
 ## Download
 
-[![Download dkx 160 Compressor 1.0.0](../assets/download-button.png)](https://github.com/mpcplugins/community-plugins/releases/download/dkx-160-compressor-v1.0.0/dkx-160-Compressor-1.0.0-mpc-sdk.zip) [![Get updates with MPC Plugins Manager](../assets/updates-button.png)](https://mpcplugins.github.io/p/mpc-plugins-manager/)
+[![Download dkx 160 Compressor 1.0.1](../assets/download-button.png)](https://github.com/mpcplugins/community-plugins/releases/download/dkx-160-compressor-v1.0.1/dkx-160-Compressor-1.0.1-mpc-sdk.zip) [![Get updates with MPC Plugins Manager](../assets/updates-button.png)](https://mpcplugins.github.io/p/mpc-plugins-manager/)
 
 **Get updates automatically:** a zip you download by hand never updates itself. Install **[MPC Plugins Manager](https://mpcplugins.github.io/p/mpc-plugins-manager/)** once on your MPC: it shows when a new version of dkx 160 Compressor is out and installs it in one tap.
 
 **Easiest:** on your MPC, open **MPC Plugins Manager**, find **dkx 160 Compressor** and tap **Install**.
 
 **By hand, step by step:**
-1. Click the **DOWNLOAD** button above. A file called `dkx-160-Compressor-1.0.0-mpc-sdk.zip` lands in your **Downloads** folder.
+1. Click the **DOWNLOAD** button above. A file called `dkx-160-Compressor-1.0.1-mpc-sdk.zip` lands in your **Downloads** folder.
 2. Unzip it. On Windows: right-click the file, then **Extract All**. On a Mac: double-click it.
 3. Connect your MPC to the computer with its USB cable and switch it to **Computer Mode**, so its **internal drive** shows up on the computer.
 4. On the MPC's internal drive, open the folder **VST2 Plugins** (make it if it is not there).
@@ -97,6 +97,16 @@ favourite for **kick, snare and bass**. dkx 160 follows the original instruction
 
 *dbx is a trademark of its owner. The Disk King is not affiliated with or endorsed by them; the name is used only to
 say which classic unit dkx 160 is modelled on. The dkx logo is The Disk King's own.*
+
+## What is new in 1.0.1
+
+- **Presets move the panel:** pick a preset and the knobs, switches and buttons on the panel go to its settings (OUTPUT, THRESHOLD and COMPRESSION knobs, POWER and the meter switch).
+- **Starts on Default:** a new "Default" preset (nothing set) is first, and the plugin loads on it until you pick a preset.
+- Everything else as in 1.0.0. Your projects still open.
+
+## Older versions
+
+- [1.0.0](https://github.com/mpcplugins/community-plugins/releases/tag/dkx-160-compressor-v1.0.0): first release.
 
 ## Known limits
 

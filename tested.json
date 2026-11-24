@@ -110,5 +110,40 @@
   "device": "Akai MPC Live III",
   "firmware": "MPC OS 3.10.1",
   "date": "2026-11-23"
+ },
+ {
+  "id": "ashy-to-classy",
+  "version": "2.0.0",
+  "device": "Akai MPC Live III",
+  "firmware": "MPC OS 3.10.1",
+  "date": "2026-11-24"
+ },
+ {
+  "id": "reel-to-real",
+  "version": "1.1.1",
+  "device": "Akai MPC Live III",
+  "firmware": "MPC OS 3.10.1",
+  "date": "2026-11-24"
+ },
+ {
+  "id": "warm-front-compressor",
+  "version": "1.0.1",
+  "device": "Akai MPC Live III",
+  "firmware": "MPC OS 3.10.1",
+  "date": "2026-11-24"
+ },
+ {
+  "id": "diskking-670-compressor",
+  "version": "1.0.2",
+  "device": "Akai MPC Live III",
+  "firmware": "MPC OS 3.10.1",
+  "date": "2026-11-24"
+ },
+ {
+  "id": "dkx-160-compressor",
+  "version": "1.0.1",
+  "device": "Akai MPC Live III",
+  "firmware": "MPC OS 3.10.1",
+  "date": "2026-11-24"
  }
 ]

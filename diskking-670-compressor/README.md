@@ -9,7 +9,7 @@ It does what the real unit is known for:
 - the famous "thump" when the tubes are out of balance;
 - gain-reduction meters.
 
-**Version 1.0.1. Tested on an Akai MPC Live III (MPC OS 3.10.1). Use at your own risk.**
+**Version 1.0.2. Tested on an Akai MPC Live III (MPC OS 3.10.1). Use at your own risk.**
 
 ![Diskking 670 Compressor on an MPC](diskking-670-compressor.png)
 
@@ -27,7 +27,7 @@ Diskking 670 Compressor is an **insert effect**, not an instrument. To use it:
 
 ## Download
 
-[![Download Diskking 670 Compressor 1.0.1](../assets/download-button.png)](https://github.com/mpcplugins/community-plugins/releases/download/diskking-670-compressor-v1.0.1/Diskking-670-Compressor-1.0.1-mpc-sdk.zip) [![Get updates with MPC Plugins Manager](../assets/updates-button.png)](https://mpcplugins.github.io/p/mpc-plugins-manager/)
+[![Download Diskking 670 Compressor 1.0.2](../assets/download-button.png)](https://github.com/mpcplugins/community-plugins/releases/download/diskking-670-compressor-v1.0.2/Diskking-670-Compressor-1.0.2-mpc-sdk.zip) [![Get updates with MPC Plugins Manager](../assets/updates-button.png)](https://mpcplugins.github.io/p/mpc-plugins-manager/)
 
 **Get updates automatically:** a zip you download by hand never updates itself. Install **[MPC Plugins Manager](https://mpcplugins.github.io/p/mpc-plugins-manager/)** once on your MPC: it shows when a new version of Diskking 670 Compressor is out and installs it in one tap.
 
@@ -35,7 +35,7 @@ Diskking 670 Compressor is an **insert effect**, not an instrument. To use it:
 New versions are listed at **[mpcplugins.github.io](https://mpcplugins.github.io/)** and in MPC Plugins Manager.
 
 **By hand, step by step:**
-1. Click the **DOWNLOAD** button above. A file called `Diskking-670-Compressor-1.0.1-mpc-sdk.zip` lands in your **Downloads** folder.
+1. Click the **DOWNLOAD** button above. A file called `Diskking-670-Compressor-1.0.2-mpc-sdk.zip` lands in your **Downloads** folder.
 2. Unzip it. On Windows: right-click the file, then **Extract All**. On a Mac: double-click it.
 3. Connect your MPC to the computer with its USB cable and switch it to **Computer Mode**, so its **internal drive** shows up on the computer.
 4. On the MPC's internal drive, open the folder **VST2 Plugins** (make it if it is not there).
@@ -105,12 +105,21 @@ adjustments, and adds the soft, growing variable-mu curve and the tube and trans
 *Fairchild is a trademark of its owner. The Disk King is not affiliated with or endorsed by them; the name is used
 only to say which classic unit Diskking 670 is modelled on.*
 
+## What is new in 1.0.2
+
+- **Presets move the panel:** pick a preset and the knobs, switches and buttons on the panel go to its settings.
+- **Starts on Default:** a new "Default" preset (nothing set) is first, and the plugin loads on it until you pick a preset.
+- **LEFT-LAT THRESHOLD has its arrow** on the outer ring, like RIGHT-VERT, turning with the knob.
+- **A white speck** on the screw under RIGHT-VERT ZERO is gone.
+- Everything else as in 1.0.1. Your projects still open.
+
 ## What is new in 1.0.1
 
 - New name on the MPC: **Diskking 670 Compressor** (was all capitals). If you have 1.0.0, delete the old folder **The Disk King - VST - DISKKING 670 Compressor** from **VST2 Plugins** (or remove it in MPC Plugins Manager).
 
 ## Older versions
 
+- [1.0.1](https://github.com/mpcplugins/community-plugins/releases/tag/diskking-670-compressor-v1.0.1): new name (Diskking 670 Compressor), banner.
 - [1.0.0](https://github.com/mpcplugins/community-plugins/releases/tag/diskking-670-compressor-v1.0.0): first release (as DISKKING 670 Compressor).
 
 ## Known limits

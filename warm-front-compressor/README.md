@@ -5,7 +5,7 @@ meters, a 12-light GAIN REDUCTION strip, three compressor styles (CLASSIC, VINTA
 filter, and **27 presets**, including 19 built from the published settings of the most famous studio
 compressors of all time.
 
-**Version 1.0.0. Tested on an Akai MPC Live III (MPC OS 3.10.1). Use at your own risk.**
+**Version 1.0.1. Tested on an Akai MPC Live III (MPC OS 3.10.1). Use at your own risk.**
 
 ![Warm Front Compressor on an MPC](warm-front-compressor.png)
 
@@ -23,14 +23,14 @@ Warm Front is an **insert effect**, not an instrument. To use it:
 
 ## Download
 
-[![Download Warm Front Compressor 1.0.0](../assets/download-button.png)](https://github.com/mpcplugins/community-plugins/releases/download/warm-front-compressor-v1.0.0/Warm-Front-Compressor-1.0.0-mpc-sdk.zip) [![Get updates with MPC Plugins Manager](../assets/updates-button.png)](https://mpcplugins.github.io/p/mpc-plugins-manager/)
+[![Download Warm Front Compressor 1.0.1](../assets/download-button.png)](https://github.com/mpcplugins/community-plugins/releases/download/warm-front-compressor-v1.0.1/Warm-Front-Compressor-1.0.1-mpc-sdk.zip) [![Get updates with MPC Plugins Manager](../assets/updates-button.png)](https://mpcplugins.github.io/p/mpc-plugins-manager/)
 
 **Get updates automatically:** a zip you download by hand never updates itself. Install **[MPC Plugins Manager](https://mpcplugins.github.io/p/mpc-plugins-manager/)** once on your MPC: it shows when a new version of Warm Front Compressor is out and installs it in one tap.
 
 **Easiest:** on your MPC, open **MPC Plugins Manager**, find **Warm Front Compressor** and tap **Install**.
 
 **By hand, step by step:**
-1. Click the **DOWNLOAD** button above. A file called `Warm-Front-Compressor-1.0.0-mpc-sdk.zip` lands in your **Downloads** folder.
+1. Click the **DOWNLOAD** button above. A file called `Warm-Front-Compressor-1.0.1-mpc-sdk.zip` lands in your **Downloads** folder.
 2. Unzip it. On Windows: right-click the file, then **Extract All**. On a Mac: double-click it.
 3. Connect your MPC to the computer with its USB cable and switch it to **Computer Mode**, so its **internal drive** shows up on the computer.
 4. On the MPC's internal drive, open the folder **VST2 Plugins** (make it if it is not there).
@@ -173,6 +173,17 @@ all other product names are trademarks of their owners. They are used here only 
 settings a preset is based on. Warm Front Compressor is an original plugin; it is not an emulation of, and is not
 affiliated with or endorsed by, any of these companies. Artist and engineer names are given only as history of the
 hardware, not as endorsements of this plugin.
+
+## What is new in 1.0.1
+
+- **Presets move the panel:** pick a preset and the knobs, switches and buttons on the panel go to its settings.
+- **Starts on Default:** a new "Default" preset (nothing set) is first, and the plugin loads on it until you pick a preset.
+- **DISKKING on the meters:** the meter faces now carry The Disk King's DISKKING brand, in the Diskking 670 meter's lettering. INPUT and OUTPUT stay as they were.
+- Everything else as in 1.0.0. Your projects still open.
+
+## Older versions
+
+- [1.0.0](https://github.com/mpcplugins/community-plugins/releases/tag/warm-front-compressor-v1.0.0): first release.
 
 ## Known limits
 

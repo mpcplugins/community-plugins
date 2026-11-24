@@ -5,7 +5,7 @@ tape: saturation, warmth, wow and flutter, tape speed from 3.75 to 30 inches per
 curves, hiss, tape stop, and recording to a WAV. While the sound plays, the reels really turn (the full reel slowly,
 the empty one fast), the tape moves from one reel to the other, the VU needles move and the red counter runs.
 
-**Version 1.1.0. Tested on an Akai MPC Live III (MPC OS 3.10.1). Use at your own risk.**
+**Version 1.1.1. Tested on an Akai MPC Live III (MPC OS 3.10.1). Use at your own risk.**
 
 ![Reel-to-Real on an MPC](reel-to-real.png)
 
@@ -26,14 +26,14 @@ coast to a stop.
 
 ## Download
 
-[![Download Reel-to-Real 1.1.0](../assets/download-button.png)](https://github.com/mpcplugins/community-plugins/releases/download/reel-to-real-v1.1.0/Reel-to-Real-1.1.0-mpc-sdk.zip) [![Get updates with MPC Plugins Manager](../assets/updates-button.png)](https://mpcplugins.github.io/p/mpc-plugins-manager/)
+[![Download Reel-to-Real 1.1.1](../assets/download-button.png)](https://github.com/mpcplugins/community-plugins/releases/download/reel-to-real-v1.1.1/Reel-to-Real-1.1.1-mpc-sdk.zip) [![Get updates with MPC Plugins Manager](../assets/updates-button.png)](https://mpcplugins.github.io/p/mpc-plugins-manager/)
 
 **Get updates automatically:** a zip you download by hand never updates itself. Install **[MPC Plugins Manager](https://mpcplugins.github.io/p/mpc-plugins-manager/)** once on your MPC: it shows when a new version of Reel-to-Real is out and installs it in one tap.
 
 **Easiest:** on your MPC, open **MPC Plugins Manager**, find **Reel-to-Real** and tap **Install**.
 
 **By hand, step by step:**
-1. Click the **DOWNLOAD** button above. A file called `Reel-to-Real-1.1.0-mpc-sdk.zip` lands in your **Downloads** folder.
+1. Click the **DOWNLOAD** button above. A file called `Reel-to-Real-1.1.1-mpc-sdk.zip` lands in your **Downloads** folder.
 2. Unzip it. On Windows: right-click the file, then **Extract All**. On a Mac: double-click it.
 3. Connect your MPC to the computer with its USB cable and switch it to **Computer Mode**, so its **internal drive** shows up on the computer.
 4. On the MPC's internal drive, open the folder **VST2 Plugins** (make it if it is not there).
@@ -86,6 +86,13 @@ The settings follow published specs of classic 1/4-inch decks and tape (calibrat
 time constants, wow and flutter, hiss) and how engineers describe the speeds: 30 ips tight and clean for mix bus
 and mastering, 15 ips rounder with more low end for rock mixes and drums, 7.5 and below warm and fat.
 
+## What is new in 1.1.1
+
+- **Presets move the panel:** pick a preset and the knobs, switches and buttons on the panel go to its settings.
+- **Starts on Default:** a new "Default" preset (nothing set) is first, and the plugin loads on it until you pick a preset.
+- **DISKKING on the meters:** the meter faces now carry The Disk King's DISKKING brand, in the Diskking 670 meter's lettering.
+- Everything else as in 1.1.0. Your projects still open.
+
 ## What is new in 1.1.0
 
 - **The counter follows your loop:** while the MPC sequence plays, it shows the time from the start of the loop and resets to 00:00.0 every pass (a 4-bar loop at 90 BPM counts to 00:10.6, then starts over).
@@ -94,6 +101,7 @@ and mastering, 15 ips rounder with more low end for rock mixes and drums, 7.5 an
 
 ## Older versions
 
+- [1.1.0](https://github.com/mpcplugins/community-plugins/releases/tag/reel-to-real-v1.1.0): the counter follows your loop, full-screen deck, new HELP card.
 - [1.0.0](https://github.com/mpcplugins/community-plugins/releases/tag/reel-to-real-v1.0.0): first release.
 
 ## Known limits
