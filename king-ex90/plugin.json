@@ -1,0 +1,17 @@
+{
+  "name": "King EX90",
+  "manufacturer": "The Disk King",
+  "version": "1.0.0",
+  "format": "vst2",
+  "kind": "effect",
+  "uid": "THlm",
+  "numInputs": 2,
+  "numOutputs": 2,
+  "category": "Effect",
+  "file32": "VST/king-ex90-arm32.so",
+  "file64": "VST/king-ex90-arm64.so",
+  "description": "King EX90 by The Disk King: Inspired by the Akai EX90R digital reverb (1988). Eight modes (L.HALL, LOFT, L.ROOM, GATE, S.HALL, S.ROOM, PLATE, REVERSE), predelay 0-200 ms, decay 0.3-15 s or gate time, high cut 1-16 kHz, separate DRY and REVERB levels, overload light, EFFECT switch with a natural tail, and a 12-BIT switch for the original's 12-bit 39 kHz sound.",
+  "author": "The Disk King",
+  "url": "https://thediskking.com",
+  "license": "Copyright The Disk King"
+}
