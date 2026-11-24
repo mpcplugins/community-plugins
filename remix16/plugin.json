@@ -1,0 +1,17 @@
+{
+  "name": "remix16",
+  "manufacturer": "The Disk King",
+  "version": "1.0.0",
+  "format": "vst2",
+  "kind": "effect",
+  "uid": "TGu3",
+  "numInputs": 2,
+  "numOutputs": 2,
+  "category": "Effect",
+  "file32": "VST/remix16-arm32.so",
+  "file64": "VST/remix16-arm64.so",
+  "description": "remix16 by The Disk King: Inspired by the AMS RMX16 digital reverb (1982). 18 programs (Ambience, Room A1, Hall C1, Plate A1, Hall B3, Chorus, Echo, Nonlin 2, Reverse 1, Delay, Freeze, Hall A1, Nonlin 1, Image P1, Plate B1, Reverse 2, Room A0, Room B1) on a working front panel: keypad entry, nudge keys, 9 save / recall stores, the pot on decay, decay filters low / high, red LED display, level lights, and a MIX knob.",
+  "author": "The Disk King",
+  "url": "https://thediskking.com",
+  "license": "Copyright The Disk King"
+}
