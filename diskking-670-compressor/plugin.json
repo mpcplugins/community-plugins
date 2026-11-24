@@ -10,7 +10,7 @@
   "category": "Effect",
   "file32": "VST/diskking-670-compressor-arm32.so",
   "file64": "VST/diskking-670-compressor-arm64.so",
-  "description": "Diskking 670 Compressor: The Disk King's variation on the Fairchild 670, the classic two-channel variable-mu tube limiter, for the MPC. Stepped input gain, threshold, six time constants, Left-Right or Lat-Vert (mid/side), balance thump and gain-reduction meters.",
+  "description": "Diskking 670 Compressor by The Disk King: Inspired by the Fairchild 670 two-channel variable-mu tube limiter. For the MPC: Stepped input gain, threshold, six time constants, Left-Right or Lat-Vert (mid/side), balance thump and gain-reduction meters.",
   "author": "The Disk King",
   "url": "https://thediskking.com",
   "license": "Copyright The Disk King"

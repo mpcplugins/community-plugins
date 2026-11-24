@@ -1,6 +1,6 @@
 # dkx 160 Compressor (The Disk King)
 
-**The Disk King X, dkx 160 Compressor, inspired by the dbx 160.** The Disk King's variation on the classic 1976 VCA compressor/limiter, for Akai MPC
+**The Disk King X, dkx 160 Compressor, inspired by the dbx 160.** A classic 1976 VCA compressor/limiter for Akai MPC
 standalone hardware. It is the punchy one: put it on kick, snare, bass or the drum bus. It has:
 - true-RMS detection with no attack or release knobs: it follows the music on its own, just like the original;
 - compression from 1:1 all the way to infinity;
@@ -96,7 +96,7 @@ favourite for **kick, snare and bass**. dkx 160 follows the original instruction
 - the published attack figures and the 120 dB/s release.
 
 *dbx is a trademark of its owner. The Disk King is not affiliated with or endorsed by them; the name is used only to
-say which classic unit dkx 160 is modelled on. The dkx logo is The Disk King's own.*
+say which classic unit dkx 160 is inspired by. The dkx logo is The Disk King's own.*
 
 ## What is new in 1.0.1
 

@@ -1,7 +1,6 @@
 # Diskking 670 Compressor (The Disk King)
 
-**The Disk King's variation on the Fairchild 670**, the classic 1959 two-channel variable-mu tube limiter,
-for Akai MPC standalone hardware. Put it on your Master for glue, on drums to squash them, or on a vocal to level it.
+**Diskking 670 Compressor by The Disk King: Inspired by the Fairchild 670 two-channel variable-mu tube limiter.** (The original is from 1959.) For Akai MPC standalone hardware. Put it on your Master for glue, on drums to squash them, or on a vocal to level it.
 It does what the real unit is known for:
 - a very soft knee that limits harder the more you push it;
 - six TIME CONSTANT settings, two of which follow the music;
@@ -103,7 +102,7 @@ original instruction manual for the time constants, the 1 dB input steps, unity 
 adjustments, and adds the soft, growing variable-mu curve and the tube and transformer colour.
 
 *Fairchild is a trademark of its owner. The Disk King is not affiliated with or endorsed by them; the name is used
-only to say which classic unit Diskking 670 is modelled on.*
+only to say which classic unit Diskking 670 is inspired by.*
 
 ## What is new in 1.0.2
 

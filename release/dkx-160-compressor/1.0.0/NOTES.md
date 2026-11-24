@@ -1,6 +1,6 @@
 dkx 160 Compressor 1.0.0 by The Disk King
 
-**The Disk King's variation on the dbx 160 compressor/limiter (1976), for the MPC.**
+**dkx 160 Compressor by The Disk King: Inspired by the dbx 160 compressor/limiter (1976).**
 
 ![dkx 160 Compressor 1.0.0](https://raw.githubusercontent.com/mpcplugins/community-plugins/main/dkx-160-compressor/dkx-160-compressor.png)
 
@@ -26,6 +26,6 @@ dkx 160 Compressor 1.0.0 by The Disk King
 
 Install: copy `The Disk King - VST - dkx 160 Compressor` into `VST2 Plugins` on your MPC's internal drive (MPC OS 3.10.1+, Enhancements and External Plugin Support on), or install it with MPC Plugins Manager.
 
-*dbx is a trademark of its owner. The Disk King is not affiliated with or endorsed by them; the name is used only to say which classic unit this plugin is modelled on. The dkx logo is The Disk King's own.*
+*dbx is a trademark of its owner. The Disk King is not affiliated with or endorsed by them; the name is used only to say which classic unit this plugin is inspired by. The dkx logo is The Disk King's own.*
 
 Provided as is, with no warranty. Use at your own risk; The Disk King is not responsible in any way for any loss or damage.

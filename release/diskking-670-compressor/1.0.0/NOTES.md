@@ -1,6 +1,6 @@
 DISKKING 670 Compressor 1.0.0 by The Disk King
 
-**The Disk King's variation on the Fairchild 670 tube limiter, for the MPC.**
+**Diskking 670 Compressor by The Disk King: Inspired by the Fairchild 670 two-channel variable-mu tube limiter.**
 
 ![DISKKING 670 Compressor 1.0.0](https://raw.githubusercontent.com/mpcplugins/community-plugins/main/diskking-670-compressor/diskking-670-compressor.png)
 
@@ -30,6 +30,6 @@ DISKKING 670 Compressor 1.0.0 by The Disk King
 
 Install: copy `The Disk King - VST - DISKKING 670 Compressor` into `VST2 Plugins` on your MPC's internal drive (MPC OS 3.10.1+, Enhancements and External Plugin Support on), or install it with MPC Plugins Manager. New versions are listed at mpcplugins.github.io.
 
-*Fairchild is a trademark of its owner. The Disk King is not affiliated with or endorsed by them; the name is used only to say which classic unit this plugin is modelled on.*
+*Fairchild is a trademark of its owner. The Disk King is not affiliated with or endorsed by them; the name is used only to say which classic unit this plugin is inspired by.*
 
 Provided as is, with no warranty. Use at your own risk; The Disk King is not responsible in any way for any loss or damage.
