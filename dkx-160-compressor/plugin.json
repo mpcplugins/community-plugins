@@ -10,7 +10,7 @@
   "category": "Effect",
   "file32": "VST/dkx-160-compressor-arm32.so",
   "file64": "VST/dkx-160-compressor-arm64.so",
-  "description": "dkx 160 Compressor: The Disk King's variation on the dbx 160 VCA compressor/limiter, for the MPC. True-RMS detection with automatic attack and release, threshold 10 mV to 3 V, compression 1:1 to infinity, output gain +-20 dB, amber BELOW / red ABOVE lights and a lamp-lit meter.",
+  "description": "The Disk King X, dkx 160 Compressor, inspired by the dbx 160. A VCA compressor/limiter for the MPC. True-RMS detection with automatic attack and release, threshold 10 mV to 3 V, compression 1:1 to infinity, output gain +-20 dB, amber BELOW / red ABOVE lights and a lamp-lit meter.",
   "author": "The Disk King",
   "url": "https://thediskking.com",
   "license": "Copyright The Disk King"
