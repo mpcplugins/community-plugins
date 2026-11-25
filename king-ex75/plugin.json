@@ -1,0 +1,17 @@
+{
+  "name": "King EX75",
+  "manufacturer": "The Disk King",
+  "version": "1.0.0",
+  "format": "vst2",
+  "kind": "effect",
+  "uid": "T59c",
+  "numInputs": 2,
+  "numOutputs": 2,
+  "category": "Effect",
+  "file32": "VST/king-ex75-arm32.so",
+  "file64": "VST/king-ex75-arm64.so",
+  "description": "King EX75 by The Disk King: Inspired by the Akai EX75N noise reduction (1987). THRESHOLD -50 to -10 dB, RATIO 1:1 to 1:8 (gentle expander to hard gate), 0.3 ms attack, DECAY 0.2 to 2 s, a 6 dB/oct FILTER (200 Hz to 5 kHz) that rolls the hiss off when the sound gets quiet, REDUCTION light, EFFECT in/out.",
+  "author": "The Disk King",
+  "url": "https://thediskking.com",
+  "license": "Copyright The Disk King"
+}

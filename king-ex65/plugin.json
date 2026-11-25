@@ -1,0 +1,17 @@
+{
+  "name": "King EX65",
+  "manufacturer": "The Disk King",
+  "version": "1.0.0",
+  "format": "vst2",
+  "kind": "effect",
+  "uid": "TyZW",
+  "numInputs": 2,
+  "numOutputs": 2,
+  "category": "Effect",
+  "file32": "VST/king-ex65-arm32.so",
+  "file64": "VST/king-ex65-arm64.so",
+  "description": "King EX65 by The Disk King: Inspired by the Akai EX65D digital delay (1987). Delay time RANGE (2, 8, 32, 128, 512 ms) x MULTI (x0.5 to x2) = 1 to 1024 ms, FEED BACK, RATE and WIDTH modulation (chorus, flanger, doubling, tape wobble), DELAY LEVEL, HOLD (loops the echoes forever), INPUT light, EFFECT in/out with the echoes ringing out.",
+  "author": "The Disk King",
+  "url": "https://thediskking.com",
+  "license": "Copyright The Disk King"
+}

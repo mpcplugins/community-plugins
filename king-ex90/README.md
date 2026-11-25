@@ -1,16 +1,70 @@
 # King EX90 (The Disk King)
 
 **King EX90 by The Disk King: Inspired by the Akai EX90R digital reverb (1988).** A half-rack 80s studio reverb for
-Akai MPC standalone hardware, bolted into its own rack. It has:
+Akai MPC standalone hardware, in the King Rack. It has:
 - eight reverb modes: L.HALL, LOFT, L.ROOM, GATE, S.HALL, S.ROOM, PLATE and REVERSE;
 - the big 80s **gated** drum sound and a **reverse** swell;
 - predelay 0 to 200 ms, decay 0.3 to 15 seconds (or the gate time), and a steep HIGH CUT filter;
 - separate DRY and REVERB levels, an OVERLOAD light and an EFFECT rocker that lets the tail ring out;
 - a **12-BIT** rocker for the original's gritty 12-bit, 39 kHz sound.
 
-**Version 1.0.0. Tested on an Akai MPC Live III (MPC OS 3.10.1). Use at your own risk.**
+**Version 1.1.0 (the King Rack). Tested on an Akai MPC Live III (MPC OS 3.10.1). Free. Use at your own risk.**
 
 ![King EX90 on an MPC](king-ex90.png)
+
+## The King Rack: get the whole bundle, free
+
+[![The King Rack: six free 80s half-rack effects](../king-rack/king-rack.png)](../king-rack/)
+
+King EX90 is one of the six units of **[The King Rack](../king-rack/)**. Back in 1987-88 Akai made a little family of half-rack studio effects, the **EX series**: a delay, a compressor/gate, a noise reduction, an enhancer, a parametric EQ and a reverb, each with a handful of knobs and a red EFFECT light. The King Rack brings all six to the MPC, each one rebuilt from photos of the real unit and Akai's own published figures. It was made for fun, trying to get as close as possible to the original sound. All six are free.
+
+On the MPC they all sit in the same rack: the one you load is lit in the middle, its neighbours stay in the rack
+above and below it, darkened. Get them all:
+
+| Unit | | Inspired by | Download |
+|---|---|---|---|
+| **[King EX90](../king-ex90/)** (this one) | Digital Reverb | after the Akai EX90R (1988) | [![Download King EX90](../assets/download-button.png)](https://github.com/mpcplugins/community-plugins/releases/download/king-ex90-v1.1.0/King-EX90-1.1.0-mpc-sdk.zip) |
+| **[King EX85](../king-ex85/)** | Parametric EQ | after the Akai EX85P (1987) | [![Download King EX85](../assets/download-button.png)](https://github.com/mpcplugins/community-plugins/releases/download/king-ex85-v1.0.0/King-EX85-1.0.0-mpc-sdk.zip) |
+| **[King EX80](../king-ex80/)** | Enhancer | after the Akai EX80E (1987) | [![Download King EX80](../assets/download-button.png)](https://github.com/mpcplugins/community-plugins/releases/download/king-ex80-v1.0.0/King-EX80-1.0.0-mpc-sdk.zip) |
+| **[King EX75](../king-ex75/)** | Noise Reduction | after the Akai EX75N (1987) | [![Download King EX75](../assets/download-button.png)](https://github.com/mpcplugins/community-plugins/releases/download/king-ex75-v1.0.0/King-EX75-1.0.0-mpc-sdk.zip) |
+| **[King EX70](../king-ex70/)** | Comp / Gate | after the Akai EX70C (1987) | [![Download King EX70](../assets/download-button.png)](https://github.com/mpcplugins/community-plugins/releases/download/king-ex70-v1.0.0/King-EX70-1.0.0-mpc-sdk.zip) |
+| **[King EX65](../king-ex65/)** | Digital Delay | after the Akai EX65D (1987) | [![Download King EX65](../assets/download-button.png)](https://github.com/mpcplugins/community-plugins/releases/download/king-ex65-v1.0.0/King-EX65-1.0.0-mpc-sdk.zip) |
+
+## The King Rack: get the whole bundle, free
+
+[![The King Rack: six free 80s half-rack effects](../king-rack/king-rack.png)](../king-rack/)
+
+King EX90 is one of the six units of **[The King Rack](../king-rack/)**. Back in 1987-88 Akai made a little family of half-rack studio effects, the **EX series**: a delay, a compressor/gate, a noise reduction, an enhancer, a parametric EQ and a reverb, each with a handful of knobs and a red EFFECT light. The King Rack brings all six to the MPC, each one rebuilt from photos of the real unit and Akai's own published figures. It was made for fun, trying to get as close as possible to the original sound. All six are free.
+
+On the MPC they all sit in the same rack: the one you load is lit in the middle, its neighbours stay in the rack
+above and below it, darkened. Get them all:
+
+| Unit | | Inspired by | Download |
+|---|---|---|---|
+| **[King EX90](../king-ex90/)** (this one) | Digital Reverb | after the Akai EX90R (1988) | [![Download King EX90](../assets/download-button.png)](https://github.com/mpcplugins/community-plugins/releases/download/king-ex90-v1.1.0/King-EX90-1.1.0-mpc-sdk.zip) |
+| **[King EX85](../king-ex85/)** | Parametric EQ | after the Akai EX85P (1987) | [![Download King EX85](../assets/download-button.png)](https://github.com/mpcplugins/community-plugins/releases/download/king-ex85-v1.0.0/King-EX85-1.0.0-mpc-sdk.zip) |
+| **[King EX80](../king-ex80/)** | Enhancer | after the Akai EX80E (1987) | [![Download King EX80](../assets/download-button.png)](https://github.com/mpcplugins/community-plugins/releases/download/king-ex80-v1.0.0/King-EX80-1.0.0-mpc-sdk.zip) |
+| **[King EX75](../king-ex75/)** | Noise Reduction | after the Akai EX75N (1987) | [![Download King EX75](../assets/download-button.png)](https://github.com/mpcplugins/community-plugins/releases/download/king-ex75-v1.0.0/King-EX75-1.0.0-mpc-sdk.zip) |
+| **[King EX70](../king-ex70/)** | Comp / Gate | after the Akai EX70C (1987) | [![Download King EX70](../assets/download-button.png)](https://github.com/mpcplugins/community-plugins/releases/download/king-ex70-v1.0.0/King-EX70-1.0.0-mpc-sdk.zip) |
+| **[King EX65](../king-ex65/)** | Digital Delay | after the Akai EX65D (1987) | [![Download King EX65](../assets/download-button.png)](https://github.com/mpcplugins/community-plugins/releases/download/king-ex65-v1.0.0/King-EX65-1.0.0-mpc-sdk.zip) |
+
+## The King Rack: get the whole bundle, free
+
+[![The King Rack: six free 80s half-rack effects](../king-rack/king-rack.png)](../king-rack/)
+
+King EX90 is one of the six units of **[The King Rack](../king-rack/)**. Back in 1987-88 Akai made a little family of half-rack studio effects, the **EX series**: a delay, a compressor/gate, a noise reduction, an enhancer, a parametric EQ and a reverb, each with a handful of knobs and a red EFFECT light. The King Rack brings all six to the MPC, each one rebuilt from photos of the real unit and Akai's own published figures. It was made for fun, trying to get as close as possible to the original sound. All six are free.
+
+On the MPC they all sit in the same rack: the one you load is lit in the middle, its neighbours stay in the rack
+above and below it, darkened. Get them all:
+
+| Unit | | Inspired by | Download |
+|---|---|---|---|
+| **[King EX90](../king-ex90/)** (this one) | Digital Reverb | after the Akai EX90R (1988) | [![Download King EX90](../assets/download-button.png)](https://github.com/mpcplugins/community-plugins/releases/download/king-ex90-v1.1.0/King-EX90-1.1.0-mpc-sdk.zip) |
+| **[King EX85](../king-ex85/)** | Parametric EQ | after the Akai EX85P (1987) | [![Download King EX85](../assets/download-button.png)](https://github.com/mpcplugins/community-plugins/releases/download/king-ex85-v1.0.0/King-EX85-1.0.0-mpc-sdk.zip) |
+| **[King EX80](../king-ex80/)** | Enhancer | after the Akai EX80E (1987) | [![Download King EX80](../assets/download-button.png)](https://github.com/mpcplugins/community-plugins/releases/download/king-ex80-v1.0.0/King-EX80-1.0.0-mpc-sdk.zip) |
+| **[King EX75](../king-ex75/)** | Noise Reduction | after the Akai EX75N (1987) | [![Download King EX75](../assets/download-button.png)](https://github.com/mpcplugins/community-plugins/releases/download/king-ex75-v1.0.0/King-EX75-1.0.0-mpc-sdk.zip) |
+| **[King EX70](../king-ex70/)** | Comp / Gate | after the Akai EX70C (1987) | [![Download King EX70](../assets/download-button.png)](https://github.com/mpcplugins/community-plugins/releases/download/king-ex70-v1.0.0/King-EX70-1.0.0-mpc-sdk.zip) |
+| **[King EX65](../king-ex65/)** | Digital Delay | after the Akai EX65D (1987) | [![Download King EX65](../assets/download-button.png)](https://github.com/mpcplugins/community-plugins/releases/download/king-ex65-v1.0.0/King-EX65-1.0.0-mpc-sdk.zip) |
 
 ## This is an EFFECT: find it in Insert Effects
 
@@ -26,14 +80,14 @@ shared by several tracks, put it on a **Return** with **DRY at MIN** (100% wet) 
 
 ## Download
 
-[![Download King EX90 1.0.0](../assets/download-button.png)](https://github.com/mpcplugins/community-plugins/releases/download/king-ex90-v1.0.0/King-EX90-1.0.0-mpc-sdk.zip) [![Get updates with MPC Plugins Manager](../assets/updates-button.png)](https://mpcplugins.github.io/p/mpc-plugins-manager/)
+[![Download King EX90 1.1.0](../assets/download-button.png)](https://github.com/mpcplugins/community-plugins/releases/download/king-ex90-v1.1.0/King-EX90-1.1.0-mpc-sdk.zip) [![Get updates with MPC Plugins Manager](../assets/updates-button.png)](https://mpcplugins.github.io/p/mpc-plugins-manager/)
 
 **Get updates automatically:** a zip you download by hand never updates itself. Install **[MPC Plugins Manager](https://mpcplugins.github.io/p/mpc-plugins-manager/)** once on your MPC: it shows when a new version of King EX90 is out and installs it in one tap.
 
 **Easiest:** on your MPC, open **MPC Plugins Manager**, find **King EX90** and tap **Install**.
 
 **By hand, step by step:**
-1. Click the **DOWNLOAD** button above. A file called `King-EX90-1.0.0-mpc-sdk.zip` lands in your **Downloads** folder.
+1. Click the **DOWNLOAD** button above. A file called `King-EX90-1.1.0-mpc-sdk.zip` lands in your **Downloads** folder.
 2. Unzip it. On Windows: right-click the file, then **Extract All**. On a Mac: double-click it.
 3. Connect your MPC to the computer with its USB cable and switch it to **Computer Mode**, so its **internal drive** shows up on the computer.
 4. On the MPC's internal drive, open the folder **VST2 Plugins** (make it if it is not there).
@@ -45,7 +99,7 @@ shared by several tracks, put it on a **Return** with **DRY at MIN** (100% wet) 
 
 | | |
 |---|---|
-| ![MAIN](screens/01-main.png) | ![HELP](screens/02-help.png) |
+| ![MAIN](screens/01-main.png) | ![HELP](screens/03-help.png) |
 
 ## Turning the knobs
 
@@ -100,6 +154,21 @@ no longer makes noise.
 
 *Akai and EX90R are trademarks of their owner. The Disk King is not affiliated with or endorsed by them; the name is
 used only to say which classic unit King EX90 is inspired by. The KING logo is The Disk King's own.*
+
+## What's new in 1.1.0
+
+- The King Rack: King EX90 now sits in one rack with the five other King units (darkened above and below it).
+- The sound is unchanged; your projects and presets load as before.
+
+## What's new in 1.1.0
+
+- The King Rack: King EX90 now sits in one rack with the five other King units (darkened above and below it).
+- The sound is unchanged; your projects and presets load as before.
+
+## What's new in 1.1.0
+
+- The King Rack: King EX90 now sits in one rack with the five other King units (darkened above and below it).
+- The sound is unchanged; your projects and presets load as before.
 
 ## Known limits
 

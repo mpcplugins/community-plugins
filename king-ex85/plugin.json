@@ -1,0 +1,17 @@
+{
+  "name": "King EX85",
+  "manufacturer": "The Disk King",
+  "version": "1.0.0",
+  "format": "vst2",
+  "kind": "effect",
+  "uid": "TmVj",
+  "numInputs": 2,
+  "numOutputs": 2,
+  "category": "Effect",
+  "file32": "VST/king-ex85-arm32.so",
+  "file64": "VST/king-ex85-arm64.so",
+  "description": "King EX85 by The Disk King: Inspired by the Akai EX85P parametric equalizer (1987). Four bands with Akai's own figures: LOW shelf at 40 Hz (+-14 dB, Q 0.5), sweepable MID LOW (60 Hz-5 kHz) and MID HI (100 Hz-10 kHz) at +-18 dB, HI shelf at 12 kHz (+-14 dB, Q 0.5), the dual BAND WIDTH knob (its own Q for each mid, 1 to 6), EFFECT in/out switch.",
+  "author": "The Disk King",
+  "url": "https://thediskking.com",
+  "license": "Copyright The Disk King"
+}

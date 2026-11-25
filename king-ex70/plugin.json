@@ -1,0 +1,17 @@
+{
+  "name": "King EX70",
+  "manufacturer": "The Disk King",
+  "version": "1.0.0",
+  "format": "vst2",
+  "kind": "effect",
+  "uid": "TI1X",
+  "numInputs": 2,
+  "numOutputs": 2,
+  "category": "Effect",
+  "file32": "VST/king-ex70-arm32.so",
+  "file64": "VST/king-ex70-arm64.so",
+  "description": "King EX70 by The Disk King: Inspired by the Akai EX70C comp / gate (1987). Compressor: INPUT -6 to -42 dB, RATIO 2:1 to 20:1, ATTACK 0.2 to 40 ms, RELEASE 0.04 to 1.5 s, up to 32 dB of compression, OUTPUT. Gate: THRESHOLD (OFF to MAX) and DECAY 5 ms to 1.5 s. COMP REDUCTION and GATE REDUCTION lights, EFFECT in/out.",
+  "author": "The Disk King",
+  "url": "https://thediskking.com",
+  "license": "Copyright The Disk King"
+}

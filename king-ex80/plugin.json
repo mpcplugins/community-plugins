@@ -1,0 +1,17 @@
+{
+  "name": "King EX80",
+  "manufacturer": "The Disk King",
+  "version": "1.0.0",
+  "format": "vst2",
+  "kind": "effect",
+  "uid": "TGhC",
+  "numInputs": 2,
+  "numOutputs": 2,
+  "category": "Effect",
+  "file32": "VST/king-ex80-arm32.so",
+  "file64": "VST/king-ex80-arm64.so",
+  "description": "King EX80 by The Disk King: Inspired by the Akai EX80E enhancer (1987). Generates new upper harmonics to brighten dull sounds: INPUT with an input light, INTENSITY (how much the harmonic generator is driven), FILTER 1 to 5 kHz (12 dB/oct, the band that feeds it), MIX (how much is added), EFFECT in/out.",
+  "author": "The Disk King",
+  "url": "https://thediskking.com",
+  "license": "Copyright The Disk King"
+}
