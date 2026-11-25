@@ -35,7 +35,7 @@ A zip you download by hand **never updates itself**. Install **[MPC Plugins Mana
 | **[King EX70](king-ex70/)** | Inspired by the Akai EX70C comp / gate: 2:1 to 20:1, attack, release, and a gate with decay (Insert Effects) | [![Download](assets/download-button.png)](https://github.com/mpcplugins/community-plugins/releases/download/king-ex70-v1.0.0/King-EX70-1.0.0-mpc-sdk.zip) |
 | **[King EX65](king-ex65/)** | Inspired by the Akai EX65D digital delay: 1 to 1024 ms, feedback, modulation, HOLD (Insert Effects) | [![Download](assets/download-button.png)](https://github.com/mpcplugins/community-plugins/releases/download/king-ex65-v1.0.0/King-EX65-1.0.0-mpc-sdk.zip) |
 | **[remix16](remix16/)** | Inspired by the AMS RMX16 digital reverb: 18 programs, NONLIN gated drums, reverse, working keypad (Insert Effects) | [![Download](assets/download-button.png)](https://github.com/mpcplugins/community-plugins/releases/download/remix16-v1.0.0/remix16-1.0.0-mpc-sdk.zip) |
-| **[MPC Plugins Manager](https://github.com/mpcplugins/mpc-plugins-manager)** | Install, update and remove plugins on the MPC; follow your favorite makers | [![Download](assets/download-button.png)](https://github.com/mpcplugins/mpc-plugins-manager/releases/download/v1.3.0/MPC-Plugins-Manager-1.3.0-mpc-sdk.zip) |
+| **[MPC Plugins Manager](https://github.com/mpcplugins/mpc-plugins-manager)** | Install, update and remove plugins on the MPC; follow your favorite makers | [![Download](assets/download-button.png)](https://github.com/mpcplugins/mpc-plugins-manager/releases/download/v1.4.0/MPC-Plugins-Manager-1.4.0-mpc-sdk.zip) |
 
 Each plugin's page has step-by-step install instructions.
 
