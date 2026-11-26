@@ -1,0 +1,17 @@
+{
+  "name": "KING SP-1200",
+  "manufacturer": "The Disk King",
+  "version": "0.3.1",
+  "format": "vst2",
+  "kind": "instrument",
+  "uid": "TJ7t",
+  "numInputs": 0,
+  "numOutputs": 18,
+  "category": "Drum",
+  "file32": "VST/king-sp-1200-arm32.so",
+  "file64": "VST/king-sp-1200-arm64.so",
+  "description": "KING SP-1200 by The Disk King: Inspired by the E-mu SP-1200. 12-bit 26.04 kHz drum sampler, 10 seconds of memory, 32 sounds, 8 filtered channels, the original front panel and functions.",
+  "author": "The Disk King",
+  "url": "https://thediskking.com",
+  "license": "MIT"
+}

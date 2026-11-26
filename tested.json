@@ -201,5 +201,12 @@
   "device": "Akai MPC Live III",
   "firmware": "MPC OS 3.10.1",
   "date": "2026-11-24"
+ },
+ {
+  "id": "king-sp-1200",
+  "version": "0.3.1",
+  "device": "Akai MPC Live III",
+  "firmware": "MPC OS 3.10.1",
+  "date": "2026-11-26"
  }
 ]
