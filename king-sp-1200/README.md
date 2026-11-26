@@ -6,16 +6,17 @@ KING SP-1200 by The Disk King: Inspired by the E-mu SP-1200, the original 1987 1
 
 ## Download
 
-[![Download KING SP-1200 0.3.2](../assets/download-button.png)](https://github.com/mpcplugins/community-plugins/releases/download/king-sp-1200-v0.3.2/KING-SP-1200-0.3.2-mpc-sdk.zip) [![Get updates with MPC Plugins Manager](../assets/updates-button.png)](https://mpcplugins.github.io/p/mpc-plugins-manager/)
+**Gen 1** (32-bit): MPC Live, Live II, One, One+, X, Key 61, Key 37, Force
 
-The button above is the zip that works on **both** generations (the MPC picks the right build). Or pick yours:
+[![Download KING SP-1200 0.3.2 for Gen 1](../assets/download-button.png)](https://github.com/mpcplugins/community-plugins/releases/download/king-sp-1200-v0.3.2/KING-SP-1200-0.3.2-mpc-armv7.zip)
 
-| Your MPC | Download |
-|---|---|
-| **Gen1** (32-bit): MPC Live, Live II, One, One+, X, Key 61, Key 37, Force | [KING-SP-1200-0.3.2-mpc-armv7.zip](https://github.com/mpcplugins/community-plugins/releases/download/king-sp-1200-v0.3.2/KING-SP-1200-0.3.2-mpc-armv7.zip) |
-| **Gen2** (64-bit): MPC Live III, XL | [KING-SP-1200-0.3.2-mpc-aarch64.zip](https://github.com/mpcplugins/community-plugins/releases/download/king-sp-1200-v0.3.2/KING-SP-1200-0.3.2-mpc-aarch64.zip) |
+**Gen 2** (64-bit): MPC Live III, XL
 
-Tested on Gen2 (MPC Live III). The Gen1 build is made from the same code but has not been tested on Gen1 hardware yet: tell us if it works on yours.
+[![Download KING SP-1200 0.3.2 for Gen 2](../assets/download-button.png)](https://github.com/mpcplugins/community-plugins/releases/download/king-sp-1200-v0.3.2/KING-SP-1200-0.3.2-mpc-aarch64.zip)
+
+[![Get updates with MPC Plugins Manager](../assets/updates-button.png)](https://mpcplugins.github.io/p/mpc-plugins-manager/)
+
+Tested on Gen 2 (MPC Live III). The Gen 1 build is made from the same code but has not been tested on Gen 1 hardware yet: tell us if it works on yours.
 
 **Get updates automatically:** a zip you download by hand never updates itself. Install **[MPC Plugins Manager](https://mpcplugins.github.io/p/mpc-plugins-manager/)** once on your MPC: it shows when a new version of KING SP-1200 is out and installs it in one tap.
 
