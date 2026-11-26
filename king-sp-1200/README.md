@@ -35,7 +35,7 @@ Tested on Gen 2 (MPC Live III). The Gen 1 build is made from the same code but h
 
 | | |
 |---|---|
-| ![The whole machine](screens/01-main.png) | ![LCD style Blue](screens/02-lcd-blue.png) |
+| ![The whole machine](screens/01-main.png) | ![Optional LCD style: Blue (pick it in Settings, tap the King Systems nameplate). Green is the default.](screens/02-lcd-blue.png) |
 | ![Tap a function list to read it](screens/03-setup-list.png) | |
 
 ## What it does
