@@ -29,7 +29,14 @@ Tested on Gen 2 (MPC Live III). The Gen 1 build is made from the same code but h
 6. On the MPC: **Preferences → Enhancements (Beta)** → turn on **Enable Enhancements** and **External Plugin Support** (needs MPC OS 3.10.1 or later). Restart the MPC.
 7. Add a **Plugin track** and pick **KING SP-1200**.
 
-![KING SP-1200 on an MPC Live III](king-sp-1200.png)
+![KING SP-1200](king-sp-1200.png)
+
+## Screens
+
+| | |
+|---|---|
+| ![The whole machine](screens/01-main.png) | ![LCD style Blue](screens/02-lcd-blue.png) |
+| ![Tap a function list to read it](screens/03-setup-list.png) | |
 
 ## What it does
 
