@@ -1,4 +1,4 @@
-Trifecta Workstation 0.1.1 by The Disk King
+King Triton Workstation 0.1.1 by The Disk King
 
 **New KEYS page**, rebuilt to look like a real keyboard.
 
