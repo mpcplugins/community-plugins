@@ -1,4 +1,4 @@
-# King Triton Workstation (The Disk King)
+# King Triton Workstation
 
 A 2000s-style music workstation for Akai MPC standalone hardware: a silver panel with realtime knobs, a blue
 touch-screen display, a big VALUE dial, program and combination banks, an arpeggiator and effects.

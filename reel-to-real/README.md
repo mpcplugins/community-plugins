@@ -1,4 +1,4 @@
-# Reel to Real King (The Disk King)
+# Reel to Real King
 
 A reel-to-reel tape machine for Akai MPC standalone hardware. Run your beat, a track or a single sample through
 tape: saturation, warmth, wow and flutter, tape speed from 3.75 to 30 inches per second, real NAB / IEC tape

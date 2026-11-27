@@ -1,4 +1,4 @@
-Reel to Real King 1.1.1 by The Disk King
+Reel to Real King 1.1.1
 
 **Presets move the panel, a blank Default, and DISKKING on the meters.**
 
