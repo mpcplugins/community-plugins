@@ -1,4 +1,4 @@
-KING SP-1200 0.3.2 by The Disk King
+KING SP-1200 0.3.2
 
 KING SP-1200 by The Disk King: Inspired by the E-mu SP-1200 (the original 1987 machine). Not affiliated with E-mu.
 

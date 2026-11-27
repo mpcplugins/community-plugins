@@ -1,4 +1,4 @@
-# KING SP-1200 (The Disk King)
+# KING SP-1200
 
 KING SP-1200 by The Disk King: Inspired by the E-mu SP-1200, the original 1987 12-bit sampling drum machine. An instrument plugin for Akai MPC standalone hardware. Not affiliated with E-mu.
 
