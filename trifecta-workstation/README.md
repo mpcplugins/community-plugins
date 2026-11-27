@@ -7,6 +7,8 @@ touch-screen display, a big VALUE dial, program and combination banks, an arpegg
 
 ## Download
 
+[![Total downloads](https://mpcplugins.github.io/downloads/trifecta-workstation.svg)](https://mpcplugins.github.io/p/trifecta-workstation/) Gen 1, Gen 2 and works-on-both downloads of every version, added up.
+
 **Gen 1** (32-bit): MPC Live, Live II, One, One+, X, Key 61, Key 37, Force
 
 [![Download Trifecta Workstation 0.1.1 for Gen 1](../assets/download-button.png)](https://github.com/mpcplugins/community-plugins/releases/download/trifecta-workstation-v0.1.1/Trifecta-Workstation-0.1.1-mpc-armv7.zip)

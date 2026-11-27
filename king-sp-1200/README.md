@@ -6,6 +6,8 @@ KING SP-1200 by The Disk King: Inspired by the E-mu SP-1200, the original 1987 1
 
 ## Download
 
+[![Total downloads](https://mpcplugins.github.io/downloads/king-sp-1200.svg)](https://mpcplugins.github.io/p/king-sp-1200/) Gen 1, Gen 2 and works-on-both downloads of every version, added up.
+
 **Gen 1** (32-bit): MPC Live, Live II, One, One+, X, Key 61, Key 37, Force
 
 [![Download KING SP-1200 0.3.2 for Gen 1](../assets/download-button.png)](https://github.com/mpcplugins/community-plugins/releases/download/king-sp-1200-v0.3.2/KING-SP-1200-0.3.2-mpc-armv7.zip)

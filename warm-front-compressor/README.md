@@ -23,6 +23,8 @@ Warm Front is an **insert effect**, not an instrument. To use it:
 
 ## Download
 
+[![Total downloads](https://mpcplugins.github.io/downloads/warm-front-compressor.svg)](https://mpcplugins.github.io/p/warm-front-compressor/) Gen 1, Gen 2 and works-on-both downloads of every version, added up.
+
 **Gen 1** (32-bit): MPC Live, Live II, One, One+, X, Key 61, Key 37, Force
 
 [![Download Warm Front Compressor 1.0.1 for Gen 1](../assets/download-button.png)](https://github.com/mpcplugins/community-plugins/releases/download/warm-front-compressor-v1.0.1/Warm-Front-Compressor-1.0.1-mpc-armv7.zip)

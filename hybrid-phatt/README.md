@@ -6,6 +6,8 @@ A 90s-style ROM sound module for Akai MPC standalone hardware, in the spirit of 
 
 ## Download
 
+[![Total downloads](https://mpcplugins.github.io/downloads/hybrid-phatt.svg)](https://mpcplugins.github.io/p/hybrid-phatt/) Gen 1, Gen 2 and works-on-both downloads of every version, added up.
+
 **Gen 1** (32-bit): MPC Live, Live II, One, One+, X, Key 61, Key 37, Force
 
 [![Download Hybrid Phatt 0.2.0 for Gen 1](../assets/download-button.png)](https://github.com/mpcplugins/community-plugins/releases/download/hybrid-phatt-v0.2.0/Hybrid-Phatt-0.2.0-mpc-armv7.zip)

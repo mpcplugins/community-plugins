@@ -40,6 +40,8 @@ King EX80 is an **insert effect**, not an instrument. To use it:
 **Start with MIX low** and bring it up until the sound just shines. Too much = harsh.
 ## Download
 
+[![Total downloads](https://mpcplugins.github.io/downloads/king-ex80.svg)](https://mpcplugins.github.io/p/king-ex80/) Gen 1, Gen 2 and works-on-both downloads of every version, added up.
+
 **Gen 1** (32-bit): MPC Live, Live II, One, One+, X, Key 61, Key 37, Force
 
 [![Download King EX80 1.0.0 for Gen 1](../assets/download-button.png)](https://github.com/mpcplugins/community-plugins/releases/download/king-ex80-v1.0.0/King-EX80-1.0.0-mpc-armv7.zip)

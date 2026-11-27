@@ -41,6 +41,8 @@ King EX75 is an **insert effect**, not an instrument. To use it:
 **Setting it up:** play the sound, turn THRESHOLD up until the hiss (or the spill between hits) goes away but the part you want stays whole. The red REDUCTION light shows when it works.
 ## Download
 
+[![Total downloads](https://mpcplugins.github.io/downloads/king-ex75.svg)](https://mpcplugins.github.io/p/king-ex75/) Gen 1, Gen 2 and works-on-both downloads of every version, added up.
+
 **Gen 1** (32-bit): MPC Live, Live II, One, One+, X, Key 61, Key 37, Force
 
 [![Download King EX75 1.0.0 for Gen 1](../assets/download-button.png)](https://github.com/mpcplugins/community-plugins/releases/download/king-ex75-v1.0.0/King-EX75-1.0.0-mpc-armv7.zip)
