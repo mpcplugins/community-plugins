@@ -1,4 +1,4 @@
-dkx 160 Compressor 1.0.1 by The Disk King
+dkx 160 Compressor by King 1.0.1
 
 **Presets move the panel, and a blank Default.**
 

@@ -1,4 +1,4 @@
-# Warm Front Compressor (The Disk King)
+# Warm Front Compressor by King
 
 A vintage analog-style stereo compressor for Akai MPC standalone hardware. It has big INPUT / OUTPUT VU
 meters, a 12-light GAIN REDUCTION strip, three compressor styles (CLASSIC, VINTAGE, MODERN), a sidechain

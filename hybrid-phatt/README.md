@@ -1,4 +1,4 @@
-# Hybrid Phatt (The Disk King)
+# King Phatt (The Disk King)
 
 A 90s-style ROM sound module for Akai MPC standalone hardware, in the spirit of the classic hip-hop / R&B rack modules: layered multi-sample voices, a big backlit LCD, and a hardware-style screen that crosses an old MPC 60 with a 90s sound module.
 

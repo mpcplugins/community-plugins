@@ -1,4 +1,4 @@
-remix16 1.0.0 by The Disk King
+remix16 by King 1.0.0
 
 **remix16 by The Disk King: Inspired by the AMS RMX16 digital reverb (1982).**
 

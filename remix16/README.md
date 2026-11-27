@@ -1,4 +1,4 @@
-# remix16 (The Disk King)
+# remix16 by King
 
 **remix16 by The Disk King: Inspired by the AMS RMX16 digital reverb (1982).** The classic 2U studio reverb for Akai MPC
 standalone hardware, with a front panel that really works: type values on the keypad, nudge them, save and recall

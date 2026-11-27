@@ -1,4 +1,4 @@
-Hybrid Phatt 0.2.0 by The Disk King
+King Phatt 0.2.0 by The Disk King
 
 New KEYS page, HELP popup and load-your-own-bank support.
 

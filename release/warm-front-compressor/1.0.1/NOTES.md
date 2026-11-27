@@ -1,4 +1,4 @@
-Warm Front Compressor 1.0.1 by The Disk King
+Warm Front Compressor by King 1.0.1
 
 **Presets move the panel, a blank Default, and DISKKING on the meters.**
 

@@ -1,4 +1,4 @@
-# Ashy to Classy (The Disk King)
+# Ashy to Classy by King
 
 A vintage console for Akai MPC standalone hardware. The left side **cleans up old records** (hiss, crackle, pops,
 60 Hz hum). The right side **makes clean sounds dusty** (vinyl noise, surface crackle, deep scratches, loop buzz).

@@ -1,4 +1,4 @@
-Diskking 670 Compressor 1.0.2 by The Disk King
+King 670 Compressor 1.0.2 by The Disk King
 
 **Presets move the panel, a blank Default, and two art fixes.**
 

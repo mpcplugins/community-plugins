@@ -1,4 +1,4 @@
-Ashy to Classy 2.0.0 by The Disk King
+Ashy to Classy by King 2.0.0
 
 **Ten new keys, each with its own mixer: eight filters and a real analog TAPE. New INPUT / OUTPUT meters with DISKKING.**
 
