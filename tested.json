@@ -222,5 +222,110 @@
   "device": "Akai MPC X SE (Gen1)",
   "firmware": "MPC OS 3.10.1",
   "date": "2026-11-26"
+ },
+ {
+  "id": "ashy-to-classy",
+  "version": "2.0.0",
+  "device": "Akai MPC X SE (Gen1)",
+  "firmware": "MPC OS 3.10.1",
+  "date": "2026-11-26"
+ },
+ {
+  "id": "diskking-670-compressor",
+  "version": "1.0.2",
+  "device": "Akai MPC X SE (Gen1)",
+  "firmware": "MPC OS 3.10.1",
+  "date": "2026-11-26"
+ },
+ {
+  "id": "dkx-160-compressor",
+  "version": "1.0.1",
+  "device": "Akai MPC X SE (Gen1)",
+  "firmware": "MPC OS 3.10.1",
+  "date": "2026-11-26"
+ },
+ {
+  "id": "hybrid-phatt",
+  "version": "0.2.0",
+  "device": "Akai MPC X SE (Gen1)",
+  "firmware": "MPC OS 3.10.1",
+  "date": "2026-11-26"
+ },
+ {
+  "id": "king-ex65",
+  "version": "1.0.0",
+  "device": "Akai MPC X SE (Gen1)",
+  "firmware": "MPC OS 3.10.1",
+  "date": "2026-11-26"
+ },
+ {
+  "id": "king-ex70",
+  "version": "1.0.0",
+  "device": "Akai MPC X SE (Gen1)",
+  "firmware": "MPC OS 3.10.1",
+  "date": "2026-11-26"
+ },
+ {
+  "id": "king-ex75",
+  "version": "1.0.0",
+  "device": "Akai MPC X SE (Gen1)",
+  "firmware": "MPC OS 3.10.1",
+  "date": "2026-11-26"
+ },
+ {
+  "id": "king-ex80",
+  "version": "1.0.0",
+  "device": "Akai MPC X SE (Gen1)",
+  "firmware": "MPC OS 3.10.1",
+  "date": "2026-11-26"
+ },
+ {
+  "id": "king-ex85",
+  "version": "1.0.0",
+  "device": "Akai MPC X SE (Gen1)",
+  "firmware": "MPC OS 3.10.1",
+  "date": "2026-11-26"
+ },
+ {
+  "id": "king-ex90",
+  "version": "1.1.0",
+  "device": "Akai MPC X SE (Gen1)",
+  "firmware": "MPC OS 3.10.1",
+  "date": "2026-11-26"
+ },
+ {
+  "id": "mpc-plugin-scanner",
+  "version": "1.2.0",
+  "device": "Akai MPC X SE (Gen1)",
+  "firmware": "MPC OS 3.10.1",
+  "date": "2026-11-26"
+ },
+ {
+  "id": "reel-to-real",
+  "version": "1.1.1",
+  "device": "Akai MPC X SE (Gen1)",
+  "firmware": "MPC OS 3.10.1",
+  "date": "2026-11-26"
+ },
+ {
+  "id": "remix16",
+  "version": "1.0.0",
+  "device": "Akai MPC X SE (Gen1)",
+  "firmware": "MPC OS 3.10.1",
+  "date": "2026-11-26"
+ },
+ {
+  "id": "trifecta-workstation",
+  "version": "0.1.1",
+  "device": "Akai MPC X SE (Gen1)",
+  "firmware": "MPC OS 3.10.1",
+  "date": "2026-11-26"
+ },
+ {
+  "id": "warm-front-compressor",
+  "version": "1.0.1",
+  "device": "Akai MPC X SE (Gen1)",
+  "firmware": "MPC OS 3.10.1",
+  "date": "2026-11-26"
  }
 ]

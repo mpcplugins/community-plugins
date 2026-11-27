@@ -11,7 +11,7 @@ them, and watch the red LED display. It has:
 - a **closer look:** tap the keypad or the display and they pop up big, so the keys are easy to hit; every key acts at once and wrong numbers are simply ignored;
 - IN / OUT / MIX knobs, level lights, an OVERFLOW light and POWER.
 
-**Version 1.0.0. Tested on an Akai MPC Live III (MPC OS 3.10.1). Use at your own risk.**
+**Version 1.0.0. Tested on Gen 1 (Akai MPC X SE) and Gen 2 (Akai MPC Live III), MPC OS 3.10.1. Use at your own risk.**
 
 ![remix16 on an MPC](remix16.png)
 
@@ -30,7 +30,15 @@ display and lights update while it runs.
 
 ## Download
 
-[![Download remix16 1.0.0](../assets/download-button.png)](https://github.com/mpcplugins/community-plugins/releases/download/remix16-v1.0.0/remix16-1.0.0-mpc-sdk.zip) [![Get updates with MPC Plugins Manager](../assets/updates-button.png)](https://mpcplugins.github.io/p/mpc-plugins-manager/)
+**Gen 1** (32-bit): MPC Live, Live II, One, One+, X, Key 61, Key 37, Force
+
+[![Download remix16 1.0.0 for Gen 1](../assets/download-button.png)](https://github.com/mpcplugins/community-plugins/releases/download/remix16-v1.0.0/remix16-1.0.0-mpc-armv7.zip)
+
+**Gen 2** (64-bit): MPC Live III, XL
+
+[![Download remix16 1.0.0 for Gen 2](../assets/download-button.png)](https://github.com/mpcplugins/community-plugins/releases/download/remix16-v1.0.0/remix16-1.0.0-mpc-aarch64.zip)
+
+[![Get updates with MPC Plugins Manager](../assets/updates-button.png)](https://mpcplugins.github.io/p/mpc-plugins-manager/)
 
 **Get updates automatically:** a zip you download by hand never updates itself. Install **[MPC Plugins Manager](https://mpcplugins.github.io/p/mpc-plugins-manager/)** once on your MPC: it shows when a new version of remix16 is out and installs it in one tap.
 

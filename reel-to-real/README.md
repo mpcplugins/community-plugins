@@ -5,7 +5,7 @@ tape: saturation, warmth, wow and flutter, tape speed from 3.75 to 30 inches per
 curves, hiss, tape stop, and recording to a WAV. While the sound plays, the reels really turn (the full reel slowly,
 the empty one fast), the tape moves from one reel to the other, the VU needles move and the red counter runs.
 
-**Version 1.1.1. Tested on an Akai MPC Live III (MPC OS 3.10.1). Use at your own risk.**
+**Version 1.1.1. Tested on Gen 1 (Akai MPC X SE) and Gen 2 (Akai MPC Live III), MPC OS 3.10.1. Use at your own risk.**
 
 ![Reel-to-Real on an MPC](reel-to-real.png)
 
@@ -26,7 +26,15 @@ coast to a stop.
 
 ## Download
 
-[![Download Reel-to-Real 1.1.1](../assets/download-button.png)](https://github.com/mpcplugins/community-plugins/releases/download/reel-to-real-v1.1.1/Reel-to-Real-1.1.1-mpc-sdk.zip) [![Get updates with MPC Plugins Manager](../assets/updates-button.png)](https://mpcplugins.github.io/p/mpc-plugins-manager/)
+**Gen 1** (32-bit): MPC Live, Live II, One, One+, X, Key 61, Key 37, Force
+
+[![Download Reel-to-Real 1.1.1 for Gen 1](../assets/download-button.png)](https://github.com/mpcplugins/community-plugins/releases/download/reel-to-real-v1.1.1/Reel-to-Real-1.1.1-mpc-armv7.zip)
+
+**Gen 2** (64-bit): MPC Live III, XL
+
+[![Download Reel-to-Real 1.1.1 for Gen 2](../assets/download-button.png)](https://github.com/mpcplugins/community-plugins/releases/download/reel-to-real-v1.1.1/Reel-to-Real-1.1.1-mpc-aarch64.zip)
+
+[![Get updates with MPC Plugins Manager](../assets/updates-button.png)](https://mpcplugins.github.io/p/mpc-plugins-manager/)
 
 **Get updates automatically:** a zip you download by hand never updates itself. Install **[MPC Plugins Manager](https://mpcplugins.github.io/p/mpc-plugins-manager/)** once on your MPC: it shows when a new version of Reel-to-Real is out and installs it in one tap.
 

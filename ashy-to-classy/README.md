@@ -6,7 +6,7 @@ In the middle are **ten keys**: eight filters (LO-FI, WATER, DYNAMIC, TINNY, RAD
 analog **TAPE**, and HELP. Every key opens its own little mixer with four faders, and you can stack as many as you like.
 Four INPUT / OUTPUT meters and an amber 16 x 2 LCD show what is going on.
 
-**Version 2.0.0. Tested on an Akai MPC Live III (MPC OS 3.10.1). Use at your own risk.**
+**Version 2.0.0. Tested on Gen 1 (Akai MPC X SE) and Gen 2 (Akai MPC Live III), MPC OS 3.10.1. Use at your own risk.**
 
 ![Ashy to Classy on an MPC Live III](ashy-to-classy.png)
 
@@ -26,7 +26,15 @@ Master = the whole beat.
 
 ## Download
 
-[![Download Ashy to Classy 2.0.0](../assets/download-button.png)](https://github.com/mpcplugins/community-plugins/releases/download/ashy-to-classy-v2.0.0/Ashy-to-Classy-2.0.0-mpc-sdk.zip) [![Get updates with MPC Plugins Manager](../assets/updates-button.png)](https://mpcplugins.github.io/p/mpc-plugins-manager/)
+**Gen 1** (32-bit): MPC Live, Live II, One, One+, X, Key 61, Key 37, Force
+
+[![Download Ashy to Classy 2.0.0 for Gen 1](../assets/download-button.png)](https://github.com/mpcplugins/community-plugins/releases/download/ashy-to-classy-v2.0.0/Ashy-to-Classy-2.0.0-mpc-armv7.zip)
+
+**Gen 2** (64-bit): MPC Live III, XL
+
+[![Download Ashy to Classy 2.0.0 for Gen 2](../assets/download-button.png)](https://github.com/mpcplugins/community-plugins/releases/download/ashy-to-classy-v2.0.0/Ashy-to-Classy-2.0.0-mpc-aarch64.zip)
+
+[![Get updates with MPC Plugins Manager](../assets/updates-button.png)](https://mpcplugins.github.io/p/mpc-plugins-manager/)
 
 **Get updates automatically:** a zip you download by hand never updates itself. Install **[MPC Plugins Manager](https://mpcplugins.github.io/p/mpc-plugins-manager/)** once on your MPC: it shows when a new version of Ashy to Classy is out and installs it in one tap.
 

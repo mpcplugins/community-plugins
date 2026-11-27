@@ -6,7 +6,7 @@
 - **INTENSITY** (from a soft shine to real grit) and **MIX** (how much is added);
 - an **INPUT** knob with its light, an **EFFECT** rocker, **POWER** and a **HELP** card.
 
-**Version 1.0.0. Tested on an Akai MPC Live III (MPC OS 3.10.1). Free. Use at your own risk.**
+**Version 1.0.0. Tested on Gen 1 (Akai MPC X SE) and Gen 2 (Akai MPC Live III), MPC OS 3.10.1. Free. Use at your own risk.**
 
 ![King EX80 on an MPC](king-ex80.png)
 
@@ -40,7 +40,15 @@ King EX80 is an **insert effect**, not an instrument. To use it:
 **Start with MIX low** and bring it up until the sound just shines. Too much = harsh.
 ## Download
 
-[![Download King EX80 1.0.0](../assets/download-button.png)](https://github.com/mpcplugins/community-plugins/releases/download/king-ex80-v1.0.0/King-EX80-1.0.0-mpc-sdk.zip) [![Get updates with MPC Plugins Manager](../assets/updates-button.png)](https://mpcplugins.github.io/p/mpc-plugins-manager/)
+**Gen 1** (32-bit): MPC Live, Live II, One, One+, X, Key 61, Key 37, Force
+
+[![Download King EX80 1.0.0 for Gen 1](../assets/download-button.png)](https://github.com/mpcplugins/community-plugins/releases/download/king-ex80-v1.0.0/King-EX80-1.0.0-mpc-armv7.zip)
+
+**Gen 2** (64-bit): MPC Live III, XL
+
+[![Download King EX80 1.0.0 for Gen 2](../assets/download-button.png)](https://github.com/mpcplugins/community-plugins/releases/download/king-ex80-v1.0.0/King-EX80-1.0.0-mpc-aarch64.zip)
+
+[![Get updates with MPC Plugins Manager](../assets/updates-button.png)](https://mpcplugins.github.io/p/mpc-plugins-manager/)
 
 **Get updates automatically:** a zip you download by hand never updates itself. Install **[MPC Plugins Manager](https://mpcplugins.github.io/p/mpc-plugins-manager/)** once on your MPC: it shows when a new version of King EX80 is out and installs it in one tap.
 

@@ -7,7 +7,7 @@ standalone hardware. It is the punchy one: put it on kick, snare, bass or the dr
 - the amber BELOW / red ABOVE threshold lights;
 - a lamp-lit meter that lights up when you press POWER.
 
-**Version 1.0.1. Tested on an Akai MPC Live III (MPC OS 3.10.1). Use at your own risk.**
+**Version 1.0.1. Tested on Gen 1 (Akai MPC X SE) and Gen 2 (Akai MPC Live III), MPC OS 3.10.1. Use at your own risk.**
 
 ![dkx 160 Compressor on an MPC](dkx-160-compressor.png)
 
@@ -25,7 +25,15 @@ dkx 160 Compressor is an **insert effect**, not an instrument. To use it:
 
 ## Download
 
-[![Download dkx 160 Compressor 1.0.1](../assets/download-button.png)](https://github.com/mpcplugins/community-plugins/releases/download/dkx-160-compressor-v1.0.1/dkx-160-Compressor-1.0.1-mpc-sdk.zip) [![Get updates with MPC Plugins Manager](../assets/updates-button.png)](https://mpcplugins.github.io/p/mpc-plugins-manager/)
+**Gen 1** (32-bit): MPC Live, Live II, One, One+, X, Key 61, Key 37, Force
+
+[![Download dkx 160 Compressor 1.0.1 for Gen 1](../assets/download-button.png)](https://github.com/mpcplugins/community-plugins/releases/download/dkx-160-compressor-v1.0.1/dkx-160-Compressor-1.0.1-mpc-armv7.zip)
+
+**Gen 2** (64-bit): MPC Live III, XL
+
+[![Download dkx 160 Compressor 1.0.1 for Gen 2](../assets/download-button.png)](https://github.com/mpcplugins/community-plugins/releases/download/dkx-160-compressor-v1.0.1/dkx-160-Compressor-1.0.1-mpc-aarch64.zip)
+
+[![Get updates with MPC Plugins Manager](../assets/updates-button.png)](https://mpcplugins.github.io/p/mpc-plugins-manager/)
 
 **Get updates automatically:** a zip you download by hand never updates itself. Install **[MPC Plugins Manager](https://mpcplugins.github.io/p/mpc-plugins-manager/)** once on your MPC: it shows when a new version of dkx 160 Compressor is out and installs it in one tap.
 

@@ -5,7 +5,7 @@ meters, a 12-light GAIN REDUCTION strip, three compressor styles (CLASSIC, VINTA
 filter, and **27 presets**, including 19 built from the published settings of the most famous studio
 compressors of all time.
 
-**Version 1.0.1. Tested on an Akai MPC Live III (MPC OS 3.10.1). Use at your own risk.**
+**Version 1.0.1. Tested on Gen 1 (Akai MPC X SE) and Gen 2 (Akai MPC Live III), MPC OS 3.10.1. Use at your own risk.**
 
 ![Warm Front Compressor on an MPC](warm-front-compressor.png)
 
@@ -23,7 +23,15 @@ Warm Front is an **insert effect**, not an instrument. To use it:
 
 ## Download
 
-[![Download Warm Front Compressor 1.0.1](../assets/download-button.png)](https://github.com/mpcplugins/community-plugins/releases/download/warm-front-compressor-v1.0.1/Warm-Front-Compressor-1.0.1-mpc-sdk.zip) [![Get updates with MPC Plugins Manager](../assets/updates-button.png)](https://mpcplugins.github.io/p/mpc-plugins-manager/)
+**Gen 1** (32-bit): MPC Live, Live II, One, One+, X, Key 61, Key 37, Force
+
+[![Download Warm Front Compressor 1.0.1 for Gen 1](../assets/download-button.png)](https://github.com/mpcplugins/community-plugins/releases/download/warm-front-compressor-v1.0.1/Warm-Front-Compressor-1.0.1-mpc-armv7.zip)
+
+**Gen 2** (64-bit): MPC Live III, XL
+
+[![Download Warm Front Compressor 1.0.1 for Gen 2](../assets/download-button.png)](https://github.com/mpcplugins/community-plugins/releases/download/warm-front-compressor-v1.0.1/Warm-Front-Compressor-1.0.1-mpc-aarch64.zip)
+
+[![Get updates with MPC Plugins Manager](../assets/updates-button.png)](https://mpcplugins.github.io/p/mpc-plugins-manager/)
 
 **Get updates automatically:** a zip you download by hand never updates itself. Install **[MPC Plugins Manager](https://mpcplugins.github.io/p/mpc-plugins-manager/)** once on your MPC: it shows when a new version of Warm Front Compressor is out and installs it in one tap.
 

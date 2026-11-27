@@ -12,7 +12,9 @@ remix16 1.0.0 by The Disk King
 - **IN / OUT / MIX** knobs, level lights, an OVERFLOW light and POWER.
 - **16 presets:** Default (1 Ambience), Ambience Vocal, Ambience Freeze Choir, Room A1 Drums, Hall C1 Vocal, Plate A1 Snare, Plate A1 Vocal, Hall B3 Strings, Chorus Thicken, Echo Slapback, Nonlin 2 Gated Snare, Nonlin 2 Big Room, Reverse 2 Swell, Delay Quarter 120, Image P1 Pan and Room B1 Small.
 
-**It is an EFFECT: find it in Insert Effects** (Mixer or a track's Insert Effects → External Plugins → The Disk King → remix16). Tested on an Akai MPC Live III, MPC OS 3.10.1.
+**It is an EFFECT: find it in Insert Effects** (Mixer or a track's Insert Effects → External Plugins → The Disk King → remix16). Tested on Gen 1 (Akai MPC X SE) and Gen 2 (Akai MPC Live III), MPC OS 3.10.1.
+
+Downloads: **Gen 1** (32-bit: Live, Live II, One, One+, X, Key 61, Key 37, Force) `*-mpc-armv7.zip`, **Gen 2** (64-bit: Live III, XL) `*-mpc-aarch64.zip`, or `*-mpc-sdk.zip` that works on both.
 
 Install: copy `The Disk King - VST - remix16` into `VST2 Plugins` on your MPC's internal drive (MPC OS 3.10.1+, Enhancements and External Plugin Support on), or install it with **MPC Plugins Manager** (https://mpcplugins.github.io/p/mpc-plugins-manager/): it also brings you every update.
 

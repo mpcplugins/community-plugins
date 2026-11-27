@@ -8,7 +8,7 @@ It does what the real unit is known for:
 - the famous "thump" when the tubes are out of balance;
 - gain-reduction meters.
 
-**Version 1.0.2. Tested on an Akai MPC Live III (MPC OS 3.10.1). Use at your own risk.**
+**Version 1.0.2. Tested on Gen 1 (Akai MPC X SE) and Gen 2 (Akai MPC Live III), MPC OS 3.10.1. Use at your own risk.**
 
 ![Diskking 670 Compressor on an MPC](diskking-670-compressor.png)
 
@@ -26,7 +26,15 @@ Diskking 670 Compressor is an **insert effect**, not an instrument. To use it:
 
 ## Download
 
-[![Download Diskking 670 Compressor 1.0.2](../assets/download-button.png)](https://github.com/mpcplugins/community-plugins/releases/download/diskking-670-compressor-v1.0.2/Diskking-670-Compressor-1.0.2-mpc-sdk.zip) [![Get updates with MPC Plugins Manager](../assets/updates-button.png)](https://mpcplugins.github.io/p/mpc-plugins-manager/)
+**Gen 1** (32-bit): MPC Live, Live II, One, One+, X, Key 61, Key 37, Force
+
+[![Download Diskking 670 Compressor 1.0.2 for Gen 1](../assets/download-button.png)](https://github.com/mpcplugins/community-plugins/releases/download/diskking-670-compressor-v1.0.2/Diskking-670-Compressor-1.0.2-mpc-armv7.zip)
+
+**Gen 2** (64-bit): MPC Live III, XL
+
+[![Download Diskking 670 Compressor 1.0.2 for Gen 2](../assets/download-button.png)](https://github.com/mpcplugins/community-plugins/releases/download/diskking-670-compressor-v1.0.2/Diskking-670-Compressor-1.0.2-mpc-aarch64.zip)
+
+[![Get updates with MPC Plugins Manager](../assets/updates-button.png)](https://mpcplugins.github.io/p/mpc-plugins-manager/)
 
 **Get updates automatically:** a zip you download by hand never updates itself. Install **[MPC Plugins Manager](https://mpcplugins.github.io/p/mpc-plugins-manager/)** once on your MPC: it shows when a new version of Diskking 670 Compressor is out and installs it in one tap.
 

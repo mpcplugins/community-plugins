@@ -3,11 +3,19 @@
 A 2000s-style music workstation for Akai MPC standalone hardware: a silver panel with realtime knobs, a blue
 touch-screen display, a big VALUE dial, program and combination banks, an arpeggiator and effects.
 
-**Version 0.1.1 — early beta. Tested on an Akai MPC Live III (MPC OS 3.10.1). Use at your own risk.**
+**Version 0.1.1 — early beta. Tested on Gen 1 (Akai MPC X SE) and Gen 2 (Akai MPC Live III), MPC OS 3.10.1. Use at your own risk.**
 
 ## Download
 
-[![Download Trifecta Workstation 0.1.1](../assets/download-button.png)](https://github.com/mpcplugins/community-plugins/releases/download/trifecta-workstation-v0.1.1/Trifecta-Workstation-0.1.1-mpc-sdk.zip) [![Get updates with MPC Plugins Manager](../assets/updates-button.png)](https://mpcplugins.github.io/p/mpc-plugins-manager/)
+**Gen 1** (32-bit): MPC Live, Live II, One, One+, X, Key 61, Key 37, Force
+
+[![Download Trifecta Workstation 0.1.1 for Gen 1](../assets/download-button.png)](https://github.com/mpcplugins/community-plugins/releases/download/trifecta-workstation-v0.1.1/Trifecta-Workstation-0.1.1-mpc-armv7.zip)
+
+**Gen 2** (64-bit): MPC Live III, XL
+
+[![Download Trifecta Workstation 0.1.1 for Gen 2](../assets/download-button.png)](https://github.com/mpcplugins/community-plugins/releases/download/trifecta-workstation-v0.1.1/Trifecta-Workstation-0.1.1-mpc-aarch64.zip)
+
+[![Get updates with MPC Plugins Manager](../assets/updates-button.png)](https://mpcplugins.github.io/p/mpc-plugins-manager/)
 
 **Get updates automatically:** a zip you download by hand never updates itself. Install **[MPC Plugins Manager](https://mpcplugins.github.io/p/mpc-plugins-manager/)** once on your MPC: it shows when a new version of Trifecta Workstation is out and installs it in one tap.
 

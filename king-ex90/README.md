@@ -8,7 +8,7 @@ Akai MPC standalone hardware, in the King Rack. It has:
 - separate DRY and REVERB levels, an OVERLOAD light and an EFFECT rocker that lets the tail ring out;
 - a **12-BIT** rocker for the original's gritty 12-bit, 39 kHz sound.
 
-**Version 1.1.0 (the King Rack). Tested on an Akai MPC Live III (MPC OS 3.10.1). Free. Use at your own risk.**
+**Version 1.1.0 (the King Rack). Tested on Gen 1 (Akai MPC X SE) and Gen 2 (Akai MPC Live III), MPC OS 3.10.1. Free. Use at your own risk.**
 
 ![King EX90 on an MPC](king-ex90.png)
 
@@ -80,7 +80,15 @@ shared by several tracks, put it on a **Return** with **DRY at MIN** (100% wet) 
 
 ## Download
 
-[![Download King EX90 1.1.0](../assets/download-button.png)](https://github.com/mpcplugins/community-plugins/releases/download/king-ex90-v1.1.0/King-EX90-1.1.0-mpc-sdk.zip) [![Get updates with MPC Plugins Manager](../assets/updates-button.png)](https://mpcplugins.github.io/p/mpc-plugins-manager/)
+**Gen 1** (32-bit): MPC Live, Live II, One, One+, X, Key 61, Key 37, Force
+
+[![Download King EX90 1.1.0 for Gen 1](../assets/download-button.png)](https://github.com/mpcplugins/community-plugins/releases/download/king-ex90-v1.1.0/King-EX90-1.1.0-mpc-armv7.zip)
+
+**Gen 2** (64-bit): MPC Live III, XL
+
+[![Download King EX90 1.1.0 for Gen 2](../assets/download-button.png)](https://github.com/mpcplugins/community-plugins/releases/download/king-ex90-v1.1.0/King-EX90-1.1.0-mpc-aarch64.zip)
+
+[![Get updates with MPC Plugins Manager](../assets/updates-button.png)](https://mpcplugins.github.io/p/mpc-plugins-manager/)
 
 **Get updates automatically:** a zip you download by hand never updates itself. Install **[MPC Plugins Manager](https://mpcplugins.github.io/p/mpc-plugins-manager/)** once on your MPC: it shows when a new version of King EX90 is out and installs it in one tap.
 

@@ -2,11 +2,19 @@
 
 A 90s-style ROM sound module for Akai MPC standalone hardware, in the spirit of the classic hip-hop / R&B rack modules: layered multi-sample voices, a big backlit LCD, and a hardware-style screen that crosses an old MPC 60 with a 90s sound module.
 
-**Version 0.2.0 — beta. Tested on an Akai MPC Live III (MPC OS 3.10.1). Use at your own risk.**
+**Version 0.2.0 — beta. Tested on Gen 1 (Akai MPC X SE) and Gen 2 (Akai MPC Live III), MPC OS 3.10.1. Use at your own risk.**
 
 ## Download
 
-[![Download Hybrid Phatt 0.2.0](../assets/download-button.png)](https://github.com/mpcplugins/community-plugins/releases/download/hybrid-phatt-v0.2.0/Hybrid-Phatt-0.2.0-mpc-sdk.zip) [![Get updates with MPC Plugins Manager](../assets/updates-button.png)](https://mpcplugins.github.io/p/mpc-plugins-manager/)
+**Gen 1** (32-bit): MPC Live, Live II, One, One+, X, Key 61, Key 37, Force
+
+[![Download Hybrid Phatt 0.2.0 for Gen 1](../assets/download-button.png)](https://github.com/mpcplugins/community-plugins/releases/download/hybrid-phatt-v0.2.0/Hybrid-Phatt-0.2.0-mpc-armv7.zip)
+
+**Gen 2** (64-bit): MPC Live III, XL
+
+[![Download Hybrid Phatt 0.2.0 for Gen 2](../assets/download-button.png)](https://github.com/mpcplugins/community-plugins/releases/download/hybrid-phatt-v0.2.0/Hybrid-Phatt-0.2.0-mpc-aarch64.zip)
+
+[![Get updates with MPC Plugins Manager](../assets/updates-button.png)](https://mpcplugins.github.io/p/mpc-plugins-manager/)
 
 **Get updates automatically:** a zip you download by hand never updates itself. Install **[MPC Plugins Manager](https://mpcplugins.github.io/p/mpc-plugins-manager/)** once on your MPC: it shows when a new version of Hybrid Phatt is out and installs it in one tap.
 
