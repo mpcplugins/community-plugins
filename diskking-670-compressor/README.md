@@ -26,7 +26,7 @@ Diskking 670 Compressor is an **insert effect**, not an instrument. To use it:
 
 ## Download
 
-[![Total downloads](https://mpcplugins.github.io/downloads/diskking-670-compressor.svg)](https://mpcplugins.github.io/p/diskking-670-compressor/) Gen 1, Gen 2 and works-on-both downloads of every version, added up.
+[![Total downloads](https://mpcplugins.github.io/downloads/diskking-670-compressor.svg)](https://mpcplugins.github.io/p/diskking-670-compressor/)
 
 **Gen 1** (32-bit): MPC Live, Live II, One, One+, X, Key 61, Key 37, Force
 

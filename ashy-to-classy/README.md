@@ -26,7 +26,7 @@ Master = the whole beat.
 
 ## Download
 
-[![Total downloads](https://mpcplugins.github.io/downloads/ashy-to-classy.svg)](https://mpcplugins.github.io/p/ashy-to-classy/) Gen 1, Gen 2 and works-on-both downloads of every version, added up.
+[![Total downloads](https://mpcplugins.github.io/downloads/ashy-to-classy.svg)](https://mpcplugins.github.io/p/ashy-to-classy/)
 
 **Gen 1** (32-bit): MPC Live, Live II, One, One+, X, Key 61, Key 37, Force
 

@@ -40,7 +40,7 @@ King EX65 is an **insert effect**, not an instrument. To use it:
 **Where you put it decides what it echoes:** on a pad = that sample, on a track = the whole track.
 ## Download
 
-[![Total downloads](https://mpcplugins.github.io/downloads/king-ex65.svg)](https://mpcplugins.github.io/p/king-ex65/) Gen 1, Gen 2 and works-on-both downloads of every version, added up.
+[![Total downloads](https://mpcplugins.github.io/downloads/king-ex65.svg)](https://mpcplugins.github.io/p/king-ex65/)
 
 **Gen 1** (32-bit): MPC Live, Live II, One, One+, X, Key 61, Key 37, Force
 
