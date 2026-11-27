@@ -2,7 +2,7 @@
 
 KING SP-1200 by The Disk King: Inspired by the E-mu SP-1200, the original 1987 12-bit sampling drum machine. An instrument plugin for Akai MPC standalone hardware. Not affiliated with E-mu.
 
-**Version 0.3.2 — beta. For Gen1 and Gen2 MPCs. Tested on an Akai MPC Live III (MPC OS 3.10.1). Use at your own risk.**
+**Version 0.3.2 — beta. For Gen1 and Gen2 MPCs. Tested on Gen 1 (Akai MPC X SE) and Gen 2 (Akai MPC Live III), MPC OS 3.10.1. Use at your own risk.**
 
 ## Download
 
@@ -16,7 +16,7 @@ KING SP-1200 by The Disk King: Inspired by the E-mu SP-1200, the original 1987 1
 
 [![Get updates with MPC Plugins Manager](../assets/updates-button.png)](https://mpcplugins.github.io/p/mpc-plugins-manager/)
 
-Tested on Gen 2 (MPC Live III). The Gen 1 build is made from the same code but has not been tested on Gen 1 hardware yet: tell us if it works on yours.
+Tested and working on Gen 1 (MPC X SE) and Gen 2 (MPC Live III).
 
 **Get updates automatically:** a zip you download by hand never updates itself. Install **[MPC Plugins Manager](https://mpcplugins.github.io/p/mpc-plugins-manager/)** once on your MPC: it shows when a new version of KING SP-1200 is out and installs it in one tap.
 

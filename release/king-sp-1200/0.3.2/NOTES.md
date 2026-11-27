@@ -7,7 +7,7 @@ KING SP-1200 by The Disk King: Inspired by the E-mu SP-1200 (the original 1987 m
 - Set-up 11-20, 22, 23 and the Specials, Disk save/load to folders on the MPC drive, tempo.
 - Tap a printed function list (Set-up, Disk, Sync, Sample) to read it large.
 - Settings: tap the King Systems nameplate (Q-Link boxes on/off, LCD style Green or Blue).
-- Downloads for both MPC generations: Gen1 (32-bit: Live, Live II, One, One+, X, Key 61, Key 37, Force), Gen2 (64-bit: Live III, XL), or the one zip that works on both. Tested on Gen2 (Live III); the Gen1 build is included but not yet tested on Gen1 hardware.
+- Downloads for both MPC generations: Gen1 (32-bit: Live, Live II, One, One+, X, Key 61, Key 37, Force), Gen2 (64-bit: Live III, XL), or the one zip that works on both. Tested and working on Gen1 (MPC X SE) and Gen2 (MPC Live III).
 - Not yet: the built-in sequencer and sampling (use the MPC's sequencer and drop WAVs on a disk folder).
 
 Get updates automatically with MPC Plugins Manager: https://mpcplugins.github.io/p/mpc-plugins-manager/
